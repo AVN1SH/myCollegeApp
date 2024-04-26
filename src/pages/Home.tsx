@@ -1,8 +1,11 @@
+import Slider from "@/components/animation/Slider"
+import Footer from "@/components/footer/Footer"
 
 const Home = () => {
   return (
     <div>
-      Home page component
+      <Slider />
+      <Footer />
     </div>
   )
 }
