@@ -59,6 +59,7 @@ const Registration = () => {
       lastName: "",
       email: "",
       role : undefined,
+      regId: "",
       mobNum : "+91",
       password: "",
       confirmPassword: "",
@@ -140,11 +141,12 @@ const Registration = () => {
                 )}
               />
             </div>
-            <FormField
+            <div className="flex justify-between items-center gap-2">
+              <FormField
                 name="role"
                 control={form.control}
                 render={({ field }) => (
-                  <FormItem className="flex-1">
+                  <FormItem className="flex-0">
                     <FormLabel>Your Position | Required</FormLabel>
                     <FormControl>
                       <Select
@@ -165,6 +167,24 @@ const Registration = () => {
                   </FormItem>
                 )}
               />
+              <FormField
+                name="regId"
+                control={form.control}
+                render={({ field }) => (
+                  <FormItem className="flex-1">
+                    <FormLabel>Registration Id | Required</FormLabel>
+                    <FormControl>
+                      <Input 
+                        type="text" 
+                        placeholder="eg : ABCDEFGH1234" 
+                        {...field} 
+                      />
+                    </FormControl>
+                    <FormMessage className="text-xs" />
+                  </FormItem>
+                )}
+              />
+            </div>
             <FormField
               control={form.control}
               name="email"
