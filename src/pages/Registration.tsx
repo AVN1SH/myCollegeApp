@@ -1,4 +1,4 @@
-import { set, z } from "zod"
+import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { Button } from "@/components/ui/button"
@@ -21,9 +21,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEye, faEyeSlash, faGraduationCap } from "@fortawesome/free-solid-svg-icons"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
-export const isPasswordValid = (password : string) => {
-
-}
 
 const Registration = () => {
   const [email, setEmail] = useState('');
@@ -230,10 +227,6 @@ const Registration = () => {
                       type={viewPassword ? "text" : "password"} 
                       placeholder="eg : ABcde123@#" 
                       {...field} 
-                      onChange={(e) => {
-                        field.onChange(e);
-                        isPasswordValid(e.target.value);
-                      }}
                     />
                   </FormControl>
                   <button
