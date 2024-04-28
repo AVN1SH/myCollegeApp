@@ -9,12 +9,14 @@ import {Route, RouterProvider, createBrowserRouter, createRoutesFromElements} fr
 import {Provider} from "react-redux";
 import store from "./store/store.ts";
 import Registration from './pages/Registration.tsx'
+import LogIn from './pages/LogIn.tsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App />}>
       <Route path='' element={<Home />} />
       <Route path="/registration" element={<Registration />} />
+      <Route path="/login" element={<LogIn />} />
     </Route>
   )
 )
