@@ -27,6 +27,7 @@ const Registration = () => {
   const [isSubmiting, setIsSubmitting] = useState(false);
   const [isCheckingEmail, setIsCheckingEmail] = useState(false);
   const [viewPassword, setViewPassword] = useState(false);
+  const [selectValue, setSelectValue] = useState(false);
 
 
   const debounced = useDebounceCallback(setEmail, 300);
@@ -57,7 +58,7 @@ const Registration = () => {
       email: "",
       role : undefined,
       regId: "",
-      mobNum : "+91",
+      mobNum : "",
       password: "",
       confirmPassword: "",
     },
@@ -149,6 +150,7 @@ const Registration = () => {
                       <Select
                         onValueChange={(value) => {
                           field.onChange(value)
+                          value === "student" ? setSelectValue(true) : setSelectValue(false);
                         }}
                       >
                         <SelectTrigger className="w-[180px]">
@@ -168,7 +170,7 @@ const Registration = () => {
                 name="regId"
                 control={form.control}
                 render={({ field }) => (
-                  <FormItem className="flex-1">
+                  <FormItem className={selectValue ? "block flex-1" : "hidden"}>
                     <FormLabel>Registration Id | Required</FormLabel>
                     <FormControl>
                       <Input 
@@ -229,13 +231,12 @@ const Registration = () => {
                       {...field} 
                     />
                   </FormControl>
-                  <button
-                    type="button"
-                    className="absolute top-1/2 right-4 -translate-y-full pb-1"
+                  <div
+                    className="absolute top-1/2 right-4 -translate-y-full pb-1 hover:cursor-pointer"
                     onClick={() => setViewPassword(!viewPassword)}>
                       {!viewPassword && <FontAwesomeIcon icon={faEye} />}
                       {viewPassword && <FontAwesomeIcon icon={faEyeSlash} />}
-                  </button>
+                  </div>
                   <FormDescription>
                     Password must be at least 8 characters long and contains 
                     uppercase, lowercase, number and special character.
