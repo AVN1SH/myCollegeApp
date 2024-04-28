@@ -27,11 +27,15 @@ const Registration = () => {
   const [isSubmiting, setIsSubmitting] = useState(false);
   const [isCheckingEmail, setIsCheckingEmail] = useState(false);
   const [viewPassword, setViewPassword] = useState(false);
-  const [selectValue, setSelectValue] = useState(false);
-
+  const [selectValue, setSelectValue] = useState('');
+  const [isSelected, setIsSelected] = useState(false);
 
   const debounced = useDebounceCallback(setEmail, 300);
 
+  const updatingRegistration = registration.extend({
+    regId : selectValue === "student" ? z.string().min(15, "Registration Id must be Valid.").max(15, "Registration Id must be Valid.") : z.string().optional()
+  })
+  
 
   useEffect(() => {
     const checkEmail = async () => {
@@ -50,7 +54,7 @@ const Registration = () => {
 
 
   const form = useForm<z.infer<typeof registration>>({
-    resolver: zodResolver(registration),
+    resolver: zodResolver(updatingRegistration),
     defaultValues: {
       firstName: "",
       middleName: "",
@@ -150,7 +154,8 @@ const Registration = () => {
                       <Select
                         onValueChange={(value) => {
                           field.onChange(value)
-                          value === "student" ? setSelectValue(true) : setSelectValue(false);
+                          setSelectValue(value);
+                          value === "student" ? setIsSelected(true) : setIsSelected(false);
                         }}
                       >
                         <SelectTrigger className="w-[180px]">
@@ -170,7 +175,7 @@ const Registration = () => {
                 name="regId"
                 control={form.control}
                 render={({ field }) => (
-                  <FormItem className={selectValue ? "block flex-1" : "hidden"}>
+                  <FormItem className={isSelected ? "block flex-1" : "hidden"}>
                     <FormLabel>Registration Id | Required</FormLabel>
                     <FormControl>
                       <Input 
@@ -232,7 +237,7 @@ const Registration = () => {
                     />
                   </FormControl>
                   <div
-                    className="absolute top-1/2 right-4 -translate-y-full pb-1 hover:cursor-pointer"
+                    className="absolute top-8 right-4 hover:cursor-pointer"
                     onClick={() => setViewPassword(!viewPassword)}>
                       {!viewPassword && <FontAwesomeIcon icon={faEye} />}
                       {viewPassword && <FontAwesomeIcon icon={faEyeSlash} />}
