@@ -44,17 +44,17 @@ const Footer = () => {
             Discover the world of new technologies with advance course and learning tools and methods.
           </p>
           <div className="flex gap-3 items-center justify-between w-[250px] text-2xl text-slate-600 overflow-hidden">
-            <FontAwesomeIcon icon={faFacebook} className="hover:text-orange-600 hover:cursor-pointer"/>
-            <FontAwesomeIcon icon={faInstagram} className="hover:text-orange-600 hover:cursor-pointer" />
-            <FontAwesomeIcon icon={faXTwitter} className="hover:text-orange-600 hover:cursor-pointer" />
-            <FontAwesomeIcon icon={faGithub} className="hover:text-orange-600 hover:cursor-pointer" />
-            <FontAwesomeIcon icon={faYoutube} className="hover:text-orange-600 hover:cursor-pointer" />
+            <FontAwesomeIcon icon={faFacebook} className="hover:text-orange-600 hover:cursor-pointer duration-150"/>
+            <FontAwesomeIcon icon={faInstagram} className="hover:text-orange-600 hover:cursor-pointer duration-150" />
+            <FontAwesomeIcon icon={faXTwitter} className="hover:text-orange-600 hover:cursor-pointer duration-150" />
+            <FontAwesomeIcon icon={faGithub} className="hover:text-orange-600 hover:cursor-pointer duration-150" />
+            <FontAwesomeIcon icon={faYoutube} className="hover:text-orange-600 hover:cursor-pointer duration-150" />
           </div>
           <hr className="block xl:hidden m-3 border-gray-300"/>
         </div>
         <div className="flex space-x-2 justify-between w-full">
           <div className="flex flex-col whitespace-nowrap space-y-4 w-40">
-            <h1 className="font-semibold text-xl text-slate-800 ">Student</h1>
+            <h1 className="font-bold text-xl text-slate-800 ">Student</h1>
             {student.map((item) => (
               <a
                 key={item.name}
@@ -66,7 +66,7 @@ const Footer = () => {
             ))}
           </div>
           <div className="flex flex-col whitespace-nowrap space-y-4 w-40">
-            <h1 className="font-semibold text-xl text-slate-800 ">Faculty</h1>
+            <h1 className="font-bold text-xl text-slate-800 ">Faculty</h1>
             {faculty.map((item) => (
               <a
                 key={item.name}
@@ -78,7 +78,7 @@ const Footer = () => {
             ))}
           </div>
           <div className="flex flex-col whitespace-nowrap space-y-4 w-40">
-            <h1 className="font-semibold text-xl text-slate-800 ">Quick Links</h1>
+            <h1 className="font-bold text-xl text-slate-800 ">Quick Links</h1>
             {links.map((item) => (
               <a
                 key={item.name}
@@ -90,7 +90,7 @@ const Footer = () => {
             ))}
           </div>
           <div className="flex flex-col whitespace-nowrap space-y-4 w-40">
-            <h1 className="font-semibold text-xl text-slate-800 ">Site Info.</h1>
+            <h1 className="font-bold text-xl text-slate-800 ">Site Info.</h1>
             {site.map((item) => (
               <a
                 key={item.name}
