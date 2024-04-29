@@ -26,3 +26,18 @@
 .custom-number-input {
     -moz-appearance: textfield;
 }
+
+/* left nav bar */
+
+.custom-scroll-bar::-webkit-scrollbar {
+  width: 3px;
+}
+.custom-scroll-bar::-webkit-scrollbar-track {
+  background: rgb(255, 204, 109);
+}
+.custom-scroll-bar::-webkit-scrollbar-thumb {
+  background: rgb(255, 115, 0);
+}
+.custom-scroll-bar::-webkit-scrollbar-thumb:hover {
+  background: orangered;
+}
