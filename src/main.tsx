@@ -4,12 +4,14 @@ import App from './App.tsx'
 import './index.css'
 
 import Home from "./pages/Home.tsx"
-
+import Layout from "./pages/studentDashboard/Layout.tsx"
+import Overview from "./pages/studentDashboard/Overview.tsx"
 import {Route, RouterProvider, createBrowserRouter, createRoutesFromElements} from "react-router-dom";
 import {Provider} from "react-redux";
 import store from "./store/store.ts";
 import Registration from './pages/Registration.tsx'
 import LogIn from './pages/LogIn.tsx'
+import PersonalInfo from './pages/studentDashboard/admission/PersonalInfo.tsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,6 +19,12 @@ const router = createBrowserRouter(
       <Route path='' element={<Home />} />
       <Route path="/registration" element={<Registration />} />
       <Route path="/login" element={<LogIn />} />
+
+      <Route path="/student-dashboard" element={<Layout />}>
+        <Route path="overview" element={<Overview />} />
+        <Route path="admission" element={<PersonalInfo />} />
+      </Route>
+
     </Route>
   )
 )
