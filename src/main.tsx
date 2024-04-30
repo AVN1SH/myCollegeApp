@@ -14,6 +14,7 @@ import LogIn from './pages/LogIn.tsx'
 import PersonalInfo from './pages/studentDashboard/admission/PersonalInfo.tsx'
 import Address from './pages/studentDashboard/admission/Address.tsx'
 import Qualification from './pages/studentDashboard/admission/Qualification.tsx'
+import Docs from './pages/studentDashboard/Docs.tsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,6 +28,7 @@ const router = createBrowserRouter(
         <Route path="admission/personal-info" element={<PersonalInfo />} />
         <Route path="admission/address" element={<Address />} />
         <Route path="admission/qualifications" element={<Qualification />} />
+        <Route path="documentation" element={<Docs />} />
       </Route>
 
     </Route>
