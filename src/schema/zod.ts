@@ -37,7 +37,7 @@ const personalDetails = z.object({
   gender: z.union([z.literal('male'), z.literal('female'), z.literal('transgender'), z.literal(undefined)]).refine(value => value !== undefined, {
     message : "Please select your gender."
   }),
-  cast: z.union([z.literal('general'), z.literal('obc'), z.literal('st'), z.literal('sc'), z.literal(undefined)]).refine(value => value !== undefined, {
+  cast: z.union([z.literal('general'), z.literal('obc'), z.literal('ebc'), z.literal('st'), z.literal('sc'), z.literal(undefined)]).refine(value => value !== undefined, {
     message : "Please select your cast."
   }),
   dob: z.date(),
@@ -49,26 +49,45 @@ const personalDetails = z.object({
 
 const address = z.object({
   buildingNum : z.string().max(20, "Field must be under 20 charecters"),
-  locality: z.string().max(40, "Field must be under 20 charecters"),
-  sublocality: z.string().max(40, "Field must be under 20 charecters"),
+  locality: z.string().max(60, "Field must be under 60 charecters"),
+  subLocality: z.string().optional(),
   state: z.string(),
   district : z.string(),
-  pinCode: z.string().max(30, "Field must be under 20 charecters"),
-  alternateNum : z.string()
+  pinCode: z.string().min(6, "Field must contain 6 digit Number").max(6, "Field must be 6 digit Number"),
+  contactNum : z.string().min(10, "Invalid Number").max(10, "Invalid Number"),
+  alternateNum : z.string().optional()
 });
 
 const qualification = z.object({
-  schoolName : z.string().min(10).max(40),
-  rollCode: z.number().min(8).max(8),
-  totalMarks : z.number().min(3).max(3),
-  obtainedMarks : z.number().min(3).max(3),
-  percentage : z.string(),
+  status : z.union([z.literal('passed'), z.literal('appearing'), z.literal('notAttempted'), z.literal(undefined)]).refine(value => value !== undefined, {
+    message : "Please select your Qualification Status."
+  }),
+  year : z.string(),
+  schoolName : z.string().min(10, "Field must contain min 10 characters").max(60, "Field must contain max 60 characters"),
+  rollCode: z.string().min(8, "Field must contain 8 digits Number").max(8, "Field must contain 8 digits Number"),
+  totalMarks : z.string().min(3, "Field must contain 3 digits Number").max(3, "Field must contain 3 digits Number"),
+  obtainedMarks : z.string().min(3, "Field must contain 3 digits Number").max(3, "Field must contain 3 digits Number"),
 });
 
 const documentations = z.object({
-  uniqueId : z.string(),
-  tenthDoc : z.string(),
-  twelfthDoc : z.string()
+  photo : z.instanceof(FileList).refine((file) => file && file.length === 1, {
+    message: "File is required",
+  }),
+  signature : z.instanceof(FileList).refine((file) => file && file.length === 1, {
+    message: "File is required",
+  }),
+  uniqueId : z.instanceof(FileList).refine((file) => file && file.length === 1, {
+    message: "File is required",
+  }),
+  tenthMarksheet : z.instanceof(FileList).refine((file) => file && file.length === 1, {
+    message: "File is required",
+  }),
+  twelfthMarksheet : z.instanceof(FileList).refine((file) => file && file.length === 1, {
+    message: "File is required",
+  }),
+  graduationMarksheet : z.instanceof(FileList).refine((file) => file && file.length === 1, {
+    message: "File is required",
+  })
 });
 
 export { 
