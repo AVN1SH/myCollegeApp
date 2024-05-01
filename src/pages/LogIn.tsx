@@ -110,10 +110,10 @@ const LogIn = () => {
                   </FormControl>
                   <button
                     type="button"
-                    className="absolute top-1/2 right-3"
+                    className="absolute top-8 right-3"
                     onClick={() => setViewPassword(!viewPassword)}>
-                      {!viewPassword && <FontAwesomeIcon icon={faEye} className="pb-1"/>}
-                      {viewPassword && <FontAwesomeIcon icon={faEyeSlash} className="pb-1"/>}
+                      {!viewPassword && <FontAwesomeIcon icon={faEye}/>}
+                      {viewPassword && <FontAwesomeIcon icon={faEyeSlash} />}
                   </button>
                   <FormMessage className="text-xs" />
                 </FormItem>
