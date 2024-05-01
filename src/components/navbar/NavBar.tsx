@@ -1,13 +1,14 @@
-import { Fragment } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { ArrowRightStartOnRectangleIcon, Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCheckToSlot, faGraduationCap, faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from '@fortawesome/free-regular-svg-icons';
+import { Link, useLocation } from 'react-router-dom';
 
 const navigation = [
-  { name: 'Home', href: '#', current: true },
-  { name: 'Admissions', href: '#', current: false },
+  { name: 'Home', href: '/', current: true },
+  { name: 'Admissions', href: "/registration", current: false },
   { name: 'Programs', href: '#', current: false },
   { name: 'Faculties', href: '#', current: false },
   { name: "About", href: '#', current: false }
@@ -18,6 +19,14 @@ function classNames(...classes : any) {
 }
 
 const NavBar = () => {
+  const location = useLocation();
+  // const { hash, pathname, search } = location;
+  const { pathname } = location;
+  const [path, setPath] = useState('');
+
+  useEffect(() => {
+    setPath(pathname);
+  }, [pathname])
   return (
     <Disclosure as="nav" className="bg-white shadow-[0_0_7px_#7e7e7e] fixed w-full z-10">
       {({ open }) => (
@@ -44,17 +53,19 @@ const NavBar = () => {
                 <div className="hidden md:ml-6 md:block h-full">
                   <div className="flex items-center justify-center space-x-4 h-full">
                     {navigation.map((item) => (
-                      <a
+                      <Link to={item.href}
                         key={item.name}
-                        href={item.href}
+                        onClick={() => {
+
+                        }}
                         className={classNames(
-                          item.current ? 'border-b-2 border-gray-900 border-solid text-black' : 'text-gray-500 hover:border-b-2 hover:border-gray-500 hover:border-solid',
+                          path === item.href ? 'border-b-2 border-gray-900 border-solid text-black' : 'text-gray-500 hover:border-b-2 hover:border-gray-500 hover:border-solid',
                           'px-3 py-2 text-sm font-medium h-full flex items-center flex-shrink-0 duration-75'
                         )}
                         aria-current={item.current ? 'page' : undefined}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
