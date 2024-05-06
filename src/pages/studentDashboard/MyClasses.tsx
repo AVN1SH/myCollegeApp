@@ -1,3 +1,4 @@
+import TimeLine from "@/components/TimeLine";
 import { buttonVariants } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar"
 import { cn } from "@/lib/utils";
@@ -15,10 +16,8 @@ const MyClasses = () => {
       </div>
       <div className="absolute border-slate-400 border-[1px] border-solid flex bg-gray-100 w-[calc(100%-100px)] top-24 left-1/2 -translate-x-1/2 min-h-[calc(100vh-11rem)] rounded p-3">
         <div className="flex bg-gray-100 justify-between w-full gap-3">
-          <div className="flex-[1.7] bg-white rounded flex flex-row h-full">
-            <div className="flex-1 space-y-40">
-              TODO: need to add events here......!
-            </div>
+          <div className="flex-[1.7] bg-white rounded flex flex-row">
+            <TimeLine />
           </div>
           <div className="flex-1 bg-white rounded">
             <Calendar
