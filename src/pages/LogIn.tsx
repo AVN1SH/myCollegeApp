@@ -70,7 +70,7 @@ const LogIn = () => {
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6">
             <FontAwesomeIcon icon={faGraduationCap} /> My College
           </h1>
-          <p className="mb-4 text-md">Sign In To Your Account, If Not <Link to={"#"} className="text-blue-500 underline hover:font-semibold">Sign-Up</Link></p>
+          <p className="mb-4 text-md">Sign In To Your Account, If Not <Link to={"/registration"} className="text-blue-500 underline hover:font-semibold">Sign-Up</Link></p>
         </div>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">

@@ -82,12 +82,12 @@ const Registration = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="w-full max-w-xl p-8 space-y-8 bg-white rounded-lg shadow-md my-3">
+      <div className="w-full max-w-xl p-8 space-y-8 bg-white rounded-lg shadow-md my-3 mt-20">
         <div className="text-center">
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6">
             <FontAwesomeIcon icon={faGraduationCap} /> My College
           </h1>
-          <p className="mb-4 text-md">Sign Up To Your Account, If Already <Link to={"#"} className="text-blue-500 underline hover:font-semibold">Sign-In</Link></p>
+          <p className="mb-4 text-md">Sign Up To Your Account, If Already <Link to={"/login"} className="text-blue-500 underline hover:font-semibold">Sign-In</Link></p>
         </div>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
