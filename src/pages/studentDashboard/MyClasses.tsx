@@ -13,9 +13,9 @@ const MyClasses = () => {
           Overview
         </h1>
       </div>
-      <div className="absolute border-slate-400 border-[1px] border-solid flex bg-gray-100 w-[calc(100%-100px)] top-24 left-1/2 -translate-x-1/2 min-h-screen rounded p-3">
+      <div className="absolute border-slate-400 border-[1px] border-solid flex bg-gray-100 w-[calc(100%-100px)] top-24 left-1/2 -translate-x-1/2 min-h-[calc(100vh-11rem)] rounded p-3">
         <div className="flex bg-gray-100 justify-between w-full gap-3">
-          <div className="flex-[1.7] bg-white rounded flex flex-row h-screen overflow-scroll">
+          <div className="flex-[1.7] bg-white rounded flex flex-row h-full">
             <div className="flex-1 space-y-40">
               TODO: need to add events here......!
             </div>
