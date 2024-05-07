@@ -9,6 +9,7 @@ const TimeLine = () => {
       <div className="flex-[10] flex flex-col justify-between h-[4000px] py-3">
         {times.map((item) => <hr key={item} className="border-slate-300"></hr>)}
         {times.map((item) => <hr key={item} className="border-slate-300"></hr>)}
+        <hr className="border-slate-300"></hr>
       </div>
     </div>
   )
