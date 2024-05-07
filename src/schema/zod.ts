@@ -90,11 +90,28 @@ const documentations = z.object({
   })
 });
 
+const feedback = z.object({
+  type : z.union([z.literal('technical'), 
+    z.literal('general'), 
+    z.literal('admission'), 
+    z.literal('result'), 
+    z.literal('class'), 
+    z.literal(undefined)]).refine(value => value !== undefined, {
+    message : "Please select your Queary Type."
+  }),
+  title : z.string().min(10, "Title must be 10 characters above.").max(30, "Title must be under 30 charecters"),
+  description : z.string().min(50, "Description must be more than 50 characters").max(400, "Description must be less than 400 characters."),
+  file : z.instanceof(FileList).refine((file) => file && file.length === 1, {
+    message: "File is required",
+  }),
+})
+
 export { 
   registration, 
   login, 
   personalDetails,
   address,
   qualification,
-  documentations
+  documentations,
+  feedback
 }
