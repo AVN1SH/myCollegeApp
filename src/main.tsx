@@ -19,6 +19,7 @@ import Payment from './pages/studentDashboard/Payment.tsx'
 import Syllabus from './pages/studentDashboard/Syllabus.tsx'
 import MyClasses from './pages/studentDashboard/MyClasses.tsx'
 import FeedBack from './pages/studentDashboard/FeedBack.tsx'
+import Progress from './pages/studentDashboard/Progress.tsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -37,6 +38,7 @@ const router = createBrowserRouter(
         <Route path="syllabus" element={<Syllabus />} />
         <Route path="my-classes" element={<MyClasses />} />
         <Route path="feedback" element={<FeedBack />} />
+        <Route path="progress-report" element={<Progress />} />
       </Route>
 
     </Route>
