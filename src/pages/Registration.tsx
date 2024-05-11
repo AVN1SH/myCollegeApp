@@ -20,6 +20,7 @@ import { Loader2 } from "lucide-react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEye, faEyeSlash, faGraduationCap } from "@fortawesome/free-solid-svg-icons"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import djangoService from "@/Django/django"
 
 
 const Registration = () => {
@@ -68,12 +69,24 @@ const Registration = () => {
     },
   })
 
-  const onSubmit = (values: z.infer<typeof registration>) => {
+  const onSubmit = async (values: z.infer<typeof registration>) => {
     setIsSubmitting(true);
     try {
-      //TODO: need to handle submit here
+      const regData = await djangoService.createAccount({
+        firstName : values.firstName,
+        middleName : values.middleName,
+        lastName : values.lastName,
+        role : values.role || "",
+        email : values.email,
+        mobNum : values.mobNum,
+        password : values.password,
+      });
+      if(regData) {
+        console.log(regData);
+      }
       setIsSubmitting(false);
     } catch (error) {
+      console.log(error);
       setIsSubmitting(false);
     }
     console.log(values)
