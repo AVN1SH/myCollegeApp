@@ -44,7 +44,7 @@ const personalDetails = z.object({
   nationality : z.union([z.literal('indian'), z.literal('other'), z.literal(undefined)]).refine(value => value !== undefined, {
     message : "Please select your nationality."
   }),
-  pwd: z.boolean().optional()
+  pwd: z.boolean()
 });
 
 const address = z.object({
