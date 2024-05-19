@@ -3,7 +3,7 @@
 import axios from "axios"
 
 const api = axios.create({
-  // baseURL : `/users`,
+  baseURL : `/api/users`,
   withCredentials : true
 });
 

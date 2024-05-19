@@ -6,7 +6,7 @@ import path from "path"
 export default defineConfig({
   server: {
     proxy : {
-      '/users' : "https://arkas.pythonanywhere.com"
+      '/api' : "https://arkas.pythonanywhere.com"
     }
   },
   plugins: [react()],
