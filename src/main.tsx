@@ -20,6 +20,7 @@ import Syllabus from './pages/studentDashboard/Syllabus.tsx'
 import MyClasses from './pages/studentDashboard/MyClasses.tsx'
 import FeedBack from './pages/studentDashboard/FeedBack.tsx'
 import Progress from './pages/studentDashboard/Progress.tsx'
+import Faculties from './pages/Faculties.tsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,6 +28,7 @@ const router = createBrowserRouter(
       <Route path='' element={<Home />} />
       <Route path="/registration" element={<Registration />} />
       <Route path="/login" element={<LogIn />} />
+      <Route path="/faculties" element={<Faculties />} />
 
       <Route path="/student-dashboard" element={<Layout />}>
         <Route path="overview" element={<Overview />} />
