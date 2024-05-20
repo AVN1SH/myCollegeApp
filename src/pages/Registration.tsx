@@ -30,6 +30,7 @@ const Registration = () => {
   const [viewPassword, setViewPassword] = useState(false);
   const [selectValue, setSelectValue] = useState('');
   const [isSelected, setIsSelected] = useState(false);
+  const [error, setError] = useState('');
 
   const debounced = useDebounceCallback(setEmail, 300);
 
@@ -83,13 +84,17 @@ const Registration = () => {
       });
       if(regData) {
         console.log(regData);
+        //TODO: redirect user
+        setError('');
       }
       setIsSubmitting(false);
-    } catch (error) {
-      console.log(error);
+    } catch (error : any) {
+      if(Number(error.message) >= 400) {
+        console.log("fields are required");
+        setError("Error While Registration, Please Try Again Or Do It Later");
+      }
       setIsSubmitting(false);
     }
-    console.log(values)
   }
 
 
@@ -276,6 +281,7 @@ const Registration = () => {
                 </FormItem>
               )}
             />
+            {error && <div className="text-red-500 font-bold ">{error}</div>}
             <Button type="submit" disabled={isSubmiting} className="bg-orange-600 rounded">
               {
                 isSubmiting ? (

@@ -15,17 +15,23 @@ import { Input } from "@/components/ui/input"
 import { login, registration } from "@/schema/zod"
 import { useDebounceCallback } from "usehooks-ts"
 import { useEffect, useState } from "react"
-import { Link, NavLink} from "react-router-dom"
+import { Link, NavLink, useNavigate} from "react-router-dom"
 import { Loader2 } from "lucide-react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEye, faEyeSlash, faGraduationCap } from "@fortawesome/free-solid-svg-icons"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import djangoService from "@/Django/django"
+import { useDispatch } from "react-redux"
+import authSlice, {login as authSignIn} from "../features/authSlice";
 
 const LogIn = () => {
   const [email, setEmail] = useState('');
   const [isSubmiting, setIsSubmitting] = useState(false);
   const [isCheckingEmail, setIsCheckingEmail] = useState(false);
   const [viewPassword, setViewPassword] = useState(false);
+  const [error, setError] = useState('');
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
 
   const debounced = useDebounceCallback(setEmail, 300);
 
@@ -45,19 +51,31 @@ const LogIn = () => {
   }, [email])
 
   const form = useForm<z.infer<typeof login>>({
-    resolver: zodResolver(registration),
+    resolver: zodResolver(login),
     defaultValues: {
       email: "",
       password: "",
     },
   })
 
-  const onSubmit = (values: z.infer<typeof login>) => {
+  const onSubmit = async (values: z.infer<typeof login>) => {
     setIsSubmitting(true);
     try {
-      //TODO: need to handle submit here
+      const userData = await djangoService.login({
+        email : values.email,
+        password : values.password,
+      });
+      if(userData) {
+        dispatch(authSignIn(userData));
+        navigate("/student-dashboard/admission/personal-info");
+        setError('');
+      }
       setIsSubmitting(false);
-    } catch (error) {
+    } catch (error : any) {
+      if(Number(error.message) >= 400) {
+        console.log("fields are required");
+        setError("Error While Login, Please Try Again Or Do It Later");
+      }
       setIsSubmitting(false);
     }
     console.log(values)
@@ -119,6 +137,7 @@ const LogIn = () => {
                 </FormItem>
               )}
             />
+            {error && <div className="text-red-500 font-bold ">{error}</div>}
             <Button type="submit" disabled={isSubmiting} className="bg-orange-600 rounded">
               {
                 isSubmiting ? (
