@@ -15,7 +15,7 @@ import { Input } from "@/components/ui/input"
 import { personalDetails } from "@/schema/zod"
 import { useDebounceCallback } from "usehooks-ts"
 import { useEffect, useState } from "react"
-import { Link, NavLink} from "react-router-dom"
+import { Link, NavLink, useNavigate} from "react-router-dom"
 import { CalendarIcon, Loader2 } from "lucide-react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEye, faEyeSlash, faGraduationCap } from "@fortawesome/free-solid-svg-icons"
@@ -26,6 +26,9 @@ import { cn } from "@/lib/utils"
 import { format } from "date-fns"
 import { Calendar } from "@/components/ui/calendar"
 import { Checkbox } from "@/components/ui/checkbox"
+import djangoService from "@/Django/django"
+import { useSelector } from "react-redux"
+import authSlice, { AuthState } from "@/features/authSlice"
 
 
 const PersonalInfo = () => {
@@ -34,6 +37,10 @@ const PersonalInfo = () => {
   const [isCheckingEmail, setIsCheckingEmail] = useState(false);
   const [viewPassword, setViewPassword] = useState(false);
   const [selectValue, setSelectValue] = useState(false);
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
+  const userData = useSelector((state : AuthState) => state.userData);
 
 
   const debounced = useDebounceCallback(setEmail, 300);
@@ -71,12 +78,42 @@ const PersonalInfo = () => {
     },
   })
 
-  const onSubmit = (values: z.infer<typeof personalDetails>) => {
+  const onSubmit = async (values: z.infer<typeof personalDetails>) => {
     setIsSubmitting(true);
+    console.log(values.dob.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "numeric",
+      day: "numeric"
+    }))
     try {
-      //TODO: need to handle submit here
+      const response = await djangoService.userDetails({
+        id : userData?.id || '',
+        candidate : values.candidate,
+        fatherName : values.fatherName,
+        motherName : values.motherName,
+        gender : values.gender || '',
+        cast : values.cast || '',
+        dob : values.dob.toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "numeric",
+          day: "numeric"
+        }),
+        nationality : values.nationality || '',
+        pwd : values.pwd,
+        email : values.email,
+        mobNum : values.mobNum,
+      });
+      
+      if(response) {
+        setError('');
+        navigate("/student-dashboard/admission/address");
+      }
       setIsSubmitting(false);
-    } catch (error) {
+    } catch (error : any) {
+      if(Number(error.message) >= 400) {
+        console.log("fields are required");
+        setError("Error While adding data, Please Try Again Or Do It Later");
+      }
       setIsSubmitting(false);
     }
     console.log(values)
@@ -110,7 +147,8 @@ const PersonalInfo = () => {
                       <FormControl>
                         <Input 
                           type="text" 
-                          placeholder="eg : Jhon" 
+                          disabled = {userData?.first_name ? true : false}
+                          placeholder={userData ? userData.first_name + ' ' + userData.middle_name + ' ' + userData.last_name : "eg : Jhon"}
                           {...field} 
                         />
                       </FormControl>
@@ -278,7 +316,7 @@ const PersonalInfo = () => {
                       <FormItem className=" flex-[1]">
                         <FormLabel>Mobile Number | Required</FormLabel>
                         <FormControl>
-                          <Input type="number" placeholder="eg : 0123456789" className="custom-number-input" {...field} />
+                          <Input type="number" placeholder={userData ? userData.phone : ""} className="custom-number-input" {...field} />
                         </FormControl>
                         <FormMessage className="text-xs" />
                       </FormItem>
@@ -321,6 +359,7 @@ const PersonalInfo = () => {
                     </FormItem>
                   )}
                 />
+                {error && <div className="text-red-500 font-bold ">{error}</div>}
                 <Button type="submit" disabled={isSubmiting} className="bg-orange-600 rounded">
                   {
                     isSubmiting ? (

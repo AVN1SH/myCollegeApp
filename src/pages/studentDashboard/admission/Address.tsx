@@ -14,7 +14,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { address } from "@/schema/zod"
 import { useState } from "react"
-import { Link, NavLink} from "react-router-dom"
+import { Link, NavLink, useNavigate} from "react-router-dom"
 import { Loader2 } from "lucide-react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons"
@@ -22,12 +22,16 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 
 import state from "../../../../public/state.json";
 import cities from "../../../../public/cities.json";
+import djangoService from "@/Django/django"
 
 
 const Address = () => {
   const [email, setEmail] = useState('');
   const [isSubmiting, setIsSubmitting] = useState(false);
   const [stateValue, setStateValue] = useState<string>('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
 
   const form = useForm<z.infer<typeof address>>({
     resolver: zodResolver(address),
@@ -43,12 +47,31 @@ const Address = () => {
     },
   })
 
-  const onSubmit = (values: z.infer<typeof address>) => {
+  const onSubmit = async (values: z.infer<typeof address>) => {
     setIsSubmitting(true);
     try {
-      //TODO: need to handle submit here
+      const response = await djangoService.userAddress({
+        buildingNum : values.buildingNum,
+        locality : values.locality,
+        subLocality : values.subLocality || '',
+        state : values.state,
+        district : values.district,
+        pinCode : values.pinCode,
+        contactNum : values.contactNum,
+        alternateNum : values.alternateNum || '',
+      });
+
+      if(response) {
+        console.log(response);
+        setError('');
+        navigate("/student-dashboard/admission/qualifications");
+      }
       setIsSubmitting(false);
-    } catch (error) {
+    } catch (error : any) {
+      if(Number(error.message) >= 400) {
+        console.log("fields are required");
+        setError("Error While adding data, Please Try Again Or Do It Later");
+      }
       setIsSubmitting(false);
     }
     console.log(values)
@@ -217,6 +240,7 @@ const Address = () => {
                     )}
                   />
                 </div>
+                {error && <div className="text-red-500 font-bold ">{error}</div>}
                 <Button type="submit" disabled={isSubmiting} className="bg-orange-600 rounded">
                   {
                     isSubmiting ? (

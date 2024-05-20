@@ -14,7 +14,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { qualification } from "@/schema/zod"
 import { useEffect, useState } from "react"
-import { Link, NavLink} from "react-router-dom"
+import { Link, NavLink, useNavigate} from "react-router-dom"
 import { Loader2 } from "lucide-react"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import year from "../../../public/year.json";
@@ -24,6 +24,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import djangoService from "@/Django/django"
 
 interface Props {
   degree : string;
@@ -35,6 +36,9 @@ const QualificationForm = ({degree} : Props) => {
   const [status, setStatus] = useState<string>('');
   const [totalMarks, setToatalMarks] = useState('');
   const [obtainedMarks, setObtainedMarks] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
 
   const form = useForm<z.infer<typeof qualification>>({
     resolver: zodResolver(qualification),
@@ -47,12 +51,29 @@ const QualificationForm = ({degree} : Props) => {
     },
   })
 
-  const onSubmit = (values: z.infer<typeof qualification>) => {
+  const onSubmit = async (values: z.infer<typeof qualification>) => {
     setIsSubmitting(true);
     try {
-      //TODO: need to handle submit here
+      const response = await djangoService.userQualification({
+        degree : degree,
+        status : values.status || '',
+        year : values.year,
+        schoolName : values.schoolName,
+        rollCode : values.rollCode,
+        totalMarks : values.totalMarks,
+        obtainedMarks : values.obtainedMarks
+      });
+
+      if(response) {
+        console.log(response);
+        setError('');
+      }
       setIsSubmitting(false);
-    } catch (error) {
+    } catch (error : any) {
+      if(Number(error.message) >= 400) {
+        console.log("fields are required");
+        setError("Error While adding data, Please Try Again Or Do It Later");
+      }
       setIsSubmitting(false);
     }
     console.log(values)
@@ -96,7 +117,7 @@ const QualificationForm = ({degree} : Props) => {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>
-                        {status === "passed" ? "Passing Year" : status === "appearing" && "Current Session"} | Required</FormLabel>
+                        {status === "passed" ? "Session" : status === "appearing" && "Current Session"} | Required</FormLabel>
                         <div className="flex gap-2">
                           <Select
                             onValueChange={(value) => {
@@ -208,6 +229,7 @@ const QualificationForm = ({degree} : Props) => {
                   </div>
                 </div>
               </div>
+              {error && <div className="text-red-500 font-bold ">{error}</div>}
               <Button type="submit" disabled={isSubmiting} className="bg-orange-600 rounded">
                 {
                   isSubmiting ? (

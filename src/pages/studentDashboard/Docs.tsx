@@ -14,16 +14,19 @@ import {
 import { Input } from "@/components/ui/input"
 import { address, documentations } from "@/schema/zod"
 import { useState } from "react"
-import { Link, NavLink} from "react-router-dom"
+import { Link, NavLink, useNavigate} from "react-router-dom"
 import { Loader2 } from "lucide-react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import djangoService from "@/Django/django"
 
 
 const Docs = () => {
   const [isSubmiting, setIsSubmitting] = useState(false);
   const [stateValue, setStateValue] = useState<string>('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const form = useForm<z.infer<typeof documentations>>({
     resolver: zodResolver(documentations),
@@ -37,12 +40,29 @@ const Docs = () => {
     },
   })
 
-  const onSubmit = (values: z.infer<typeof documentations>) => {
+  const onSubmit = async (values: z.infer<typeof documentations>) => {
     setIsSubmitting(true);
     try {
-      //TODO: need to handle submit here
+      const response = await djangoService.userDocs({
+        photo : values.photo[0],
+        signature : values.signature[0],
+        uniqueId : values.uniqueId[0],
+        tenthMarksheet : values.tenthMarksheet[0],
+        twelfthMarksheet : values.twelfthMarksheet[0],
+        graduationMarksheet : values.graduationMarksheet[0]
+      });
+
+      if(response) {
+        console.log(response);
+        setError('');
+        navigate("/student-dashboard/admission/qualifications");
+      }
       setIsSubmitting(false);
-    } catch (error) {
+    } catch (error : any) {
+      if(Number(error.message) >= 400) {
+        console.log("fields are required");
+        setError("Error While adding data, Please Try Again Or Do It Later");
+      }
       setIsSubmitting(false);
     }
     console.log(values)
