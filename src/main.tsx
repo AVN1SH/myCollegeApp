@@ -21,6 +21,7 @@ import MyClasses from './pages/studentDashboard/MyClasses.tsx'
 import FeedBack from './pages/studentDashboard/FeedBack.tsx'
 import Progress from './pages/studentDashboard/Progress.tsx'
 import Faculties from './pages/Faculties.tsx'
+import PageNotFound from './pages/PageNotFound.tsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -42,6 +43,8 @@ const router = createBrowserRouter(
         <Route path="feedback" element={<FeedBack />} />
         <Route path="progress-report" element={<Progress />} />
       </Route>
+
+      <Route path='*' element={<PageNotFound />} />
 
     </Route>
   )
