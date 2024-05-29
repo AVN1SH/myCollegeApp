@@ -27,6 +27,9 @@ export const options = {
     title: {
       display: true,
       text: "Classes Attended This Year",
+      font : {
+        size : 18
+      }
     },
   },
 };
@@ -51,7 +54,7 @@ export const data = {
 
 const Attendance = () => {
   return (
-    <Bar options={options} data={data} className="w-full h-full" />
+    <Bar options={options} data={data} className="bg-white p-1 rounded" />
   )
 }
 
