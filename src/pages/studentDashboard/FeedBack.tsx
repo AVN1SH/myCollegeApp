@@ -74,7 +74,7 @@ const FeedBack = () => {
                           }}
                         >
                           <SelectTrigger className="w-[180px]">
-                            <SelectValue placeholder="State" />
+                            <SelectValue placeholder="Type" />
                           </SelectTrigger>
                           <SelectContent>
                             <SelectItem 
