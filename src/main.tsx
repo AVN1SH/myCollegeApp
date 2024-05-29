@@ -22,6 +22,7 @@ import FeedBack from './pages/studentDashboard/FeedBack.tsx'
 import Progress from './pages/studentDashboard/Progress.tsx'
 import Faculties from './pages/Faculties.tsx'
 import PageNotFound from './pages/PageNotFound.tsx'
+import Teachers from './pages/studentDashboard/Teachers.tsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -40,6 +41,7 @@ const router = createBrowserRouter(
         <Route path="payment" element={<Payment />} />
         <Route path="syllabus" element={<Syllabus />} />
         <Route path="my-classes" element={<MyClasses />} />
+        <Route path="teachers" element={<Teachers />} />
         <Route path="feedback" element={<FeedBack />} />
         <Route path="progress-report" element={<Progress />} />
       </Route>
