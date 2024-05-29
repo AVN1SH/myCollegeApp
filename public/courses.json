@@ -1,0 +1,54 @@
+[
+  {
+    "name" : "Batchlor's of computer application"
+  },
+  {
+    "name" : "B.Voc."
+  },
+  {
+    "name" : "BBA"
+  },
+  {
+    "name" : "Batchlor's in computer science"
+  },
+  {
+    "name" : "B.Tech."
+  },
+  {
+    "name" : "Master of computer application"
+  },
+  {
+    "name" : "MBA"
+  },
+  {
+    "name" : "M.Tech."
+  },
+  {
+    "name" : "M.Sc."
+  },
+  {
+    "name" : "specializations",
+    "course" : [
+      {
+        "name" : "Python",
+        "desc" : ""
+      },
+      {
+        "name" : "SQL",
+        "desc" : ""
+      },
+      {
+        "name" : "Artificial Inteligence and Machine Learning",
+        "desc" : ""
+      },
+      {
+        "name" : "Web Development",
+        "desc" : ""
+      },
+      {
+        "name" : "Data Structure and Algorithm",
+        "desc" : ""
+      }
+    ]
+  }
+]
