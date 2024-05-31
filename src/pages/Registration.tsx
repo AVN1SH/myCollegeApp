@@ -63,7 +63,7 @@ const Registration = () => {
       lastName: "",
       email: "",
       role : undefined,
-      regId: "",
+      collegeID: "",
       mobNum : "",
       password: "",
       confirmPassword: "",
@@ -78,6 +78,7 @@ const Registration = () => {
         middleName : values.middleName,
         lastName : values.lastName,
         role : values.role || "",
+        collegeID : values.collegeID,
         email : values.email,
         mobNum : values.mobNum,
         password : values.password,
@@ -173,7 +174,7 @@ const Registration = () => {
                         onValueChange={(value) => {
                           field.onChange(value)
                           setSelectValue(value);
-                          value === "student" ? setIsSelected(true) : setIsSelected(false);
+                          value === "faculty" ? setIsSelected(true) : setIsSelected(false);
                         }}
                       >
                         <SelectTrigger className="w-[180px]">
@@ -190,15 +191,16 @@ const Registration = () => {
                 )}
               />
               <FormField
-                name="regId"
+                name="collegeID"
                 control={form.control}
                 render={({ field }) => (
                   <FormItem className={isSelected ? "block flex-1" : "hidden"}>
-                    <FormLabel>Registration Id | Required</FormLabel>
+                    <FormLabel>College ID | Required</FormLabel>
                     <FormControl>
                       <Input 
-                        type="text" 
-                        placeholder="eg : ABCDEFGH1234" 
+                        type="number" 
+                        placeholder="eg : 123456" 
+                        className="custom-number-input"
                         {...field} 
                       />
                     </FormControl>

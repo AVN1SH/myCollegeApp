@@ -5,6 +5,7 @@ export interface CreateUserAccount {
   middleName : string;
   lastName : string;
   role : string;
+  collegeID ? : string;
   email : string;
   mobNum ?: string;
   password : string;
@@ -13,6 +14,7 @@ export interface CreateUserAccount {
 interface LoginUserAccount {
   email : string;
   password : string;
+  collegeID ? : string; //optional
 }
 
 interface UserDetails {
@@ -61,13 +63,14 @@ interface UserDocs {
 
 export class DjangoService {
 
-  async createAccount({firstName, middleName, lastName, role, email, mobNum, password} : CreateUserAccount) {
+  async createAccount({firstName, middleName, lastName, role, collegeID, email, mobNum, password} : CreateUserAccount) {
     try {
       const response = await api.post("/register/", {
         first_name : firstName,
         middle_name : middleName,
         last_name : lastName,
         role,
+        collegeID,
         email,
         phone : mobNum,
         password
@@ -85,6 +88,8 @@ export class DjangoService {
       throw new Error(error.response.status)
     }
   }
+
+// Authentication section..............
 
   async login({email, password} : LoginUserAccount) {
     try {
@@ -130,6 +135,30 @@ export class DjangoService {
       await api.post("/logout");
     } catch (error) {
       console.log("logout not fetched, error : ", error);
+    }
+  }
+
+  // faculty login...............
+
+  async facultyLogin({email, password, collegeID} : LoginUserAccount) {
+    try {
+      const response = await api.post(`/login/`, {
+        email,
+        password,
+        collegeID
+      });
+  
+      if (response.data) {
+        const user = response.data;
+        console.log('Logged in successfully');
+        console.log(user)
+        return user;
+
+      } else {
+        console.error('Login failed:', response.data.error);
+      }
+    } catch (error : any) {
+      throw new Error(error.response.status)
     }
   }
 

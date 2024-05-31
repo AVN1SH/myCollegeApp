@@ -9,7 +9,7 @@ const registration = z.object({
   role: z.union([z.literal('student'), z.literal('faculty'), z.literal(undefined)]).refine(value => value !== undefined, {
     message : "Please select your role."
   }),
-  regId: z.string().min(15, "Registration Id must be Valid.").max(15, "Registration Id must be Valid."),
+  collegeID: z.string().min(6, "Registration Id must be Valid.").max(6, "College Id must be Valid."),
   email: z.string().email("Invalid Email Id"),
   mobNum: z.string().min(10, "Mobile Number must contain 10 digits").max(10, "Mobile Number must contain 10 digits"),
   password: z.string().min(8, "Password must have at least 8 characters").max(20, "Password must be under 20 charecters").refine(value => {
@@ -21,9 +21,18 @@ const registration = z.object({
   }),
 })
 
+//Student login ...................
+
 const login = z.object({
   email : z.string().email("Invalid Email Id"),
   password : z.string().max(20, "Password must be under 20 charecters")
+})
+
+//faculty login..................
+const facultyLogin = z.object({
+  email : z.string().email("Invalid Email Id"),
+  password : z.string().max(20, "Password must be under 20 charecters"),
+  collegeID : z.string().min(6, "CollegeID must be valid").max(6, "College id must be valid")
 })
 
 //admission shemas........
@@ -109,6 +118,7 @@ const feedback = z.object({
 export { 
   registration, 
   login, 
+  facultyLogin,
   personalDetails,
   address,
   qualification,
