@@ -23,6 +23,7 @@ import Progress from './pages/studentDashboard/Progress.tsx'
 import Faculties from './pages/Faculties.tsx'
 import PageNotFound from './pages/PageNotFound.tsx'
 import Teachers from './pages/studentDashboard/Teachers.tsx'
+import FacultyLogin from './pages/FacultyLogin.tsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,6 +31,7 @@ const router = createBrowserRouter(
       <Route path='' element={<Home />} />
       <Route path="/registration" element={<Registration />} />
       <Route path="/login" element={<LogIn />} />
+      <Route path="/faculty/login" element={<FacultyLogin />} />
       <Route path="/faculties" element={<Faculties />} />
 
       <Route path="/student-dashboard" element={<Layout />}>
