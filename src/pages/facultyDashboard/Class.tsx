@@ -17,7 +17,7 @@ import { faCalendar, faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Loader2 } from "lucide-react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
@@ -43,42 +43,68 @@ const Class = () => {
   const form = useForm<z.infer<typeof stdClass>>({
     resolver: zodResolver(stdClass),
     defaultValues: {
+      course : '',
+      startTime : '',
+      endTime : '',
+      description : '',
     },
   })
 
   const onSubmit = async (values: z.infer<typeof stdClass>) => {
     setIsSubmitting(true);
     try {
-      // const userData = await djangoService.login({
-      //   email : values.email,
-      //   password : values.password,
-      // });
-      // if(userData) {
-      //   dispatch(authSignIn(userData));
-      //   navigate("/student-dashboard/admission/personal-info");
-      //   setError('');
-      // }
+      const userData = await djangoService.facultyClass({
+        facultyName : "Vikrant sir",
+        course : values.course,
+        date : formattedDate,
+        startTime : values.startTime,
+        endTime : values.endTime,
+        description : values.description,
+      });
+      if(userData) {
+        setError('');
+      }
       setIsSubmitting(false);
     } catch (error : any) {
       if(Number(error.message) >= 400) {
         console.log("fields are required");
-        setError("Error While Login, Please Try Again Or Do It Later");
+        setError("Error While submitting, Please Try Again Or Do It Later");
       }
       setIsSubmitting(false);
     }
     console.log(values)
   }
 
+  useEffect(() => {
+    const options1: Intl.DateTimeFormatOptions = {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    };
+
+    const options2 : Intl.DateTimeFormatOptions = {
+      weekday: "long",
+    }
+  
+    const formatDate = date?.toLocaleDateString("en-US", options1);
+    const formatWeek = date?.toLocaleDateString("en-US", options2);
+
+    if(formatDate) setFormattedDate(formatDate);
+    if(formatWeek) setFormattedWeek(formatWeek);
+  }, [date])
+
   return (
     <div className="relative m-1 w-[clac(100%-280px)]">
       <div className="absolute w-full bg-orange-500 h-72 rounded">
         <h1 className="font-bold text-3xl pl-3 pt-3 text-white">
-          Classes | Set your class schedule
+          Classes | <span className="font-thin">Set your class schedules</span>
         </h1>
       </div>
-      <div className="absolute border-slate-400 border-[1px] border-solid flex bg-gray-100 w-[calc(100%-100px)] top-24 left-1/2 -translate-x-1/2 min-h-[calc(100vh-11rem)] rounded p-3">
+      <div className="absolute border-slate-400 border-[1px] border-solid flex flex-col bg-gray-100 w-[calc(100%-100px)] top-24 left-1/2 -translate-x-1/2 min-h-[calc(100vh-11rem)] rounded p-3">
+        <div className="font-semibold text-2xl text-slate-700 bg-white mb-1 rounded p-2 pl-2 shadow-md"><FontAwesomeIcon icon={faCalendar}/> {formattedDate}<span className="divider-vertical border-solid border-[1px] border-orange-300 mx-2"></span><span className="font-thin text-md">{formattedWeek}</span>
+        </div>
         <div className="flex bg-gray-100 justify-between w-full gap-1">
-          <div className="flex-[1.7] bg-white rounded p-8 space-y-8">
+          <div className="flex-[1.7] bg-white rounded p-8 space-y-8 shadow-md">
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                 <FormField
@@ -95,7 +121,7 @@ const Class = () => {
                           }}
                         >
                           <SelectTrigger className="w-[180px]">
-                            <SelectValue placeholder="State" />
+                            <SelectValue placeholder="Select Course" />
                           </SelectTrigger>
                           <SelectContent>
                             {courses.map(value => (
@@ -109,77 +135,40 @@ const Class = () => {
                   )}
                 />
                 <div className="flex justify-between items-center gap-2">
-                  <div className="flex flex-col">
-                    <p className="font-semibold pb-2">Start Time | Required</p>
-                    <div className="flex justify-between items-center gap-2">
-                      <FormField
-                        name="hour"
-                        control={form.control}
-                        render={({ field }) => (
-                          <FormItem className="flex-1">
-                            <FormControl>
-                              <Input 
-                                type="text" 
-                                placeholder="Hour" 
-                                {...field} 
-                              />
-                            </FormControl>
-                            <FormMessage className="text-xs" />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        name="minute"
-                        control={form.control}
-                        render={({ field }) => (
-                          <FormItem className="flex-1">
-                            <FormControl>
-                              <Input type="text" placeholder="Minute" {...field} />
-                            </FormControl>
-                            <FormMessage className="text-xs" />
-                          </FormItem>
-                        )}
-                      />
-                      <span className="text-xl font-bold">:</span>
-                    </div>
-                  </div>
-                  <div className="flex flex-col">
-                    <p className="font-semibold pb-2">End Time | Required</p>
-                    <div className="flex justify-between items-center gap-2">
-                      <FormField
-                        name="hour2"
-                        control={form.control}
-                        render={({ field }) => (
-                          <FormItem className="flex-1">
-                            <FormControl>
-                              <Input 
-                                type="text" 
-                                placeholder="Hour" 
-                                {...field} 
-                              />
-                            </FormControl>
-                            <FormMessage className="text-xs" />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        name="minute2"
-                        control={form.control}
-                        render={({ field }) => (
-                          <FormItem className="flex-1">
-                            <FormControl>
-                              <Input 
-                                type="text" 
-                                placeholder="Minute" 
-                                {...field} 
-                              />
-                            </FormControl>
-                            <FormMessage className="text-xs" />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
-                  </div>
+                  <FormField
+                    name="startTime"
+                    control={form.control}
+                    render={({ field }) => (
+                      <FormItem className="flex-1">
+                        <FormLabel>Start Time | Required</FormLabel>
+                        <FormControl>
+                          <Input 
+                            type="time" 
+                            placeholder="" 
+                            {...field} 
+                          />
+                        </FormControl>
+                        <FormMessage className="text-xs" />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    name="endTime"
+                    control={form.control}
+                    render={({ field }) => (
+                      <FormItem className="flex-1">
+                        <FormLabel>End Time | Required</FormLabel>
+                        <FormControl>
+                          <Input 
+                            type="time" 
+                            placeholder="" 
+                            {...field} 
+                          />
+                        </FormControl>
+                        <FormMessage className="text-xs" />
+                      </FormItem>
+                    )}
+                  />
                 </div>
                 <FormField
                   control={form.control}
@@ -207,14 +196,14 @@ const Class = () => {
                     isSubmiting ? (
                       <><Loader2 className="mr-2 h4 w4 animate-spin"/> Please wait</>
                     ) : (
-                      "Sign-In"
+                      "Add Schedule"
                     )
                   }
                 </Button>
               </form>
             </Form>
           </div>
-          <div className="flex-1 bg-white rounded">
+          <div className="flex-1 bg-white rounded shadow-md">
             <Calendar
               mode="single"
               selected={date}

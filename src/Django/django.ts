@@ -61,6 +61,16 @@ interface UserDocs {
   graduationMarksheet : File;
 }
 
+//faculty interface..........
+interface FacultyClass {
+  facultyName : string;
+  course : string;
+  date : string;
+  startTime : string;
+  endTime : string;
+  description : string;
+}
+
 export class DjangoService {
 
   async createAccount({firstName, middleName, lastName, role, collegeID, email, mobNum, password} : CreateUserAccount) {
@@ -274,7 +284,37 @@ export class DjangoService {
       throw new Error(error.response.status)
     }
   }
+  
+  // faculty features................
+
+  async facultyClass({facultyName, course, date, startTime, endTime, description } : FacultyClass) {
+    console.log(date, startTime)
+    try {
+      const response = await api.post(`/login/`, {
+        faculty_name : facultyName,
+        course,
+        date,
+        startTime,
+        endTime,
+        description
+      });
+  
+      if (response.data) {
+        const user = response.data;
+        console.log('Logged in successfully');
+        console.log(user)
+        return user;
+  
+      } else {
+        console.error('Login failed:', response.data.error);
+      }
+    } catch (error : any) {
+      throw new Error(error.response.status)
+    }
+  }
 }
+
+
 
 const djangoService = new DjangoService();
 
