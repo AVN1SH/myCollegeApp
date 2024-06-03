@@ -119,12 +119,9 @@ const feedback = z.object({
 
 const stdClass = z.object({
   course : z.string(),
-  date : z.date(),
-  hour : z.string(),
-  minute : z.string(),
-  hour2 : z.string(),
-  minute2 : z.string(),
-  description : z.string().min(50, "Description must be more than 50 characters").max(400, "Description must be less than 400 characters."),
+  startTime : z.string(),
+  endTime : z.string(),
+  description : z.string().min(10, "Description must be more than 10 characters").max(200, "Description must be less than 400 characters."),
 })
 
 export { 
