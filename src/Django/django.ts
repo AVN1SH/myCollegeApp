@@ -1,4 +1,4 @@
-import { api } from "../conf/conf.ts"
+import { api, facultyApi } from "../conf/conf.ts"
 
 export interface CreateUserAccount {
   firstName : string;
@@ -284,13 +284,34 @@ export class DjangoService {
       throw new Error(error.response.status)
     }
   }
+
+  async stdClass({facultyName, course, date, startTime, endTime, description } : FacultyClass) {
+    console.log(date, startTime)
+    try {
+      const response = await api.post(`/class/`, {
+        
+      });
+  
+      if (response.data) {
+        const user = response.data;
+        console.log('');
+        console.log(user)
+        return user;
+  
+      } else {
+        console.error('Login failed:', response.data.error);
+      }
+    } catch (error : any) {
+      throw new Error(error.response.status)
+    }
+  }
   
   // faculty features................
 
   async facultyClass({facultyName, course, date, startTime, endTime, description } : FacultyClass) {
     console.log(date, startTime)
     try {
-      const response = await api.post(`/login/`, {
+      const response = await facultyApi.post(`/class/`, {
         faculty_name : facultyName,
         course,
         date,
