@@ -9,7 +9,7 @@ const ProtectedRoute = ({ children } : ProtectedRouteProps) => {
 
   useEffect(() => {
     if(!user) {
-      navigate("/login", {replace : true});
+      navigate("/", {replace : true});
     }
   }, [navigate, user])
 
