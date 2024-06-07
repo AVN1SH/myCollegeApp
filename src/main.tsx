@@ -26,6 +26,8 @@ import Teachers from './pages/studentDashboard/Teachers.tsx'
 import FacultyLogin from './pages/FacultyLogin.tsx'
 import Class from './pages/facultyDashboard/Class.tsx'
 import Results from './pages/studentDashboard/Results.tsx'
+import AboutUs from './pages/AboutUs.tsx'
+import ProtectedRoute from './components/auth/ProtectedRoute.tsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -35,24 +37,25 @@ const router = createBrowserRouter(
       <Route path="/login" element={<LogIn />} />
       <Route path="/faculty/login" element={<FacultyLogin />} />
       <Route path="/faculties" element={<Faculties />} />
+      <Route path="/about-us" element={<AboutUs />} />
 
-      <Route path="/student-dashboard" element={<Layout />}>
-        <Route path="overview" element={<Overview />} />
-        <Route path="admission/personal-info" element={<PersonalInfo />} />
-        <Route path="admission/address" element={<Address />} />
-        <Route path="admission/qualifications" element={<Qualification />} />
-        <Route path="documentation" element={<Docs />} />
-        <Route path="payment" element={<Payment />} />
-        <Route path="syllabus" element={<Syllabus />} />
-        <Route path="my-classes" element={<MyClasses />} />
-        <Route path="teachers" element={<Teachers />} />
-        <Route path="feedback" element={<FeedBack />} />
-        <Route path="progress-report" element={<Progress />} />
-        <Route path="result" element={<Results />} />
+      <Route path="/student-dashboard" element={<ProtectedRoute><Layout /></ProtectedRoute>}>
+        <Route path="overview" element={<ProtectedRoute><Overview /></ProtectedRoute>} />
+        <Route path="admission/personal-info" element={<ProtectedRoute><PersonalInfo /></ProtectedRoute>} />
+        <Route path="admission/address" element={<ProtectedRoute><Address /></ProtectedRoute>} />
+        <Route path="admission/qualifications" element={<ProtectedRoute><Qualification /></ProtectedRoute>} />
+        <Route path="documentation" element={<ProtectedRoute><Docs /></ProtectedRoute>} />
+        <Route path="payment" element={<ProtectedRoute><Payment /></ProtectedRoute>} />
+        <Route path="syllabus" element={<ProtectedRoute><Syllabus /></ProtectedRoute>} />
+        <Route path="my-classes" element={<ProtectedRoute><MyClasses /></ProtectedRoute>} />
+        <Route path="teachers" element={<ProtectedRoute><Teachers /></ProtectedRoute>} />
+        <Route path="feedback" element={<ProtectedRoute><FeedBack /></ProtectedRoute>} />
+        <Route path="progress-report" element={<ProtectedRoute><Progress /></ProtectedRoute>} />
+        <Route path="result" element={<ProtectedRoute><Results /></ProtectedRoute>} />
       </Route>
 
-      <Route path="/faculty-dashboard" element={<Layout />}>
-        <Route path="class" element={<Class />} />
+      <Route path="/faculty-dashboard" element={<ProtectedRoute><Layout /></ProtectedRoute>}>
+        <Route path="class" element={<ProtectedRoute><Class /></ProtectedRoute>} />
       </Route>
 
       <Route path='*' element={<PageNotFound />} />
