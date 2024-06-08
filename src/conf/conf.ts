@@ -6,9 +6,13 @@ const api = axios.create({
   baseURL : `/api/users`,
   withCredentials : true
 });
+const stdApi = axios.create({
+  baseURL : `/api/student`,
+  withCredentials : true
+});
 const facultyApi = axios.create({
   baseURL : `/api/faculty`,
   withCredentials : true
 });
 
-export { api, facultyApi }
+export { api, stdApi, facultyApi }
