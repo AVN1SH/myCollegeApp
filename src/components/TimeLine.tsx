@@ -1,14 +1,50 @@
 import times from "@/../public/times.json";
 import { useEffect, useState } from "react";
 import TimeDuration from "./dashboard/myClass/TimeDuration";
+import djangoService from "@/Django/django";
 
+interface Props {
+  date : string | undefined;
+}
 
-const TimeLine = () => {
+interface Data {
+  id : number;
+  date : string;
+  description : string;
+  start : string;
+  end : string;
+  faculty_name : string;
+  course : string;
+}
 
-  function classNames(...classes : any) {
-    return classes.filter(Boolean).join(' ');
-  }
-  
+const TimeLine = ({date} : Props) => {
+  const [data, setData] = useState<Data[]>();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await djangoService.stdClass({
+          course : "Batchlor's of computer application",
+          date : date || ''
+        });
+        
+        if(response) {
+          let arr : Data[] = [];
+          Object.values(response).forEach((value) => {
+            arr.push(value as Data);
+          });
+          setData(arr);
+        }
+      } catch (error : any) {
+        if(Number(error.message) >= 400) {
+          console.log("Error while fetching data");
+        }
+      }
+    }
+
+    fetchData();
+  }, [date]);
+
   return (
     <div className="flex w-full rounded overflow-y-scroll h-[calc(100vh-12rem)] bg-white p-3 custom-scroll-bar">
       <div className="flex flex-col flex-1 justify-between h-[4000px] pb-[170px] font-semibold text-slate-400">
@@ -19,7 +55,15 @@ const TimeLine = () => {
         {times.map((item) => <hr key={item} className="border-slate-300"></hr>)}
         <hr className="border-slate-300"></hr>
         
-        <TimeDuration startTime="0:30" endTime="1:00"/>
+        {data?.map((value) => (
+          <TimeDuration 
+            key={value.id}
+            startTime={value.start} 
+            endTime={value.end} 
+            facultyName={value.faculty_name} 
+            description={value.description} 
+          />
+        ))}
       </div>
     </div>
   )

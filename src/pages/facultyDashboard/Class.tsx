@@ -56,7 +56,11 @@ const Class = () => {
       const userData = await djangoService.facultyClass({
         facultyName : "Vikrant sir",
         course : values.course,
-        date : formattedDate,
+        date : date?.toLocaleDateString("en-GB", {
+          year: "numeric",
+          month: "numeric",
+          day: "numeric",
+        }) || "",
         startTime : values.startTime,
         endTime : values.endTime,
         description : values.description,
@@ -76,18 +80,14 @@ const Class = () => {
   }
 
   useEffect(() => {
-    const options1: Intl.DateTimeFormatOptions = {
+    const formatDate = date?.toLocaleDateString("en-US", {
       year: "numeric",
       month: "long",
       day: "numeric",
-    };
-
-    const options2 : Intl.DateTimeFormatOptions = {
-      weekday: "long",
-    }
-  
-    const formatDate = date?.toLocaleDateString("en-US", options1);
-    const formatWeek = date?.toLocaleDateString("en-US", options2);
+    });
+    const formatWeek = date?.toLocaleDateString("en-US", {
+      weekday: "long"
+    });
 
     if(formatDate) setFormattedDate(formatDate);
     if(formatWeek) setFormattedWeek(formatWeek);

@@ -6,9 +6,11 @@ import { useEffect, useState } from "react";
 interface Props {
   startTime : string;
   endTime : string;
+  facultyName : string;
+  description : string;
 }
 
-const TimeDuration = ({startTime, endTime} : Props) => {
+const TimeDuration = ({startTime, endTime, facultyName, description} : Props) => {
   const [height, setHeight] = useState(0);
   const [top, setTop] = useState(12);
 
@@ -37,10 +39,10 @@ const TimeDuration = ({startTime, endTime} : Props) => {
       <p className="text-white font-semibold">
         <FontAwesomeIcon icon={faClock}/> Time : {startTime} - {endTime} 
         <span className="text-orange-600"> | </span> 
-        <span className="text-black text-sm"> By Vikrant Lochan</span>
+        <span className="text-black text-sm"> By {facultyName}</span>
       </p>
       <p className="pl-3">
-        Everyone must bring there notebook and laptop.
+        {description}
       </p>
     </div>
   )

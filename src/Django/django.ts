@@ -1,4 +1,4 @@
-import { api, facultyApi } from "../conf/conf.ts"
+import { api, facultyApi, stdApi } from "../conf/conf.ts"
 
 export interface CreateUserAccount {
   firstName : string;
@@ -285,18 +285,17 @@ export class DjangoService {
     }
   }
 
-  async stdClass({facultyName, course, date, startTime, endTime, description } : FacultyClass) {
-    console.log(date, startTime)
+  async result(sem : string) {
     try {
-      const response = await api.post(`/class/`, {
-        
+      const response = await api.post(`/result/`, {
+        sem
       });
   
       if (response.data) {
-        const user = response.data;
+        const data = response.data;
         console.log('');
-        console.log(user)
-        return user;
+        console.log(data)
+        return data;
   
       } else {
         console.error('Login failed:', response.data.error);
@@ -305,31 +304,53 @@ export class DjangoService {
       throw new Error(error.response.status)
     }
   }
+
+  async stdClass({course, date} : {course : string, date : string}) {
+    try {
+      const response = await stdApi.post(`/my-class/`, {
+        date, 
+        course
+      });
+      console.log(response)
+      if (response.data) {
+        const data = response.data;
+        console.log(data)
+        return data;
+  
+      } else {
+        console.error('Error while fetching data:', response.data.error);
+      }
+    } catch (error : any) {
+      console.log(error);
+      throw new Error(error.response.status)
+    }
+  }
   
   // faculty features................
 
   async facultyClass({facultyName, course, date, startTime, endTime, description } : FacultyClass) {
-    console.log(date, startTime)
+    console.log(facultyName, course, date, startTime, endTime, description)
     try {
-      const response = await facultyApi.post(`/class/`, {
+      console.log(course, date, startTime, endTime)
+      const response = await facultyApi.post(`/my-class/`, {
         faculty_name : facultyName,
         course,
         date,
-        startTime,
-        endTime,
+        start : startTime,
+        end : endTime,
         description
       });
   
       if (response.data) {
-        const user = response.data;
-        console.log('Logged in successfully');
-        console.log(user)
-        return user;
+        const data = response.data;
+        console.log(data)
+        return data;
   
       } else {
-        console.error('Login failed:', response.data.error);
+        console.error('Error while Fetching Data : ', response.data.error);
       }
     } catch (error : any) {
+      console.log(error);
       throw new Error(error.response.status)
     }
   }
