@@ -15,7 +15,7 @@ import { Input } from "@/components/ui/input"
 import { registration } from "@/schema/zod"
 import { useDebounceCallback } from "usehooks-ts"
 import { useEffect, useState } from "react"
-import { Link, NavLink} from "react-router-dom"
+import { Link, NavLink, useNavigate} from "react-router-dom"
 import { Loader2 } from "lucide-react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEye, faEyeSlash, faGraduationCap } from "@fortawesome/free-solid-svg-icons"
@@ -31,11 +31,12 @@ const Registration = () => {
   const [selectValue, setSelectValue] = useState('');
   const [isSelected, setIsSelected] = useState(false);
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const debounced = useDebounceCallback(setEmail, 300);
 
   const updatingRegistration = registration.extend({
-    regId : selectValue === "student" ? z.string().min(15, "Registration Id must be Valid.").max(15, "Registration Id must be Valid.") : z.string().optional()
+    collegeID : selectValue === "faculty" ? z.string().min(6, "College Id must be Valid.").max(6, "College Id must be Valid.") : z.string().optional()
   })
   
 
@@ -85,7 +86,7 @@ const Registration = () => {
       });
       if(regData) {
         console.log(regData);
-        //TODO: redirect user
+        navigate("/login");
         setError('');
       }
       setIsSubmitting(false);
