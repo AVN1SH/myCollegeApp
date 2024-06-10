@@ -22,18 +22,15 @@ const App = () => {
     const fetchUser = async () => {
       const authIdStr = localStorage.getItem("authId");
       const authIdJson = authIdStr ? JSON.parse(authIdStr) : null;
-      if(authIdJson) {
-        await djangoService.getCurrentUser({id : authIdJson})
-          .then((userData) => {
-            console.log(userData)
-            if(userData) {
-              dispatch(login(userData))
-            } else {
-              dispatch(logout())
-            }
-          })
-          .finally(() => setLoading(false))
-      }
+      await djangoService.getCurrentUser({id : authIdJson})
+        .then((userData) => {
+          if(userData) {
+            dispatch(login(userData))
+          } else {
+            dispatch(logout())
+          }
+        })
+        .finally(() => setLoading(false))
     }
 
     fetchUser();

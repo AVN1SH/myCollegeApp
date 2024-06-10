@@ -12,6 +12,8 @@ const ProtectedRoute = ({ children } : ProtectedRouteProps) => {
   const loading = useSelector((state : AuthState) => state.loading);
 
   useEffect(() => {
+    console.log(authStatus)
+    console.log(loading)
     if(!loading && !authStatus) {
       navigate("/", {replace : true});
     }

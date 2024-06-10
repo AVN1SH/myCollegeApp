@@ -39,7 +39,7 @@ const authSlice = createSlice({
       state.loading = false;
       state.userData = null;
       
-      const authId = JSON.stringify('');
+      const authId = JSON.stringify(null);
       localStorage.setItem("authId", authId);
 
     },
