@@ -21,18 +21,18 @@ const MarksTable = ({headData, caption, rowData} : Props) => {
       <Table>
         <TableCaption>{caption}</TableCaption>
         <TableHeader>
-          <TableRow>
+          <TableRow className="bg-slate-100">
             {/* <TableHead className="w-[100px] whitespace-nowrap">{headData[0]}</TableHead> */}
-            {headData.map((data) => (
-              <TableHead>{data}</TableHead>
+            {headData.map((data, index) => (
+              <TableHead key={index}>{data}</TableHead>
             ))}
           </TableRow>
         </TableHeader>
         <TableBody>
-          {[...rowData].map((innerData) => (
-            <TableRow>
-              {innerData.map((data) => (
-                <TableCell className={
+          {rowData && [...rowData].map((innerData, index) => (
+            <TableRow key={index} className={classNames(index % 2 !== 0 ? "bg-slate-100" : '')}>
+              {innerData.map((data, index) => (
+                <TableCell key={index} className={
                   classNames(data === data[0] ? "font-medium" : "", data === data[innerData.length - 1] ? "text-right" : "",)
                   }>{data}</TableCell>
               ))}
