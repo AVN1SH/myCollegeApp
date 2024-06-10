@@ -4,21 +4,44 @@ import { Pie } from 'react-chartjs-2';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 interface Props {
-  data : {
-    labels : string[];
-    datasets : {
-      label : string;
-      data : number[];
-      backgroundColor : string[];
-      borderColor : string[];
-      borderWidth : number;
-    }[];
-  };
+  labels : string[];
+  data : number[];
+  label : string;
 }
 
-const MarksGraph = ({data} : Props) => {
+const MarksGraph = ({labels, label, data} : Props) => {
+
+  const graphData = {
+    labels: labels,
+    datasets: [
+      {
+        label: label,
+        data: data,
+        backgroundColor: [
+          'rgba(14, 212, 0, 0.8)',
+          'rgba(83, 227, 0, 0.8)',
+          'rgba(251, 255, 0, 0.8)',
+          'rgba(255, 204, 0, 0.8)',
+          'rgba(255, 72, 0, 0.8)',
+          'rgba(255, 0, 0, 0.8)',
+          'rgba(242, 242, 242, 0.8)',
+        ],
+        borderColor: [
+          'rgba(14, 212, 0, 1)',
+          'rgba(83, 227, 0, 1)',
+          'rgba(251, 255, 0, 1)',
+          'rgba(255, 204, 0, 1)',
+          'rgba(255, 72, 0, 1)',
+          'rgba(255, 0, 0, 1)',
+          'rgba(242, 242, 242, 1)',
+        ],
+        borderWidth: 1,
+      },
+    ],
+  };
+
   return (
-    <Pie data={data} />
+    <Pie data={graphData} />
   )
 }
 
