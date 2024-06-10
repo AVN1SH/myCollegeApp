@@ -122,9 +122,9 @@ export class DjangoService {
     }
   }
 
-  async getCurrentUser() {
+  async getCurrentUser({id} : {id : string}) {
     try {
-      const response = await api.post("/current-user");
+      const response = await api.get(`/get_register/${id}`);
 
       if(response.data){ 
         return response.data
@@ -285,20 +285,18 @@ export class DjangoService {
     }
   }
 
-  async result(sem : string) {
+  async result({id} : {id : string;}) {
     try {
-      const response = await api.post(`/result/`, {
-        sem
+      const response = await stdApi.post("/result/", {
+        rid : id,
       });
-  
       if (response.data) {
         const data = response.data;
-        console.log('');
         console.log(data)
         return data;
   
       } else {
-        console.error('Login failed:', response.data.error);
+        console.error('Failed to fetch Result:', response.data.error);
       }
     } catch (error : any) {
       throw new Error(error.response.status)
