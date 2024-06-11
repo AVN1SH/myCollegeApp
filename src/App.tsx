@@ -2,9 +2,10 @@ import { Outlet, useLocation } from "react-router-dom"
 import NavBar from "./components/navbar/NavBar"
 import Footer from "./components/footer/Footer"
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import djangoService from "./Django/django";
 import { AuthState, login, logout } from "./features/authSlice";
+import { RootState } from "./store/store";
 
 const App = () => {
   const location = useLocation();
@@ -12,7 +13,6 @@ const App = () => {
   const [path, setPath] = useState(location.pathname);
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
-  const hello = useSelector((state : AuthState) => state.status)
 
   useEffect(() => {
     setPath(pathname);
