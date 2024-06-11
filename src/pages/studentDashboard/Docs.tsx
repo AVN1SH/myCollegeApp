@@ -20,6 +20,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import djangoService from "@/Django/django"
+import { useSelector } from "react-redux"
+import { AuthState } from "@/features/authSlice"
+import { RootState } from "@/store/store"
 
 
 const Docs = () => {
@@ -27,6 +30,7 @@ const Docs = () => {
   const [stateValue, setStateValue] = useState<string>('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const userData = useSelector((state : RootState) => state.authSlice.userData);
 
   const form = useForm<z.infer<typeof documentations>>({
     resolver: zodResolver(documentations),
@@ -44,18 +48,19 @@ const Docs = () => {
     setIsSubmitting(true);
     try {
       const response = await djangoService.userDocs({
+        id : userData?.id || '',
         photo : values.photo[0],
         signature : values.signature[0],
         uniqueId : values.uniqueId[0],
         tenthMarksheet : values.tenthMarksheet[0],
         twelfthMarksheet : values.twelfthMarksheet[0],
-        graduationMarksheet : values.graduationMarksheet[0]
+        graduationMarksheet : values.graduationMarksheet ? values.graduationMarksheet[0] : null
       });
 
       if(response) {
         console.log(response);
         setError('');
-        navigate("/student-dashboard/admission/qualifications");
+        navigate("/student-dashboard/payment");
       }
       setIsSubmitting(false);
     } catch (error : any) {

@@ -25,6 +25,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import djangoService from "@/Django/django"
+import { useSelector } from "react-redux"
+import { AuthState } from "@/features/authSlice"
+import { RootState } from "@/store/store"
 
 interface Props {
   degree : string;
@@ -38,6 +41,8 @@ const QualificationForm = ({degree} : Props) => {
   const [obtainedMarks, setObtainedMarks] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const userData = useSelector((state : RootState) => state.authSlice.userData);
+
 
 
   const form = useForm<z.infer<typeof qualification>>({
@@ -55,6 +60,7 @@ const QualificationForm = ({degree} : Props) => {
     setIsSubmitting(true);
     try {
       const response = await djangoService.userQualification({
+        id : userData?.id || '',
         degree : degree,
         status : values.status || '',
         year : values.year,
@@ -63,7 +69,7 @@ const QualificationForm = ({degree} : Props) => {
         totalMarks : values.totalMarks,
         obtainedMarks : values.obtainedMarks
       });
-
+      console.log(values.year)
       if(response) {
         console.log(response);
         setError('');
@@ -225,7 +231,7 @@ const QualificationForm = ({degree} : Props) => {
                   />
                   <div className="flex flex-col gap-2 ">
                     <h1 className="font-semibold">Total Percentage</h1>
-                    <p className="bg-gray-300 w-[180px] h-10 hover:cursor-not-allowed border-solid border-[1px] border-gray-200 rounded-md pl-3 py-2">{totalMarks ? (Number(obtainedMarks) * 100 / Number(totalMarks)) : '0'}%</p>
+                    <p className="bg-gray-300 w-[180px] h-10 hover:cursor-not-allowed border-solid border-[1px] border-gray-200 rounded-md pl-3 py-2">{totalMarks ? (Number(Number(obtainedMarks) * 100 / Number(totalMarks)).toFixed(2)) : '0'}%</p>
                   </div>
                 </div>
               </div>

@@ -29,6 +29,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 import djangoService from "@/Django/django"
 import { useSelector } from "react-redux"
 import authSlice, { AuthState } from "@/features/authSlice"
+import { RootState } from "@/store/store"
 
 
 const PersonalInfo = () => {
@@ -40,7 +41,7 @@ const PersonalInfo = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const userData = useSelector((state : AuthState) => state.userData);
+  const userData = useSelector((state : RootState) => state.authSlice.userData);
 
 
   const debounced = useDebounceCallback(setEmail, 300);
@@ -61,9 +62,12 @@ const PersonalInfo = () => {
     }
   }, [email])
 
+  const updatedDetails = personalDetails.extend({
+    candidate : !userData?.first_name ? z.string().min(3, "Name must have at least 3 characters").max(30, "Name must be less than 30 Characters") : z.string().optional()
+  })
 
   const form = useForm<z.infer<typeof personalDetails>>({
-    resolver: zodResolver(personalDetails),
+    resolver: zodResolver(updatedDetails),
     defaultValues: {
       candidate : "",
       fatherName : "",
@@ -88,7 +92,7 @@ const PersonalInfo = () => {
     try {
       const response = await djangoService.userDetails({
         id : userData?.id || '',
-        candidate : values.candidate,
+        candidate : userData ? (userData.first_name + ' ' + userData.middle_name + ' ' + userData.last_name) : values.candidate,
         fatherName : values.fatherName,
         motherName : values.motherName,
         gender : values.gender || '',

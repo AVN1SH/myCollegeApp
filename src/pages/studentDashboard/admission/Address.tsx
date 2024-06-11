@@ -23,6 +23,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import state from "../../../../public/state.json";
 import cities from "../../../../public/cities.json";
 import djangoService from "@/Django/django"
+import { useSelector } from "react-redux"
+import { AuthState } from "@/features/authSlice"
+import { RootState } from "@/store/store"
 
 
 const Address = () => {
@@ -31,6 +34,8 @@ const Address = () => {
   const [stateValue, setStateValue] = useState<string>('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const userData = useSelector((state : RootState) => state.authSlice.userData);
+
 
 
   const form = useForm<z.infer<typeof address>>({
@@ -51,6 +56,7 @@ const Address = () => {
     setIsSubmitting(true);
     try {
       const response = await djangoService.userAddress({
+        id : userData?.id || '',
         buildingNum : values.buildingNum,
         locality : values.locality,
         subLocality : values.subLocality || '',

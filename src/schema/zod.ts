@@ -38,7 +38,7 @@ const facultyLogin = z.object({
 //admission shemas........
 
 const personalDetails = z.object({
-  candidate: z.string().min(3, "Name must have at least 3 characters").max(30, "Name must be less than 30 Characters"),
+  candidate: z.string(),
   fatherName: z.string().min(5, "Name must have at least 3 characters").max(30, "Name must be less than 30 Characters"),
   motherName: z.string().min(5, "Name must have at least 3 characters").max(30, "Name must be less than 30 Characters"),
   email: z.string().email("Invalid Email Id"),
@@ -94,9 +94,7 @@ const documentations = z.object({
   twelfthMarksheet : z.instanceof(FileList).refine((file) => file && file.length === 1, {
     message: "File is required",
   }),
-  graduationMarksheet : z.instanceof(FileList).refine((file) => file && file.length === 1, {
-    message: "File is required",
-  })
+  graduationMarksheet : z.instanceof(FileList).optional()
 });
 
 const feedback = z.object({
