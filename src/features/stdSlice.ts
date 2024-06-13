@@ -14,7 +14,7 @@ const authSlice = createSlice({
   name : "auth",
   initialState,
   reducers : {
-    admission : (state, action) => {
+    admission : (state) => {
       state.admissionStatus = true;
       state.loading = false;
     },

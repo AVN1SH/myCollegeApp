@@ -3,16 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export interface AuthState {
   status : boolean;
   loading: boolean;
-  userData : {
-    id : string;
-    registration_id : string;
-    first_name : string;
-    middle_name : string | null;
-    last_name : string | null;
-    role : string;
-    phone : string;
-    email : string;
-  } | null;
+  userData : UserData | null;
 }
 
 const initialState : AuthState = {
