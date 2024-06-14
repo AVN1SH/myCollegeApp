@@ -1,4 +1,4 @@
-import { faCalendar, faChartPie, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faCalendar, faChartPie, faMessage, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -29,16 +29,17 @@ const Testimonials = () => {
         </div>
       <div className="grid grid-cols-1 gap-x-3 gap-y-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {data?.items.map((value) => (
-          <Link key={value.quote} to='#' className="group shadow-md overflow-hidden max-w-md md:max-w-full mx-auto rounded-3xl bg-white hover:shadow-[0_0_10px_rgba(255,77,0,0.45)] md:min-h-[100px] duration-75">
+          <Link key={value.name} to='#' className="group shadow-md overflow-hidden max-w-md md:max-w-full mx-auto rounded-xl bg-white hover:shadow-[0_0_10px_rgba(255,77,0,0.45)] md:min-h-[100px] duration-75">
             <div className="p-3 h-fit">
               <div className=" flex items-center justify-between">
                 <div className="flex items-center gap-2 text-indigo-500 uppercase tracking-wide text-md  font-semibold ">
                   <FontAwesomeIcon icon={faUser} className="w-[13px] h-[13px] rounded-full border-slate-500 border-solid border-2 p-2 bg-slate-700 text-slate-300"/>
                   {value.name}
+                  <FontAwesomeIcon icon={faMessage} />
                 </div>
                 <div className="text-xs"><span className="font-semibold">Class : </span>{value.class}</div>
               </div>
-              <p className="block mt-2 text-md leading-tight font-medium text-black">{value.quote}</p>
+              <p className="block mt-2 text-sm leading-tight font-semibold text-slate-600">{value.quote}</p>
             </div>
           </Link>
         ))}
