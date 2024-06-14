@@ -6,6 +6,7 @@ import './index.css'
 import Home from "./pages/Home.tsx"
 import Layout from "./pages/studentDashboard/Layout.tsx"
 import Overview from "./pages/studentDashboard/Overview.tsx"
+import FaOverview from './pages/facultyDashboard/FaOverview.tsx'
 import {Route, RouterProvider, createBrowserRouter, createRoutesFromElements} from "react-router-dom";
 import {Provider} from "react-redux";
 import store from "./store/store.ts";
@@ -28,6 +29,8 @@ import Class from './pages/facultyDashboard/Class.tsx'
 import Results from './pages/studentDashboard/Results.tsx'
 import AboutUs from './pages/AboutUs.tsx'
 import ProtectedRoute from './components/auth/ProtectedRoute.tsx'
+import Developer from './pages/Developer.tsx'
+import Assignment from './pages/facultyDashboard/Assignments.tsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -38,6 +41,7 @@ const router = createBrowserRouter(
       <Route path="/faculty/login" element={<FacultyLogin />} />
       <Route path="/faculties" element={<Faculties />} />
       <Route path="/about-us" element={<AboutUs />} />
+      <Route path="/developer" element={<Developer />} />
 
       <Route path="/student-dashboard" element={<ProtectedRoute><Layout /></ProtectedRoute>}>
         <Route path="overview" element={<ProtectedRoute><Overview /></ProtectedRoute>} />
@@ -55,7 +59,10 @@ const router = createBrowserRouter(
       </Route>
 
       <Route path="/faculty-dashboard" element={<ProtectedRoute><Layout /></ProtectedRoute>}>
+        <Route path="overview" element={<ProtectedRoute><FaOverview /></ProtectedRoute>} />
+        <Route path="feedback" element={<ProtectedRoute><FeedBack /></ProtectedRoute>} />
         <Route path="class" element={<ProtectedRoute><Class /></ProtectedRoute>} />
+        <Route path="assignment" element={<ProtectedRoute><Assignment /></ProtectedRoute>} />
       </Route>
 
       <Route path='*' element={<PageNotFound />} />
