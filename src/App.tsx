@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import djangoService from "./Django/django";
 import { AuthState, login, logout } from "./features/authSlice";
 import { RootState } from "./store/store";
+import { admission } from "./features/stdSlice";
 
 const App = () => {
   const location = useLocation();
@@ -22,10 +23,10 @@ const App = () => {
     const fetchUser = async () => {
       const authIdStr = localStorage.getItem("authId");
       const authIdJson = authIdStr ? JSON.parse(authIdStr) : null;
-      await djangoService.getCurrentUser({id : authIdJson})
+      await djangoService.getAllData({id : authIdJson})
         .then((userData) => {
           if(userData) {
-            dispatch(login(userData))
+            dispatch(login(userData));
           } else {
             dispatch(logout())
           }
@@ -35,6 +36,10 @@ const App = () => {
 
     fetchUser();
   }), []);
+
+  useEffect(() => {
+    document.body.classList.add('bg-gray-100');
+  }, [])
 
   return (
     <div className="">
