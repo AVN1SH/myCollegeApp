@@ -1,7 +1,7 @@
 import ProgressLine from "@/components/animation/ProgressLine"
 import { Link } from "react-router-dom"
 
-const Home = () => {
+const Overview = () => {
   const name = "Avnish Kr. Sharma"
   return (
     <div className="relative m-1 w-[clac(100%-280px)]">
@@ -24,4 +24,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Overview
