@@ -31,6 +31,7 @@ import AboutUs from './pages/AboutUs.tsx'
 import ProtectedRoute from './components/auth/ProtectedRoute.tsx'
 import Developer from './pages/Developer.tsx'
 import Assignment from './pages/facultyDashboard/Assignments.tsx'
+import Profile from './pages/Profile.tsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -42,6 +43,7 @@ const router = createBrowserRouter(
       <Route path="/faculties" element={<Faculties />} />
       <Route path="/about-us" element={<AboutUs />} />
       <Route path="/developer" element={<Developer />} />
+      <Route path="/profile/:id" element={<Profile />} />
 
       <Route path="/student-dashboard" element={<ProtectedRoute><Layout /></ProtectedRoute>}>
         <Route path="overview" element={<ProtectedRoute><Overview /></ProtectedRoute>} />
