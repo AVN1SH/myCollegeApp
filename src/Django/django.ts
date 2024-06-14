@@ -32,6 +32,7 @@ interface UserDetails {
 }
 
 interface UserAddress {
+  id : string;
   buildingNum : string;
   locality : string;
   subLocality : string;
@@ -43,6 +44,7 @@ interface UserAddress {
 }
 
 interface UserQualification {
+  id : string;
   degree : string;
   status : string;
   year : string;
@@ -53,12 +55,13 @@ interface UserQualification {
 }
 
 interface UserDocs {
+  id : string;
   photo : File;
   signature : File;
   uniqueId : File;
   tenthMarksheet : File;
   twelfthMarksheet : File;
-  graduationMarksheet : File;
+  graduationMarksheet : File | null;
 }
 
 //faculty interface..........
@@ -176,7 +179,7 @@ export class DjangoService {
 
   async userDetails({id, candidate, fatherName, motherName, email, mobNum, gender, cast, dob, nationality, pwd} : UserDetails) {
     try {
-      const response = await api.post("/personalDetails/", {
+      const response = await api.post("/personal_details/", {
         rid : id,
         father_name : fatherName,
         mother_name : motherName,
@@ -203,10 +206,10 @@ export class DjangoService {
     }
   }
 
-  async userAddress({buildingNum, locality, subLocality, state, district, pinCode, contactNum, alternateNum} : UserAddress) {
+  async userAddress({ id, buildingNum, locality, subLocality, state, district, pinCode, contactNum, alternateNum} : UserAddress) {
     try {
       const response = await api.post("/address/", {
-        rid : "3",
+        rid : id,
         building_number : buildingNum,
         locality,
         sublocality : subLocality,
@@ -231,13 +234,12 @@ export class DjangoService {
     }
   }
   
-  async userQualification({degree, status, year, schoolName, rollCode, totalMarks, obtainedMarks} : UserQualification) {
+  async userQualification({ id, degree, status, year, schoolName, rollCode, totalMarks, obtainedMarks} : UserQualification) {
     try {
       const response = await api.post("/qualification/", {
-        rid : "2",
-        // degree,
+        rid : id,
         status,
-        year : "2024",
+        year : year,
         school : schoolName,
         roll_code : rollCode,
         total_marks : totalMarks,
@@ -258,10 +260,10 @@ export class DjangoService {
     }
   }
 
-  async userDocs({photo, signature, uniqueId, tenthMarksheet, twelfthMarksheet, graduationMarksheet} : UserDocs) {
+  async userDocs({id, photo, signature, uniqueId, tenthMarksheet, twelfthMarksheet, graduationMarksheet} : UserDocs) {
     try {
       const formData = new FormData();
-      formData.append("rid" , "4");
+      formData.append("rid" , id);
       formData.append("photo", photo || '');
       formData.append("signatue", signature || '');
       formData.append("adhar", uniqueId || '');
@@ -285,6 +287,24 @@ export class DjangoService {
     }
   }
 
+  async getAllData({id} : {id : string}) {
+    try {
+      const response = await api.get(`/get_all_data/${id}`);
+
+      if(response.data) {
+        console.log(response.data)
+        console.log("Added successfully..!")
+
+        return response.data;
+      } else {
+        console.error("error while Adding qualification details : ");
+      }
+    } catch(error : any) {
+      console.log(error);
+      throw new Error(error.response.status)
+    }
+  }
+
   async result({id} : {id : string;}) {
     try {
       const response = await stdApi.post("/result/", {
@@ -292,7 +312,6 @@ export class DjangoService {
       });
       if (response.data) {
         const data = response.data;
-        console.log(data)
         return data;
   
       } else {
