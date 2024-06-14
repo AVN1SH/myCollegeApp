@@ -34,7 +34,7 @@ const site = [
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col p-5 border-slate-200 border-2 border-solid rounded m-2">
+    <footer className="flex flex-col p-5 border-slate-200 border-2 border-solid rounded m-2 bg-white">
       <div className="flex flex-1 flex-col items-center justify-between gap-5 xl:flex-row ">
         <div className="w-full flex flex-col items-start gap-4">
           <div className="flex items-end gap-3">

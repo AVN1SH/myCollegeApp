@@ -1,5 +1,8 @@
+import Dot from "@/components/animation/Dot"
 import Slider from "@/components/animation/Slider"
+import CallToAction from "@/components/home/CallToAction"
 import EventAndNews from "@/components/home/EventAndNews"
+import Testimonials from "@/components/home/Testimonials"
 import BadgeNav from "@/components/navbar/BadgeNav"
 
 const Home = () => {
@@ -9,6 +12,8 @@ const Home = () => {
       <Slider />
       <BadgeNav />
       <EventAndNews />
+      <Testimonials />
+      <CallToAction />
     </div>
   )
 }
