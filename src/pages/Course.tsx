@@ -1,10 +1,5 @@
 import { useParams } from "react-router-dom";
-import { FacultyType } from "./Faculties"
 import { useEffect, useRef, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faLinkedin, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { CourseType } from "./Programs";
 import { Link, Element, Events, scrollSpy, scroller } from 'react-scroll';
 

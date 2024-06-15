@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import faculties from "../../public/faculties.json"
 import { useEffect, useState } from "react";
 
 export interface CourseType {

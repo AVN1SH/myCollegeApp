@@ -1,5 +1,3 @@
-import ProgressLine from "@/components/animation/ProgressLine"
-import { Link } from "react-router-dom"
 
 const FaOverview = () => {
   const name = "Avnish Kr. Sharma"

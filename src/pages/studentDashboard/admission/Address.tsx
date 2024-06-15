@@ -13,31 +13,50 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { address } from "@/schema/zod"
-import { useState } from "react"
-import { Link, NavLink, useNavigate} from "react-router-dom"
+import { useEffect, useState } from "react"
+import { useNavigate} from "react-router-dom"
 import { Loader2 } from "lucide-react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-
-import state from "../../../../public/state.json";
-import cities from "../../../../public/cities.json";
 import djangoService from "@/Django/django"
 import { useSelector } from "react-redux"
-import { AuthState } from "@/features/authSlice"
 import { RootState } from "@/store/store"
 import { toast } from "sonner"
 
+interface State {
+  id: number
+  name: {
+    default : string,
+    en: string
+    hi: string
+  }
+}
+
+interface Cities {
+  [any : string] : string[]
+}
 
 const Address = () => {
-  const [email, setEmail] = useState('');
   const [isSubmiting, setIsSubmitting] = useState(false);
   const [stateValue, setStateValue] = useState<string>('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
   const userData = useSelector((state : RootState) => state.authSlice.userData);
+  const [state, setState] = useState<State[] | null>(null)
+  const [cities, setCities] = useState<Cities | null>(null)
 
+  useEffect(() => {
+    fetch('/state.json')
+      .then((response) => response.json())
+      .then((data) => setState(data))
+      .catch((error) => console.error('Error fetching the JSON:', error));
 
+    fetch('/cities.json')
+      .then((response) => response.json())
+      .then((data) => setCities(data))
+      .catch((error) => console.error('Error fetching the JSON:', error));
+  }, []);
 
   const form = useForm<z.infer<typeof address>>({
     resolver: zodResolver(address),
@@ -174,7 +193,7 @@ const Address = () => {
                                 <SelectValue placeholder="State" />
                               </SelectTrigger>
                               <SelectContent>
-                                {state.map(value => (
+                                {state?.map(value => (
                                   <SelectItem value={value.name.default} key={value.id} className="hover:cursor-pointer hover:font-semibold hover:pl-10 duration-75">{value.name.default}</SelectItem>
                                 ))}
                               </SelectContent>

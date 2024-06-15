@@ -43,8 +43,14 @@ const QualificationForm = ({degree} : Props) => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
   const userData = useSelector((state : RootState) => state.authSlice.userData);
+  const [year, setYear] = useState<number[] | null>(null)
 
-
+  useEffect(() => {
+    fetch('/faculties.json')
+      .then((response) => response.json())
+      .then((data) => setYear(data))
+      .catch((error) => console.error('Error fetching the JSON:', error));
+  }, []);
 
   const form = useForm<z.infer<typeof qualification>>({
     resolver: zodResolver(qualification),
@@ -142,7 +148,7 @@ const QualificationForm = ({degree} : Props) => {
                               <SelectValue placeholder="From" />
                             </SelectTrigger>
                             <SelectContent>
-                            {year.map(value => {
+                            {year?.map(value => {
                               if(value <= 2024) {
                                 return <SelectItem value={String(value)} key={value} className="hover:cursor-pointer hover:font-semibold hover:pl-10 duration-75">{value}</SelectItem>
                               }
@@ -158,7 +164,7 @@ const QualificationForm = ({degree} : Props) => {
                               <SelectValue placeholder="To" />
                             </SelectTrigger>
                             <SelectContent>
-                            {year.map(value => {
+                            {year?.map(value => {
                               if(Number(value) > Number(yearFrom) && Number(value) <= Number(yearFrom) + 5) {
                                 return <SelectItem value={String(value)} key={value} className="hover:cursor-pointer hover:font-semibold hover:pl-10 duration-75">{value}</SelectItem>
                               }

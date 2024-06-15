@@ -1,4 +1,3 @@
-import Dot from "@/components/animation/Dot"
 import Slider from "@/components/animation/Slider"
 import CallToAction from "@/components/home/CallToAction"
 import EventAndNews from "@/components/home/EventAndNews"

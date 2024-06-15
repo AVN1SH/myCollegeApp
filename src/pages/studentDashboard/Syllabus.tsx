@@ -1,14 +1,12 @@
 import syllabus from "@/../public/syllabus.json"
-import { useSelector, useDispatch } from "react-redux";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { AuthState } from "@/features/authSlice"
-import { useState } from "react";
 
+import { useState } from "react";
 function classNames(...classes : any) {
   return classes.filter(Boolean).join(' ')
 }

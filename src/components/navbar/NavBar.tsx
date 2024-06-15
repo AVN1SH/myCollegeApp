@@ -1,12 +1,12 @@
 import { Fragment, useEffect, useState } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { ArrowRightStartOnRectangleIcon, Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { ArrowRightStartOnRectangleIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCheckToSlot, faGraduationCap, faUserPlus } from "@fortawesome/free-solid-svg-icons";
+import { faCheckToSlot, faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { AuthState, logout } from '@/features/authSlice';
+import { logout } from '@/features/authSlice';
 import { RootState } from '@/store/store';
 
 const navigation = [

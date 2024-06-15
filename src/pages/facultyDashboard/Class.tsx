@@ -1,5 +1,4 @@
 import djangoService from "@/Django/django"
-import TimeLine from "@/components/TimeLine"
 import { Button } from "@/components/ui/button"
 import { Calendar } from "@/components/ui/calendar"
 import {
@@ -13,32 +12,32 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { faCalendar, faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons"
+import { faCalendar} from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Loader2 } from "lucide-react"
 import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
-import { useDispatch } from "react-redux"
-import { useNavigate } from "react-router-dom"
 import { z } from "zod";
-import courses from "../../../public/courses.json";
-import { login as authSignIn } from "@/features/authSlice"
 import { stdClass } from "@/schema/zod"
 import { Textarea } from "@/components/ui/textarea"
+import { CourseType } from "../Programs"
 
 const Class = () => {
   const [date, setDate] = useState<Date | undefined>(new Date());
   const [formattedDate, setFormattedDate] = useState('');
   const [formattedWeek, setFormattedWeek] = useState(''); 
-  const [email, setEmail] = useState('');
   const [isSubmiting, setIsSubmitting] = useState(false);
-  const [isCheckingEmail, setIsCheckingEmail] = useState(false);
-  const [viewPassword, setViewPassword] = useState(false);
   const [course, setCourse] = useState('');
   const [error, setError] = useState('');
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const [courses, setCourses] = useState<CourseType[] | null>(null);
+
+  useEffect(() => {
+    fetch('/courses.json')
+      .then((response) => response.json())
+      .then((data) => setCourses(data))
+      .catch((error) => console.error('Error fetching the JSON:', error));
+  }, []);
 
   const form = useForm<z.infer<typeof stdClass>>({
     resolver: zodResolver(stdClass),
@@ -124,7 +123,7 @@ const Class = () => {
                             <SelectValue placeholder="Select Course" />
                           </SelectTrigger>
                           <SelectContent>
-                            {courses.map(value => (
+                            {courses?.map(value => (
                               <SelectItem value={value.name} key={value.name} className="hover:cursor-pointer hover:font-semibold hover:pl-10 duration-75">{value.name}</SelectItem>
                             ))}
                           </SelectContent>
