@@ -34,6 +34,8 @@ import Assignment from './pages/facultyDashboard/Assignments.tsx'
 import Profile from './pages/Profile.tsx'
 import Programs from './pages/Programs.tsx'
 import Course from './pages/Course.tsx'
+import FacultyProtectedRoute from './components/auth/FacultyProtectedRoute.tsx'
+import StudentProtectedRoute from './components/auth/StudentProtectedRoute.tsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -49,26 +51,26 @@ const router = createBrowserRouter(
       <Route path="/profile/:id" element={<Profile />} />
       <Route path="/programs/:id" element={<Course />} />
 
-      <Route path="/student-dashboard" element={<ProtectedRoute><Layout /></ProtectedRoute>}>
-        <Route path="overview" element={<ProtectedRoute><Overview /></ProtectedRoute>} />
-        <Route path="admission/personal-info" element={<ProtectedRoute><PersonalInfo /></ProtectedRoute>} />
-        <Route path="admission/address" element={<ProtectedRoute><Address /></ProtectedRoute>} />
-        <Route path="admission/qualifications" element={<ProtectedRoute><Qualification /></ProtectedRoute>} />
-        <Route path="documentation" element={<ProtectedRoute><Docs /></ProtectedRoute>} />
-        <Route path="payment" element={<ProtectedRoute><Payment /></ProtectedRoute>} />
-        <Route path="syllabus" element={<ProtectedRoute><Syllabus /></ProtectedRoute>} />
-        <Route path="my-classes" element={<ProtectedRoute><MyClasses /></ProtectedRoute>} />
-        <Route path="teachers" element={<ProtectedRoute><Teachers /></ProtectedRoute>} />
-        <Route path="feedback" element={<ProtectedRoute><FeedBack /></ProtectedRoute>} />
-        <Route path="progress-report" element={<ProtectedRoute><Progress /></ProtectedRoute>} />
-        <Route path="result" element={<ProtectedRoute><Results /></ProtectedRoute>} />
+      <Route path="/student-dashboard" element={<ProtectedRoute><StudentProtectedRoute><Layout /></StudentProtectedRoute></ProtectedRoute>}>
+        <Route path="overview" element={<ProtectedRoute><StudentProtectedRoute><Overview /></StudentProtectedRoute></ProtectedRoute>} />
+        <Route path="admission/personal-info" element={<ProtectedRoute><StudentProtectedRoute><PersonalInfo /></StudentProtectedRoute></ProtectedRoute>} />
+        <Route path="admission/address" element={<ProtectedRoute><StudentProtectedRoute><Address /></StudentProtectedRoute></ProtectedRoute>} />
+        <Route path="admission/qualifications" element={<ProtectedRoute><StudentProtectedRoute><Qualification /></StudentProtectedRoute></ProtectedRoute>} />
+        <Route path="documentation" element={<ProtectedRoute><StudentProtectedRoute><Docs /></StudentProtectedRoute></ProtectedRoute>} />
+        <Route path="payment" element={<ProtectedRoute><StudentProtectedRoute><Payment /></StudentProtectedRoute></ProtectedRoute>} />
+        <Route path="syllabus" element={<ProtectedRoute><StudentProtectedRoute><Syllabus /></StudentProtectedRoute></ProtectedRoute>} />
+        <Route path="my-classes" element={<ProtectedRoute><StudentProtectedRoute><MyClasses /></StudentProtectedRoute></ProtectedRoute>} />
+        <Route path="teachers" element={<ProtectedRoute><StudentProtectedRoute><Teachers /></StudentProtectedRoute></ProtectedRoute>} />
+        <Route path="feedback" element={<ProtectedRoute><StudentProtectedRoute><FeedBack /></StudentProtectedRoute></ProtectedRoute>} />
+        <Route path="progress-report" element={<ProtectedRoute><StudentProtectedRoute><Progress /></StudentProtectedRoute></ProtectedRoute>} />
+        <Route path="result" element={<ProtectedRoute><StudentProtectedRoute><Results /></StudentProtectedRoute></ProtectedRoute>} />
       </Route>
 
-      <Route path="/faculty-dashboard" element={<ProtectedRoute><Layout /></ProtectedRoute>}>
-        <Route path="overview" element={<ProtectedRoute><FaOverview /></ProtectedRoute>} />
-        <Route path="feedback" element={<ProtectedRoute><FeedBack /></ProtectedRoute>} />
-        <Route path="class" element={<ProtectedRoute><Class /></ProtectedRoute>} />
-        <Route path="assignment" element={<ProtectedRoute><Assignment /></ProtectedRoute>} />
+      <Route path="/faculty-dashboard" element={<ProtectedRoute><FacultyProtectedRoute><Layout /></FacultyProtectedRoute></ProtectedRoute>}>
+        <Route path="overview" element={<ProtectedRoute><FacultyProtectedRoute><FaOverview /></FacultyProtectedRoute></ProtectedRoute>} />
+        <Route path="feedback" element={<ProtectedRoute><FacultyProtectedRoute><FeedBack /></FacultyProtectedRoute></ProtectedRoute>} />
+        <Route path="class" element={<ProtectedRoute><FacultyProtectedRoute><Class /></FacultyProtectedRoute></ProtectedRoute>} />
+        <Route path="assignment" element={<ProtectedRoute><FacultyProtectedRoute><Assignment /></FacultyProtectedRoute></ProtectedRoute>} />
       </Route>
 
       <Route path='*' element={<PageNotFound />} />

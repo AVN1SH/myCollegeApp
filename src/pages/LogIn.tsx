@@ -22,6 +22,7 @@ import djangoService from "@/Django/django"
 import { useDispatch } from "react-redux"
 import {login as authSignIn} from "../features/authSlice";
 import { toast } from "sonner"
+import { admission } from "@/features/stdSlice"
 
 const LogIn = () => {
   // const [email, setEmail] = useState('');
@@ -67,6 +68,7 @@ const LogIn = () => {
       });
       if(userData) {
         dispatch(authSignIn(userData));
+        if(userData.pay) dispatch(admission());
         navigate("/student-dashboard/admission/personal-info");
         setError('');
         toast("Login Successfully..!", {

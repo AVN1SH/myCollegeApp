@@ -41,7 +41,7 @@ const QualificationForm = ({degree} : Props) => {
   const [year, setYear] = useState<number[] | null>(null)
 
   useEffect(() => {
-    fetch('/faculties.json')
+    fetch('/year.json')
       .then((response) => response.json())
       .then((data) => setYear(data))
       .catch((error) => console.error('Error fetching the JSON:', error));

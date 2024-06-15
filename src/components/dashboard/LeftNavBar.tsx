@@ -25,7 +25,7 @@ const LeftNavBar = () => {
   }, [pathname]);
 
 
-  return (
+  return userData && (
     <div className="flex fixed bg-white min-w-[50px] h-[calc(100%-64px)] md:min-w-[280px] shadow-[0_0_7px_#7e7e7e] mt-16">
       <div className={classNames(userData ? "pb-[70px]" : '', "flex flex-col items-start space-y-7 w-full h-full p-3 pt-3 overflow-y-auto custom-scroll-bar")}>
         {(userData?.role === "student" ? stdNav : facultyNav).map((item) => {
