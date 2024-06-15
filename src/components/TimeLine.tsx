@@ -29,7 +29,7 @@ const TimeLine = ({date} : Props) => {
         });
         
         if(response) {
-          let arr : Data[] = [];
+          const arr : Data[] = [];
           Object.values(response).forEach((value) => {
             arr.push(value as Data);
           });

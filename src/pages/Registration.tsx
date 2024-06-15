@@ -13,9 +13,9 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { registration } from "@/schema/zod"
-import { useDebounceCallback } from "usehooks-ts"
-import { useEffect, useState } from "react"
-import { Link, NavLink, useNavigate} from "react-router-dom"
+// import { useDebounceCallback } from "usehooks-ts"
+import { useState } from "react"
+import { Link, useNavigate} from "react-router-dom"
 import { Loader2 } from "lucide-react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEye, faEyeSlash, faGraduationCap } from "@fortawesome/free-solid-svg-icons"
@@ -25,36 +25,36 @@ import { toast } from "sonner"
 
 
 const Registration = () => {
-  const [email, setEmail] = useState('');
+  // const [email, setEmail] = useState('');
   const [isSubmiting, setIsSubmitting] = useState(false);
-  const [isCheckingEmail, setIsCheckingEmail] = useState(false);
+  // const [isCheckingEmail, setIsCheckingEmail] = useState(false);
   const [viewPassword, setViewPassword] = useState(false);
   const [selectValue, setSelectValue] = useState('');
   const [isSelected, setIsSelected] = useState(false);
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const debounced = useDebounceCallback(setEmail, 300);
+  // const debounced = useDebounceCallback(setEmail, 300);
 
   const updatingRegistration = registration.extend({
     collegeID : selectValue === "faculty" ? z.string().min(6, "College Id must be Valid.").max(6, "College Id must be Valid.") : z.string().optional()
   })
   
 
-  useEffect(() => {
-    const checkEmail = async () => {
-      if(email) {
-        setIsCheckingEmail(true);
-        try {
-          //TODO: i need to add the request to the django
-          setIsSubmitting(false);
-        } catch(error) {
-          // TODO:
-          setIsSubmitting(false);
-        }
-      }
-    }
-  }, [email])
+  // useEffect(() => {
+  //   const checkEmail = async () => {
+  //     if(email) {
+  //       setIsCheckingEmail(true);
+  //       try {
+  //         //TODO: i need to add the request to the django
+  //         setIsSubmitting(false);
+  //       } catch(error) {
+  //         // TODO:
+  //         setIsSubmitting(false);
+  //       }
+  //     }
+  //   }
+  // }, [email])
 
 
   const form = useForm<z.infer<typeof registration>>({
@@ -230,11 +230,11 @@ const Registration = () => {
                       {...field}
                       onChange={(e) => {
                         field.onChange(e);
-                        debounced(e.target.value);
+                        // debounced(e.target.value);
                       }}
                     />
                   </FormControl>
-                    {isCheckingEmail && <Loader2 className="animate-spin" />}
+                    {/* {isCheckingEmail && <Loader2 className="animate-spin" />} */}
                   <FormMessage className="text-xs" />
                 </FormItem>
               )}

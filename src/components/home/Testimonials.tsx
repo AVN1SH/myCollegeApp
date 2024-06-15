@@ -1,4 +1,4 @@
-import { faCalendar, faChartPie, faMessage, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faChartPie, faMessage, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
