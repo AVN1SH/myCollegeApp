@@ -18,12 +18,16 @@ const authSlice = createSlice({
       state.admissionStatus = true;
       state.loading = false;
     },
+    admissionRemove : (state) => {
+      state.admissionStatus = false;
+      state.loading = false;
+    },
     setLoading(state, action) {
       state.loading = action.payload;
     },
   }
 })
 
-export const {admission, setLoading,} = authSlice.actions;
+export const {admission, admissionRemove, setLoading,} = authSlice.actions;
 
 export default authSlice.reducer;

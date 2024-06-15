@@ -8,6 +8,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '@/features/authSlice';
 import { RootState } from '@/store/store';
+import { admissionRemove } from '@/features/stdSlice';
 
 const navigation = [
   { name: 'Home', href: '/', current: true },
@@ -40,6 +41,7 @@ const NavBar = () => {
 
   const handleOnClick = () => {
     dispatch(logout());
+    dispatch(admissionRemove());
   }
   return (
     <Disclosure as="nav" className="bg-white shadow-[0_0_7px_#7e7e7e] fixed w-full z-50">
