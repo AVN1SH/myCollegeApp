@@ -4,11 +4,11 @@ import path from "path"
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  server: {
-    proxy : {
-      '/api' : "https://arkas.pythonanywhere.com"
-    }
-  },
+  // server: {
+  //   proxy : {
+  //     '/api' : "https://arkas.pythonanywhere.com"
+  //   }
+  // },
   plugins: [react()],
   resolve: {
     alias: {
