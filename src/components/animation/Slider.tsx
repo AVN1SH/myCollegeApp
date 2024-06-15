@@ -3,6 +3,7 @@ import Banner from "../banner/Banner";
 import Banner2 from "../banner/Banner2";
 import Banner3 from "../banner/Banner3";
 import { ChevronRightIcon, ChevronLeftIcon } from '@heroicons/react/24/outline'
+import { Link } from "react-router-dom";
 
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -25,15 +26,15 @@ const Slider = () => {
         </button>
 
         <div className="flex transition-transform duration-500" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
-          <div className="w-full flex-shrink-0">
+          <Link to={"/programs"} className="w-full flex-shrink-0">
             <Banner />
-          </div>
-          <div className="w-full flex-shrink-0">
+          </Link>
+          <Link to={"/programs"} className="w-full flex-shrink-0">
             <Banner2 />
-          </div>
-          <div className="w-full flex-shrink-0">
+          </Link>
+          <Link to={"/programs"} className="w-full flex-shrink-0">
             <Banner3 />
-          </div>
+          </Link>
         </div>
 
         <button
