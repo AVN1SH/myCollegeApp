@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import {
   Form,
   FormControl,
-  FormDescription,
+  // FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -13,14 +13,13 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { personalDetails } from "@/schema/zod"
-import { useDebounceCallback } from "usehooks-ts"
-import { useEffect, useState } from "react"
-import { Link, NavLink, useNavigate} from "react-router-dom"
+// import { useDebounceCallback } from "usehooks-ts"
+import { useState } from "react"
+import { useNavigate} from "react-router-dom"
 import { CalendarIcon, Loader2 } from "lucide-react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faEye, faEyeSlash, faGraduationCap } from "@fortawesome/free-solid-svg-icons"
+import { faGraduationCap } from "@fortawesome/free-solid-svg-icons"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { DatePicker } from "@/components/ui/composition/DatePicker"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { cn } from "@/lib/utils"
 import { format } from "date-fns"
@@ -28,40 +27,37 @@ import { Calendar } from "@/components/ui/calendar"
 import { Checkbox } from "@/components/ui/checkbox"
 import djangoService from "@/Django/django"
 import { useSelector } from "react-redux"
-import authSlice, { AuthState } from "@/features/authSlice"
 import { RootState } from "@/store/store"
 import { toast } from "sonner"
 
 
 const PersonalInfo = () => {
-  const [email, setEmail] = useState('');
+  // const [email, setEmail] = useState('');
   const [isSubmiting, setIsSubmitting] = useState(false);
-  const [isCheckingEmail, setIsCheckingEmail] = useState(false);
-  const [viewPassword, setViewPassword] = useState(false);
-  const [selectValue, setSelectValue] = useState(false);
+  // const [isCheckingEmail, setIsCheckingEmail] = useState(false);
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const userData = useSelector((state : RootState) => state.authSlice.userData);
 
 
-  const debounced = useDebounceCallback(setEmail, 300);
+  // const debounced = useDebounceCallback(setEmail, 300);
 
 
-  useEffect(() => {
-    const checkEmail = async () => {
-      if(email) {
-        setIsCheckingEmail(true);
-        try {
-          //TODO: i need to add the request to the django
-          setIsSubmitting(false);
-        } catch(error) {
-          // TODO:
-          setIsSubmitting(false);
-        }
-      }
-    }
-  }, [email])
+  // useEffect(() => {
+  //   const checkEmail = async () => {
+  //     if(email) {
+  //       setIsCheckingEmail(true);
+  //       try {
+  //         //TODO: i need to add the request to the django
+  //         setIsSubmitting(false);
+  //       } catch(error) {
+  //         // TODO:
+  //         setIsSubmitting(false);
+  //       }
+  //     }
+  //   }
+  // }, [email])
 
   const updatedDetails = personalDetails.extend({
     candidate : !userData?.first_name ? z.string().min(3, "Name must have at least 3 characters").max(30, "Name must be less than 30 Characters") : z.string().optional()
@@ -312,11 +308,11 @@ const PersonalInfo = () => {
                             {...field}
                             onChange={(e) => {
                               field.onChange(e);
-                              debounced(e.target.value);
+                              // debounced(e.target.value);
                             }}
                           />
                         </FormControl>
-                          {isCheckingEmail && <Loader2 className="animate-spin" />}
+                          {/* {isCheckingEmail && <Loader2 className="animate-spin" />} */}
                         <FormMessage className="text-xs" />
                       </FormItem>
                     )}

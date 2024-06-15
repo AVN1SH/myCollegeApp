@@ -177,7 +177,7 @@ export class DjangoService {
 
   // student Dashboard section.......
 
-  async userDetails({id, candidate, fatherName, motherName, email, mobNum, gender, cast, dob, nationality, pwd} : UserDetails) {
+  async userDetails({id, fatherName, motherName, email, mobNum, gender, cast, dob, nationality, pwd} : UserDetails) {
     try {
       const response = await api.post("/personal_details/", {
         rid : id,
@@ -234,7 +234,7 @@ export class DjangoService {
     }
   }
   
-  async userQualification({ id, degree, status, year, schoolName, rollCode, totalMarks, obtainedMarks} : UserQualification) {
+  async userQualification({ id, status, year, schoolName, rollCode, totalMarks, obtainedMarks} : UserQualification) {
     try {
       const response = await api.post("/qualification/", {
         rid : id,
@@ -260,7 +260,7 @@ export class DjangoService {
     }
   }
 
-  async userDocs({id, photo, signature, uniqueId, tenthMarksheet, twelfthMarksheet, graduationMarksheet} : UserDocs) {
+  async userDocs({id, photo, signature, uniqueId, tenthMarksheet, twelfthMarksheet} : UserDocs) {
     try {
       const formData = new FormData();
       formData.append("rid" , id);

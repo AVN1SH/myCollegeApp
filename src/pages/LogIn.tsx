@@ -5,17 +5,16 @@ import { Button } from "@/components/ui/button"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { login, registration } from "@/schema/zod"
-import { useDebounceCallback } from "usehooks-ts"
-import { useEffect, useState } from "react"
-import { Link, NavLink, useNavigate} from "react-router-dom"
+import { login } from "@/schema/zod"
+// import { useDebounceCallback } from "usehooks-ts"
+import { useState } from "react"
+import { Link, useNavigate} from "react-router-dom"
 import { Loader2 } from "lucide-react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEye, faEyeSlash, faGraduationCap } from "@fortawesome/free-solid-svg-icons"
@@ -25,31 +24,31 @@ import {login as authSignIn} from "../features/authSlice";
 import { toast } from "sonner"
 
 const LogIn = () => {
-  const [email, setEmail] = useState('');
+  // const [email, setEmail] = useState('');
   const [isSubmiting, setIsSubmitting] = useState(false);
-  const [isCheckingEmail, setIsCheckingEmail] = useState(false);
+  // const [isCheckingEmail, setIsCheckingEmail] = useState(false);
   const [viewPassword, setViewPassword] = useState(false);
   const [error, setError] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
 
-  const debounced = useDebounceCallback(setEmail, 300);
+  // const debounced = useDebounceCallback(setEmail, 300);
 
-  useEffect(() => {
-    const checkEmail = async () => {
-      if(email) {
-        setIsCheckingEmail(true);
-        try {
-          //TODO: i need to add the request to the django
-          setIsSubmitting(false);
-        } catch(error) {
-          // TODO:
-          setIsSubmitting(false);
-        }
-      }
-    }
-  }, [email])
+  // useEffect(() => {
+  //   const checkEmail = async () => {
+  //     if(email) {
+  //       setIsCheckingEmail(true);
+  //       try {
+  //         //TODO: i need to add the request to the django
+  //         setIsSubmitting(false);
+  //       } catch(error) {
+  //         // TODO:
+  //         setIsSubmitting(false);
+  //       }
+  //     }
+  //   }
+  // }, [email])
 
   const form = useForm<z.infer<typeof login>>({
     resolver: zodResolver(login),
@@ -112,11 +111,11 @@ const LogIn = () => {
                       {...field}
                       onChange={(e) => {
                         field.onChange(e);
-                        debounced(e.target.value);
+                        // debounced(e.target.value);
                       }}
                     />
                   </FormControl>
-                    {isCheckingEmail && <Loader2 className="animate-spin" />}
+                    {/* {isCheckingEmail && <Loader2 className="animate-spin" />} */}
                   <FormMessage className="text-xs" />
                 </FormItem>
               )}

@@ -41,7 +41,7 @@ const authSlice = createSlice({
 
     authCheck : (state) => {
       const authStatus = localStorage.getItem("authStatus");
-      const authId = JSON.stringify(state.userData?.id);
+      // const authId = JSON.stringify(state.userData?.id);
 
       if(authStatus) {
         state.status = JSON.parse(authStatus);

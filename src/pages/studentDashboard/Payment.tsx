@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import { admission } from "@/features/stdSlice";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 const Payment = () => {
   const navigate = useNavigate();

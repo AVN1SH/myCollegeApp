@@ -1,6 +1,3 @@
-import { faGraduationCap } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import about from "../../public/about.json"
 import { useEffect, useState } from "react"
 
 const links = [

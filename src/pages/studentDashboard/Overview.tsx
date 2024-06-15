@@ -1,4 +1,3 @@
-import ProgressLine from "@/components/animation/ProgressLine"
 import { Link } from "react-router-dom"
 
 const Overview = () => {

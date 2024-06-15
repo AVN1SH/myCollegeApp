@@ -12,23 +12,21 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { address, documentations } from "@/schema/zod"
+import { documentations } from "@/schema/zod"
 import { useState } from "react"
-import { Link, NavLink, useNavigate} from "react-router-dom"
+import { useNavigate} from "react-router-dom"
 import { Loader2 } from "lucide-react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import djangoService from "@/Django/django"
 import { useSelector } from "react-redux"
-import { AuthState } from "@/features/authSlice"
 import { RootState } from "@/store/store"
 import { toast } from "sonner"
 
 
 const Docs = () => {
   const [isSubmiting, setIsSubmitting] = useState(false);
-  const [stateValue, setStateValue] = useState<string>('');
+  // const [stateValue, setStateValue] = useState<string>('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
   const userData = useSelector((state : RootState) => state.authSlice.userData);
@@ -101,7 +99,7 @@ const Docs = () => {
               <FormField
                   name="photo"
                   control={form.control}
-                  render={({ field }) => (
+                  render={({ }) => (
                     <FormItem>
                       <FormLabel>Profile Photo | Required</FormLabel>
                       <FormControl>
@@ -123,7 +121,7 @@ const Docs = () => {
               <FormField
                   name="signature"
                   control={form.control}
-                  render={({ field }) => (
+                  render={({ }) => (
                     <FormItem>
                       <FormLabel>Signature Phote | Required</FormLabel>
                       <FormControl>
@@ -146,7 +144,7 @@ const Docs = () => {
                 <FormField
                   name="uniqueId"
                   control={form.control}
-                  render={({ field }) => (
+                  render={({ }) => (
                     <FormItem>
                       <FormLabel>Unique Identification card | Required</FormLabel>
                       <FormControl>
@@ -169,7 +167,7 @@ const Docs = () => {
                 <FormField
                   name="tenthMarksheet"
                   control={form.control}
-                  render={({ field }) => (
+                  render={({ }) => (
                     <FormItem>
                       <FormLabel>10Th MarkSheet | Required</FormLabel>
                       <FormControl>
@@ -191,7 +189,7 @@ const Docs = () => {
                 <FormField
                   name="twelfthMarksheet"
                   control={form.control}
-                  render={({ field }) => (
+                  render={({ }) => (
                     <FormItem>
                       <FormLabel>12th Marksheet | If Applicable</FormLabel>
                       <FormControl>
@@ -213,7 +211,7 @@ const Docs = () => {
                 <FormField
                   name="graduationMarksheet"
                   control={form.control}
-                  render={({ field }) => (
+                  render={({ }) => (
                     <FormItem>
                       <FormLabel>Graduation Marksheet | If Applicable</FormLabel>
                       <FormControl>
@@ -232,6 +230,7 @@ const Docs = () => {
                     </FormItem>
                   )}
                 />
+                {error && <div className="text-red-500 font-bold ">{error}</div>}
                 <Button type="submit" disabled={isSubmiting} className="bg-orange-600 rounded">
                   {
                     isSubmiting ? (

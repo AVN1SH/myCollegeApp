@@ -4,8 +4,7 @@ import Footer from "./components/footer/Footer"
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import djangoService from "./Django/django";
-import { AuthState, login, logout } from "./features/authSlice";
-import { RootState } from "./store/store";
+import { login, logout } from "./features/authSlice";
 import { admission } from "./features/stdSlice";
 import { Toaster } from "sonner";
 
@@ -14,7 +13,7 @@ const App = () => {
   const { pathname } = location;
   const [path, setPath] = useState(location.pathname);
   const dispatch = useDispatch();
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setPath(pathname);
@@ -33,7 +32,7 @@ const App = () => {
             dispatch(logout())
           }
         })
-        .finally(() => setLoading(false))
+        // .finally(() => setLoading(false))
     }
 
     fetchUser();

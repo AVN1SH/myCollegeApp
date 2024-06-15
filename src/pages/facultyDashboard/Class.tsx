@@ -28,7 +28,7 @@ const Class = () => {
   const [formattedDate, setFormattedDate] = useState('');
   const [formattedWeek, setFormattedWeek] = useState(''); 
   const [isSubmiting, setIsSubmitting] = useState(false);
-  const [course, setCourse] = useState('');
+  // const [course, setCourse] = useState('');
   const [error, setError] = useState('');
   const [courses, setCourses] = useState<CourseType[] | null>(null);
 
@@ -116,7 +116,7 @@ const Class = () => {
                         <Select
                           onValueChange={(value) => {
                             field.onChange(value)
-                            setCourse(value);
+                            // setCourse(value);
                           }}
                         >
                           <SelectTrigger className="w-[180px]">

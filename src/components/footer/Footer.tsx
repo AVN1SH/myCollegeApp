@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {faFacebook, faGit, faGithub, faInstagram, faXTwitter, faYoutube} from "@fortawesome/free-brands-svg-icons"
+import {faFacebook, faGithub, faInstagram, faXTwitter, faYoutube} from "@fortawesome/free-brands-svg-icons"
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons"
 import { Link } from "react-router-dom"
 

@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -14,10 +13,8 @@ import {
 import { Input } from "@/components/ui/input"
 import { qualification } from "@/schema/zod"
 import { useEffect, useState } from "react"
-import { Link, NavLink, useNavigate} from "react-router-dom"
 import { Loader2 } from "lucide-react"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import year from "../../../public/year.json";
 import {
   Accordion,
   AccordionContent,
@@ -26,7 +23,6 @@ import {
 } from "@/components/ui/accordion"
 import djangoService from "@/Django/django"
 import { useSelector } from "react-redux"
-import { AuthState } from "@/features/authSlice"
 import { RootState } from "@/store/store"
 import { toast } from "sonner"
 
@@ -41,7 +37,6 @@ const QualificationForm = ({degree} : Props) => {
   const [totalMarks, setToatalMarks] = useState('');
   const [obtainedMarks, setObtainedMarks] = useState('');
   const [error, setError] = useState('');
-  const navigate = useNavigate();
   const userData = useSelector((state : RootState) => state.authSlice.userData);
   const [year, setYear] = useState<number[] | null>(null)
 

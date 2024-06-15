@@ -1,8 +1,6 @@
 import TimeLine from "@/components/TimeLine";
-import { buttonVariants } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar"
-import { cn } from "@/lib/utils";
-import { faCalendar, faCalendarTimes } from "@fortawesome/free-solid-svg-icons";
+import { faCalendar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react"
 

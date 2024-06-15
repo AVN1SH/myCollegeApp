@@ -17,7 +17,7 @@ const LeftNavBar = () => {
   const { pathname } = location;
   const [path, setPath] = useState(location.pathname);
   const admissionStats = useSelector((state : RootState) => state.stdSlice.admissionStatus);
-  const [facultyStats, setFacultyStats] = useState(true); 
+  // const [facultyStats, setFacultyStats] = useState(true);
 
   useEffect(() => {
     setPath(pathname);
@@ -29,7 +29,7 @@ const LeftNavBar = () => {
     <div className="flex fixed bg-white min-w-[50px] h-[calc(100%-64px)] md:min-w-[280px] shadow-[0_0_7px_#7e7e7e] mt-16">
       <div className={classNames(userData ? "pb-[70px]" : '', "flex flex-col items-start space-y-7 w-full h-full p-3 pt-3 overflow-y-auto custom-scroll-bar")}>
         {(userData?.role === "student" ? stdNav : facultyNav).map((item) => {
-          if((userData?.role === 'faculty' && facultyStats) || admissionStats ? (item.list === 'both' || item.list === '2') : (item.list === '1' || item.list === 'both')){
+          if((userData?.role === 'faculty') || admissionStats ? (item.list === 'both' || item.list === '2') : (item.list === '1' || item.list === 'both')){
             return <div className="w-full whitespace-nowrap" key={item.name}>
                 <Link to={item.subNav ? item.href + item.subNav : item.href}
                 key={item.name}

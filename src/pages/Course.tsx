@@ -26,11 +26,11 @@ const Course = () => {
   }, [id]);
 
   useEffect(() => {
-    Events.scrollEvent.register('begin', function(to, element) {
+    Events.scrollEvent.register('begin', function() {
       console.log('begin', arguments);
     });
 
-    Events.scrollEvent.register('end', function(to, element) {
+    Events.scrollEvent.register('end', function() {
       console.log('end', arguments);
     });
 
