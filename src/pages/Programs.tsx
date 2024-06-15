@@ -29,7 +29,7 @@ const Programs = () => {
 
         <div className="bg-white grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
           {courses?.map((course, index) => (
-            <Link key={course.name} to={`/profile/${index}`} className="group shadow-md overflow-hidden max-w-md md:max-w-full xl:max-w-md mx-auto rounded-xl hover:shadow-[0_0_10px_rgba(0,0,0,0.45)] duration-300">
+            <Link key={course.name} to={`/programs/${index}`} className="group shadow-md overflow-hidden max-w-md md:max-w-full xl:max-w-md mx-auto rounded-xl hover:shadow-[0_0_10px_rgba(0,0,0,0.45)] duration-300">
                 <div className="xs:flex md:block">
                   <div className="xs:shrink-0 md:block">
                     <img 
