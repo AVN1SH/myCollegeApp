@@ -1,6 +1,5 @@
 import { faFileAlt } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import Behavior from "@/components/dashboard/progress/Behavior"
 import MarksTable from "@/components/result/MarksTable"
 import MarksGraph from "@/components/result/MarksGraph"
 import { useEffect, useState } from "react"
@@ -36,7 +35,6 @@ const Results = () => {
             transformed[semKey] = transformedSemData;
           });
           setMarks(transformed);
-          console.log(transformed)
         }
       } catch (error : any) {
         if(Number(error.message) >= 400) {
@@ -82,8 +80,8 @@ const Results = () => {
           ],
           marks.sem6 && ["6th", 
             "300", 
-            String(marks.sem6.subjects[1].total_marks), 
-            `${String(Number((marks.sem6.subjects[1].total_marks * 100 / 300).toFixed(2)))}%`
+            String(marks.sem6.subjects[3].total_marks), 
+            `${String(Number((marks.sem6.subjects[3].total_marks * 100 / 300).toFixed(2)))}%`
           ],
         ] : []
       },
@@ -337,6 +335,29 @@ const Results = () => {
           ],
         ] : []
       },
+      "6th" : {
+        "caption" : "Your Marks This Semester",
+        "head" : [
+          "Events", "Total Marks", "Obtained Marks"
+        ],
+        "row" : marks?.sem6 ? [
+          [
+            marks.sem6.subjects[0].paper_title, 
+            "100",
+            String(marks.sem6.subjects[0].obtain_marks)
+          ],
+          [
+            marks.sem6.subjects[1].paper_title, 
+            "100",
+            String(marks.sem6.subjects[1].obtain_marks)
+          ],
+          [
+            marks.sem6.subjects[2].paper_title, 
+            "100",
+            String(marks.sem6.subjects[2].obtain_marks)
+          ],
+        ] : []
+      },
       
     }
 
@@ -370,12 +391,15 @@ const Results = () => {
                   marks.sem3 ? marks.sem3.subjects[6].total_marks : 0,
                   marks.sem4 ? marks.sem4.subjects[6].total_marks : 0,
                   marks.sem5 ? marks.sem5.subjects[6].total_marks : 0,
-                  marks.sem6 ? 200 : 0,
-                  marks.sem1.subjects[6].total_marks + 
+                  marks.sem6 ? marks.sem6.subjects[3].total_marks : 0,
+
+                  ((Object.keys(marks).length - 1) * 600 + 300) - 
+                  (marks.sem1.subjects[6].total_marks + 
                   marks.sem2.subjects[6].total_marks +
                   marks.sem3.subjects[6].total_marks +
                   marks.sem4.subjects[6].total_marks +
-                  marks.sem5.subjects[6].total_marks + 200,
+                  marks.sem5.subjects[6].total_marks +
+                  marks.sem6.subjects[3].total_marks)
                 ]}
                 label={String((Object.keys(marks).length - 1) * 600 + 300)}
               />
@@ -405,12 +429,7 @@ const Results = () => {
                   marks.sem1.subjects[4].obtain_marks,
                   marks.sem1.subjects[5].obtain_marks,
                   
-                  600 - (marks.sem1.subjects[0].obtain_marks + 
-                  marks.sem1.subjects[1].obtain_marks +
-                  marks.sem1.subjects[2].obtain_marks +
-                  marks.sem1.subjects[3].obtain_marks +
-                  marks.sem1.subjects[4].obtain_marks +
-                  marks.sem1.subjects[5].obtain_marks)
+                  600 - (marks.sem1.subjects[6].total_marks)
                 ]}
                 label={"Oute of 600"}
               />
@@ -440,12 +459,7 @@ const Results = () => {
                   marks.sem2.subjects[4].obtain_marks,
                   marks.sem2.subjects[5].obtain_marks,
                   
-                  600 - (marks.sem2.subjects[0].obtain_marks + 
-                  marks.sem2.subjects[1].obtain_marks +
-                  marks.sem2.subjects[2].obtain_marks +
-                  marks.sem2.subjects[3].obtain_marks +
-                  marks.sem2.subjects[4].obtain_marks +
-                  marks.sem2.subjects[5].obtain_marks)
+                  600 - (marks.sem2.subjects[6].total_marks)
                 ]}
                 label="Oute of 600"
               />
@@ -475,12 +489,7 @@ const Results = () => {
                   marks.sem3.subjects[4].obtain_marks,
                   marks.sem3.subjects[5].obtain_marks,
                   
-                  600 - (marks.sem3.subjects[0].obtain_marks + 
-                  marks.sem3.subjects[1].obtain_marks +
-                  marks.sem3.subjects[2].obtain_marks +
-                  marks.sem3.subjects[3].obtain_marks +
-                  marks.sem3.subjects[4].obtain_marks +
-                  marks.sem3.subjects[5].obtain_marks)
+                  600 - (marks.sem3.subjects[6].total_marks)
                 ]}
                 label="Oute of 600"
               />
@@ -510,12 +519,7 @@ const Results = () => {
                   marks.sem4.subjects[4].obtain_marks,
                   marks.sem4.subjects[5].obtain_marks,
                   
-                  600 -(marks.sem4.subjects[0].obtain_marks + 
-                  marks.sem4.subjects[1].obtain_marks +
-                  marks.sem4.subjects[2].obtain_marks +
-                  marks.sem4.subjects[3].obtain_marks +
-                  marks.sem4.subjects[4].obtain_marks +
-                  marks.sem4.subjects[5].obtain_marks)
+                  600 -(marks.sem4.subjects[6].total_marks)
                 ]}
                 label="Oute of 600"
               />
@@ -546,19 +550,38 @@ const Results = () => {
                   marks.sem5.subjects[5].obtain_marks,
                   
                   600 -
-                  (marks.sem5.subjects[0].obtain_marks + 
-                  marks.sem5.subjects[1].obtain_marks +
-                  marks.sem5.subjects[2].obtain_marks +
-                  marks.sem5.subjects[3].obtain_marks +
-                  marks.sem5.subjects[4].obtain_marks +
-                  marks.sem5.subjects[5].obtain_marks)
+                  (marks.sem5.subjects[6].total_marks)
                 ]}
                 label="Oute of 600"
               />
             </div>
           </div>
         </div>}
-
+        {marks?.sem6 && <div className="font-semibold text-2xl text-slate-700 bg-white mb-1 rounded p-2 pl-2 w-full h-fit space-y-2 shadow-md">
+          <FontAwesomeIcon icon={faFileAlt}/> Semester 6th<span className="divider-vertical border-solid border-[1px] border-orange-300 mx-2"></span><span className="font-thin text-md"> Your Marks and Performance</span>
+          <div className="flex rounded gap-3 bg-gray-100 xl:flex-row sm:flex-col">
+            <MarksTable headData={tableData["1st"].head} caption={tableData["1st"].caption} rowData={tableData["5th"].row} />
+            <div className="bg-white sm:flex sm:items-center sm:justify-center xl:items-start xl:justify-start">
+            <MarksGraph 
+                labels={[
+                  String(marks.sem6.subjects[0].paper_title),
+                  String(marks.sem6.subjects[1].paper_title),
+                  String(marks.sem6.subjects[2].paper_title),
+                  "Not Gained"
+                ]}
+                data={[
+                  marks.sem6.subjects[0].obtain_marks,
+                  marks.sem6.subjects[1].obtain_marks,
+                  marks.sem6.subjects[2].obtain_marks,
+                  
+                  300 -
+                  (marks.sem6.subjects[3].total_marks)
+                ]}
+                label="Oute of 300"
+              />
+            </div>
+          </div>
+        </div>}
       </div>
     </div>
   )

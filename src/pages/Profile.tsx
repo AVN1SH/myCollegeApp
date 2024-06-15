@@ -25,7 +25,7 @@ const Profile = () => {
             {faculties![Number(id)].photo_url ? <img src={`/images/faculty/${faculties![Number(id)].photo_url}`} className=" object-center object-cover w-40 h-40  rounded-xl" /> : <FontAwesomeIcon icon={faUser} className="w-[140px] h-[140px] rounded-xl border-slate-500 border-solid border-2 p-2 bg-slate-700 text-slate-300"/>}
             <div className="pb-[10px]">
               <p className="font-semibold text-3xl text-slate-800">{faculties![Number(id)].name}</p>
-              <p className="font-semibold text-slate-600">{faculties![Number(id)].name}</p>
+              <p className="font-semibold text-slate-600">Age : {faculties![Number(id)].age}</p>
             </div>
           </div>
         </div>

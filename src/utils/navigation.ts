@@ -14,8 +14,8 @@ export const stdNav = [
   { name: "FeedBack", href: '/student-dashboard/feedback', current: false, list: 'both', icon:faMessage, subNav : '' },
 ]
 export const facultyNav = [
-  { name: 'Overview', href: "/faculty-dashboard/overview", current: true, list: true, icon: faHome, subNav : ''},
-  { name: 'Classes', href: "/faculty-dashboard/class", current: false, list: true, icon:faChalkboard, subNav : '' },
-  { name: 'Upcoming Assignments', href: '#', current: false, list: true, icon:faFolderOpen, subNav : '' },
-  { name: "FeedBack", href: '/faculty-dashboard/feedback', current: false, list: true, icon:faMessage, subNav : '' },
+  { name: 'Overview', href: "/faculty-dashboard/overview", current: true, list: 'both', icon: faHome, subNav : ''},
+  { name: 'Classes', href: "/faculty-dashboard/class", current: false, list: 'both', icon:faChalkboard, subNav : '' },
+  { name: 'Send Assignments', href: '/faculty-dashboard/assignment', current: false, list: 'both', icon:faFolderOpen, subNav : '' },
+  { name: "FeedBack", href: '/faculty-dashboard/feedback', current: false, list: 'both', icon:faMessage, subNav : '' },
 ]
