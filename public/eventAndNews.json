@@ -1,0 +1,84 @@
+{
+  "newsEvents": [
+    {
+      "id": 1,
+      "title": "Annual Tech Fest 2024",
+      "date": "2024-07-15",
+      "img" : "function.jpg",
+      "brief": "Join us for the Annual Tech Fest 2024, showcasing the latest innovations in technology.",
+      "detailed": "The Annual Tech Fest 2024 will be held on July 15, 2024, at the college campus. This event will feature workshops, keynote sessions by industry experts, project exhibitions by students, and a hackathon. Participants will have the opportunity to explore the latest technological advancements and network with professionals. The event aims to inspire and foster innovation among students."
+    },
+    {
+      "id": 2,
+      "title": "Guest Lecture on AI and Machine Learning",
+      "date": "2024-08-20",
+      "img" :"channels4_profile.jpg",
+      "brief": "A guest lecture on AI and Machine Learning by Dr. Vikas Divyakirti.",
+      "detailed": "We are pleased to announce a guest lecture on AI and Machine Learning by Dr. Suresh Kumar, a renowned AI expert from IIT Delhi. The lecture will cover the basics of AI, recent advancements, and real-world applications. The event is scheduled for August 20, 2024, in the college auditorium. All students are encouraged to attend and participate in the interactive session."
+    },
+    {
+      "id": 3,
+      "title": "Workshop on Web Development",
+      "date": "2024-09-05",
+      "img" : "22112043_6587176.jpg",
+      "brief": "A hands-on workshop on modern web development techniques.",
+      "detailed": "The Computer Science Department is organizing a workshop on modern web development techniques on September 5, 2024. This workshop will cover HTML, CSS, JavaScript, and popular frameworks like React and Angular. Participants will build a web project from scratch and learn best practices in web development. Seats are limited, so register early to secure your spot."
+    },
+    {
+      "id": 4,
+      "title": "Career Fair 2024",
+      "date": "2024-10-10",
+      "img" :"cover.png",
+      "brief": "Meet top recruiters at our Career Fair 2024 and explore job opportunities.",
+      "detailed": "The Career Fair 2024 will be held on October 10, 2024, in the college gymnasium. This event will bring together top recruiters from various industries, offering students a chance to explore job opportunities and internships. There will be on-the-spot interviews, resume workshops, and career counseling sessions. All final-year students are encouraged to attend and make the most of this opportunity."
+    },
+    {
+      "id": 5,
+      "title": "Python Programming Bootcamp",
+      "date": "2024-11-18",
+      "img" :"python bootcamp.jpg",
+      "brief": "A week-long Python programming bootcamp for beginners and intermediates.",
+      "detailed": "Join our week-long Python programming bootcamp starting November 18, 2024. This bootcamp is designed for both beginners and intermediate learners, covering topics from basic syntax to advanced concepts like web scraping and data analysis. Experienced instructors will provide hands-on training and mentorship throughout the bootcamp. Certificates will be awarded to participants upon successful completion."
+    },
+    {
+      "id": 6,
+      "title": "Cyber Security Awareness Week",
+      "date": "2024-12-01",
+      "img" :"cyber.jpg",
+      "brief": "A series of events focused on raising awareness about cyber security.",
+      "detailed": "The Cyber Security Awareness Week, starting December 1, 2024, will feature a series of events including workshops, seminars, and a cyber security quiz. Experts from the industry will discuss topics such as safe online practices, data protection, and the latest trends in cyber threats. Students will learn how to protect themselves and their data in the digital world."
+    },
+    {
+      "id": 7,
+      "title": "Hackathon 2024",
+      "date": "2025-01-15",
+      "img" :"original.jpg",
+      "brief": "A 24-hour hackathon to solve real-world problems using technology.",
+      "detailed": "Hackathon 2024 will take place on January 15, 2025. This 24-hour event challenges students to solve real-world problems using technology. Teams will work on projects related to various domains such as healthcare, education, and environment. Prizes will be awarded to the best solutions, and participants will have the opportunity to present their projects to a panel of judges."
+    },
+    {
+      "id": 8,
+      "title": "Data Science Seminar",
+      "date": "2025-02-10",
+      "img" :"data_sciences.png",
+      "brief": "A seminar on data science and its applications in different industries.",
+      "detailed": "The Data Science Seminar on February 10, 2025, will feature talks by data scientists from leading tech companies. Topics will include data analytics, machine learning, big data technologies, and their applications in various industries. This seminar is a great opportunity for students to learn about the latest trends in data science and network with professionals."
+    },
+    {
+      "id": 9,
+      "title": "Alumni Meet 2025",
+      "date": "2025-03-20",
+      "img" :"branding-handloop.png",
+      "brief": "Reconnect with old friends and network with fellow alumni at the Alumni Meet 2025.",
+      "detailed": "The Alumni Meet 2025 will be held on March 20, 2025. This event is an opportunity for alumni to reconnect with old friends, network with fellow alumni, and share their experiences with current students. The event will include a formal dinner, speeches by distinguished alumni, and an awards ceremony. Alumni will also have the chance to visit their old classrooms and meet their favorite professors."
+    },
+    {
+      "id": 10,
+      "title": "Annual Sports Day",
+      "date": "2025-04-05",
+      "img" :"sport.jpg",
+      "brief": "Participate in various sports events and showcase your athletic skills.",
+      "detailed": "The Annual Sports Day on April 5, 2025, will feature a variety of sports events including track and field, basketball, football, and volleyball. Students are encouraged to participate and showcase their athletic skills. The event aims to promote physical fitness, teamwork, and sportsmanship among students. Winners will receive medals and certificates."
+    }
+  ]
+}

@@ -1,24 +1,24 @@
 [
   {
-    "photo_url": "https://example.com/photos/a1.jpg",
-    "name": "Dr. Arvind Kumar",
+    "photo_url": "rajeev.jpg",
+    "name": "Dr. Rajeev Ranjan",
     "age": 45,
     "specialization": "Artificial Intelligence",
     "qualification": "Ph.D. in Computer Science",
-    "description": "Dr. Arvind Kumar is a distinguished professor with over 20 years of experience in the field of Artificial Intelligence. He has published numerous research papers in top-tier journals and has been a keynote speaker at several international conferences. His areas of expertise include machine learning, neural networks, and deep learning. Dr. Kumar is passionate about teaching and mentoring students, helping them to understand complex concepts and apply them in real-world scenarios. He has been instrumental in setting up the AI lab at the college, providing students with hands-on experience in developing AI models and applications. In addition to his teaching and research responsibilities, Dr. Kumar actively collaborates with industry partners on various AI projects, contributing to advancements in the field.",
+    "description": "Dr. Rajeev Ranjan is a distinguished professor with over 20 years of experience in the field of Artificial Intelligence. He has published numerous research papers in top-tier journals and has been a keynote speaker at several international conferences. His areas of expertise include machine learning, neural networks, and deep learning. Dr. Kumar is passionate about teaching and mentoring students, helping them to understand complex concepts and apply them in real-world scenarios. He has been instrumental in setting up the AI lab at the college, providing students with hands-on experience in developing AI models and applications. In addition to his teaching and research responsibilities, Dr. Kumar actively collaborates with industry partners on various AI projects, contributing to advancements in the field.",
     "courses": ["B.Tech", "M.Tech", "Ph.D.", "Specialized Course in AI"]
   },
   {
-    "photo_url": "https://example.com/photos/a2.jpg",
-    "name": "Prof. Meera Nair",
-    "age": 38,
+    "photo_url": "vinod.png",
+    "name": "Prof. Vinod",
+    "age": 58,
     "specialization": "Data Structures and Algorithms",
     "qualification": "M.Tech in Computer Science",
     "description": "Prof. Meera Nair is a dedicated educator with a strong background in Data Structures and Algorithms. She has been teaching at the college for over 10 years and has a reputation for making complex topics accessible to students. Prof. Nair's teaching methodology focuses on practical applications and problem-solving techniques, which prepare students for competitive exams and industry challenges. She has developed several innovative teaching materials and online courses that have been widely appreciated. In her role, she also mentors students on their projects and research work, guiding them to achieve excellence. Prof. Nair is committed to continuous learning and frequently updates her knowledge to include the latest advancements in the field.",
     "courses": ["B.Tech", "M.Tech", "BCA", "Specialized Course in DSA"]
   },
   {
-    "photo_url": "https://example.com/photos/a3.jpg",
+    "photo_url": "naveen.png",
     "name": "Dr. Rajesh Sharma",
     "age": 50,
     "specialization": "Computer Architecture",
