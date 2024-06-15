@@ -23,6 +23,7 @@ import djangoService from "@/Django/django"
 import { useSelector } from "react-redux"
 import { AuthState } from "@/features/authSlice"
 import { RootState } from "@/store/store"
+import { toast } from "sonner"
 
 
 const Docs = () => {
@@ -60,6 +61,13 @@ const Docs = () => {
       if(response) {
         console.log(response);
         setError('');
+        toast("Documentations saved Successfully..!", {
+          description : "Now Do Payment to complete Your Admission",
+          action: {
+            label: "ok",
+            onClick: () => console.log(''),
+          },
+        })
         navigate("/student-dashboard/payment");
       }
       setIsSubmitting(false);

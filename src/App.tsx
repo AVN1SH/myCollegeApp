@@ -7,6 +7,7 @@ import djangoService from "./Django/django";
 import { AuthState, login, logout } from "./features/authSlice";
 import { RootState } from "./store/store";
 import { admission } from "./features/stdSlice";
+import { Toaster } from "sonner";
 
 const App = () => {
   const location = useLocation();
@@ -27,6 +28,7 @@ const App = () => {
         .then((userData) => {
           if(userData) {
             dispatch(login(userData));
+            if(userData.pay) dispatch(admission());
           } else {
             dispatch(logout())
           }
@@ -46,6 +48,7 @@ const App = () => {
       <NavBar />
       <main>
         <Outlet />
+        <Toaster />
       </main>
       {!path.includes("dashboard") && <Footer />}
     </div>

@@ -21,6 +21,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEye, faEyeSlash, faGraduationCap } from "@fortawesome/free-solid-svg-icons"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import djangoService from "@/Django/django"
+import { toast } from "sonner"
 
 
 const Registration = () => {
@@ -88,6 +89,13 @@ const Registration = () => {
         console.log(regData);
         navigate("/login");
         setError('');
+        toast("Registred Successfully..!", {
+          description : "Login to Continue access your dashboard.",
+          action: {
+            label: "ok",
+            onClick: () => console.log(''),
+          },
+        })
       }
       setIsSubmitting(false);
     } catch (error : any) {

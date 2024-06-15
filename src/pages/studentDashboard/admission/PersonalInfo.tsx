@@ -30,6 +30,7 @@ import djangoService from "@/Django/django"
 import { useSelector } from "react-redux"
 import authSlice, { AuthState } from "@/features/authSlice"
 import { RootState } from "@/store/store"
+import { toast } from "sonner"
 
 
 const PersonalInfo = () => {
@@ -104,12 +105,19 @@ const PersonalInfo = () => {
         }),
         nationality : values.nationality || '',
         pwd : values.pwd,
-        email : values.email,
+        email : values.email === userData?.email ? '': values.email,
         mobNum : values.mobNum,
       });
       
       if(response) {
         setError('');
+        toast("Personal Information Saved Successfully..!", {
+          description : "Now Here, You need to add your address informations.",
+          action: {
+            label: "ok",
+            onClick: () => console.log(''),
+          },
+        })
         navigate("/student-dashboard/admission/address");
       }
       setIsSubmitting(false);

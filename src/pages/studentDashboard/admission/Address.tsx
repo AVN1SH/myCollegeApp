@@ -26,6 +26,7 @@ import djangoService from "@/Django/django"
 import { useSelector } from "react-redux"
 import { AuthState } from "@/features/authSlice"
 import { RootState } from "@/store/store"
+import { toast } from "sonner"
 
 
 const Address = () => {
@@ -70,6 +71,13 @@ const Address = () => {
       if(response) {
         console.log(response);
         setError('');
+        toast("Address info saved Successfully..!", {
+          description : "Now you need to add your Qualifications",
+          action: {
+            label: "ok",
+            onClick: () => console.log(''),
+          },
+        })
         navigate("/student-dashboard/admission/qualifications");
       }
       setIsSubmitting(false);

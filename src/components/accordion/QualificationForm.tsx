@@ -28,6 +28,7 @@ import djangoService from "@/Django/django"
 import { useSelector } from "react-redux"
 import { AuthState } from "@/features/authSlice"
 import { RootState } from "@/store/store"
+import { toast } from "sonner"
 
 interface Props {
   degree : string;
@@ -73,6 +74,13 @@ const QualificationForm = ({degree} : Props) => {
       if(response) {
         console.log(response);
         setError('');
+        toast("Your Qualifications Saved Successfully..!", {
+          description : "",
+          action: {
+            label: "ok",
+            onClick: () => console.log(''),
+          },
+        })
       }
       setIsSubmitting(false);
     } catch (error : any) {

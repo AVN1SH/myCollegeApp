@@ -32,4 +32,5 @@ interface UserData {
   adhar: string
   tenth: string
   twelth: string
+  pay : boolean
 }

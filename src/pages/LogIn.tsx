@@ -21,7 +21,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEye, faEyeSlash, faGraduationCap } from "@fortawesome/free-solid-svg-icons"
 import djangoService from "@/Django/django"
 import { useDispatch } from "react-redux"
-import authSlice, {login as authSignIn} from "../features/authSlice";
+import {login as authSignIn} from "../features/authSlice";
+import { toast } from "sonner"
 
 const LogIn = () => {
   const [email, setEmail] = useState('');
@@ -69,6 +70,13 @@ const LogIn = () => {
         dispatch(authSignIn(userData));
         navigate("/student-dashboard/admission/personal-info");
         setError('');
+        toast("Login Successfully..!", {
+          description : "Welcome to our College",
+          action: {
+            label: "ok",
+            onClick: () => console.log(''),
+          },
+        })
       }
       setIsSubmitting(false);
     } catch (error : any) {

@@ -22,8 +22,22 @@
     "name" : "Vikas Kumar",
     "role" : ["Backend-Developer"],
     "photo" : "/images/developer/vikas.png",
-    "email" : "vikas@gmail.com",
-    "about" : "",
+    "email" : "vikaskumarstm83@gmail.com",
+    "about" : "Teacher at Aptech Computer As a dedicated educator at Aptech Computer, Vikas Kumar specializes in imparting knowledge on various programming languages and web development technologies. With a strong passion for teaching, Vikas Kumar has successfully mentored numerous students, guiding them to become proficient developers in both frontend and backend technologies.",
+    "Hobies" : [
+      {
+        "title" : "Coding",
+        "content" : "A passion that extends beyond professional work, with personal projects and continuous learning."
+      },
+      {
+        "title" : "Watching Movies",
+        "content" : "An avid movie enthusiast who enjoys exploring different genres and narratives."
+      },
+      {
+        "title" : "Playing Cricket",
+        "content" : "Actively participates in local cricket matches, enjoying the team spirit and physical activity."
+      }
+    ],
     "backend" : {
       "contribution" : "80%",
       "labels" : ["Model Relation", "Models", "Django Rest API", "Not Contributed"],

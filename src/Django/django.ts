@@ -22,7 +22,7 @@ interface UserDetails {
   candidate : string;
   fatherName : string;
   motherName : string;
-  email : string;
+  email ?: string;
   mobNum : string;
   gender : string;
   cast : string;
@@ -280,6 +280,27 @@ export class DjangoService {
         return response.data;
       } else {
         console.error("error while Adding file : ");
+      }
+    } catch(error : any) {
+      console.log(error);
+      throw new Error(error.response.status)
+    }
+  }
+
+  async userPayment({ id, payment} : {id : string; payment : boolean}) {
+    try {
+      const response = await api.post("/payment/", {
+        rid : id,
+        pay : payment
+      });
+
+      if(response.data) {
+        console.log(response.data)
+        console.log("Added successfully..!")
+
+        return response.data;
+      } else {
+        console.error("error while Adding qualification details : ");
       }
     } catch(error : any) {
       console.log(error);
