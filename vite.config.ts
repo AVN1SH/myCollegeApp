@@ -10,6 +10,11 @@ export default defineConfig({
   //   }
   // },
   plugins: [react()],
+  base : '/',
+  build: {
+    outDir: 'dist',
+    sourcemap: false,
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
