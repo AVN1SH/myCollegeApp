@@ -7,7 +7,6 @@ import djangoService from "./Django/django";
 import { login, logout } from "./features/authSlice";
 import { admission } from "./features/stdSlice";
 import { Toaster } from "sonner";
-import ErrorBoundary from "./components/ErrorBoundary";
 
 const App = () => {
   const location = useLocation();
@@ -44,16 +43,14 @@ const App = () => {
   }, [])
 
   return (
-    <ErrorBoundary>
-      <div className="">
-        <NavBar />
-        <main>
-          <Outlet />
-          <Toaster />
-        </main>
-        {!path.includes("dashboard") && <Footer />}
-      </div>
-    </ErrorBoundary>
+    <div className="">
+      <NavBar />
+      <main>
+        <Outlet />
+        <Toaster />
+      </main>
+      {!path.includes("dashboard") && <Footer />}
+    </div>
   )
 }
 
