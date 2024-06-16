@@ -1,0 +1,82 @@
+[
+  {
+    "duration": "First 3 Months (Foundations of AI/ML)",
+    "content": [
+      {
+        "duration": "Week 1-2 Introduction to AI/ML",
+        "topics": "Overview of AI and ML concepts, Historical background and development, Applications of AI/ML in various fields"
+      },
+      {
+        "duration": "Week 3-4 Python Programming Basics",
+        "topics": "Introduction to Python programming language, Data types, variables, and operators, Control flow statements (if, else, loops), Functions and modules"
+      },
+      {
+        "duration": "Week 5-6 Mathematics for AI/ML",
+        "topics": "Fundamentals of linear algebra, Calculus essentials (derivatives, gradients), Probability theory and statistics"
+      },
+      {
+        "duration": "Week 7-9 Machine Learning Basics",
+        "topics": "Introduction to supervised, unsupervised, and reinforcement learning, Basic concepts: training, testing, evaluation, Overview of common ML algorithms (linear regression, logistic regression, k-nearest neighbors)"
+      },
+      {
+        "duration": "Week 10-12 Data Preprocessing and Visualization",
+        "topics": "Data cleaning and preprocessing techniques, Exploratory data analysis (EDA), Data visualization using libraries like Matplotlib and Seaborn"
+      }
+    ]
+  },
+  {
+    "duration": "Second 3 Months (Intermediate AI/ML Concepts)",
+    "content": [
+      {
+        "duration": "Week 13-15 Advanced Machine Learning",
+        "topics": "Understanding model complexity and overfitting, Introduction to ensemble methods (random forests, boosting), Cross-validation and hyperparameter tuning"
+      },
+      {
+        "duration": "Week 16-18 Deep Learning Fundamentals",
+        "topics": "Introduction to neural networks and deep learning, Basics of TensorFlow or PyTorch frameworks, Building and training simple neural networks"
+      },
+      {
+        "duration": "Week 19-21 Neural Network Architectures",
+        "topics": "Convolutional Neural Networks (CNNs) for image recognition, Recurrent Neural Networks (RNNs) for sequence modeling, Transfer learning and pre-trained models"
+      },
+      {
+        "duration": "Week 22-24 Natural Language Processing (NLP)",
+        "topics": "Introduction to NLP tasks (tokenization, POS tagging, named entity recognition), Word embeddings and word2vec, Sequence-to-sequence models and attention mechanisms"
+      }
+    ]
+  },
+  {
+    "duration": "Third 3 Months (Advanced Topics and Applications)",
+    "content": [
+      {
+        "duration": "Week 25-27 Reinforcement Learning",
+        "topics": "Fundamentals of reinforcement learning, Markov Decision Processes (MDPs), Q-learning, Deep Q-Networks (DQN)"
+      },
+      {
+        "duration": "Week 28-30 Generative Adversarial Networks (GANs)",
+        "topics": "Introduction to GANs and their applications, Training GANs: adversarial training process, Variants of GANs (e.g., DCGAN, WGAN)"
+      },
+      {
+        "duration": "Week 31-33 Advanced Topics in AI/ML",
+        "topics": "Model deployment and serving, Explainable AI and interpretability, AI ethics and societal impact"
+      }
+    ]
+  },
+  {
+    "duration": "Final 3 Months (Project Work and Capstone)",
+    "content": [
+      {
+        "duration": "Week 34-36 Project Planning and Data Collection",
+        "topics": "Identifying project ideas and objectives, Collecting and preprocessing data for the project"
+      },
+      {
+        "duration": "Week 37-39 Model Development and Experimentation",
+        "topics": "Implementing machine learning or deep learning models for the project, Experimenting with different architectures and hyperparameters"
+      },
+      {
+        "duration": "Week 40-42 Project Evaluation and Presentation",
+        "topics": "Evaluating model performance and results, Creating visualizations and reports, Presenting the project findings to peers or stakeholders"
+      }
+    ]
+  }
+]

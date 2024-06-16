@@ -1,0 +1,48 @@
+[
+  {
+    "name" : "Avnish Kr. Sharma",
+    "role" : ["Team Leader", "Front-end Developer", "Backend-Helper"],
+    "photo" : "/images/developer/file3.png",
+    "email" : "avnish84344@gmail.com",
+    "about" : "Full stack web developer with expertise in front-end and back-end development, experienced in leading cross-functional teams.",
+    "frontend" : {
+      "contribution" : "100%",
+      "labels" : ["TypeScript", "CSS", "Json", "Others"],
+      "label" : "File Type Used",
+      "value" : [80, 5, 10, 5]
+    },
+    "backend" : {
+      "contribution" : "20%",
+      "labels" : ["Python", "Models", "Django Rest API", "Not Contributed"],
+      "label" : "My Contribution",
+      "value" : [30, 20, 10, 70]
+    }
+  },
+  {
+    "name" : "Vikas Kumar",
+    "role" : ["Backend-Developer"],
+    "photo" : "/images/developer/vikas.png",
+    "email" : "vikaskumarstm83@gmail.com",
+    "about" : "Teacher at Aptech Computer As a dedicated educator at Aptech Computer, Vikas Kumar specializes in imparting knowledge on various programming languages and web development technologies. With a strong passion for teaching, Vikas Kumar has successfully mentored numerous students, guiding them to become proficient developers in both frontend and backend technologies.",
+    "Hobies" : [
+      {
+        "title" : "Coding",
+        "content" : "A passion that extends beyond professional work, with personal projects and continuous learning."
+      },
+      {
+        "title" : "Watching Movies",
+        "content" : "An avid movie enthusiast who enjoys exploring different genres and narratives."
+      },
+      {
+        "title" : "Playing Cricket",
+        "content" : "Actively participates in local cricket matches, enjoying the team spirit and physical activity."
+      }
+    ],
+    "backend" : {
+      "contribution" : "80%",
+      "labels" : ["Model Relation", "Models", "Django Rest API", "Not Contributed"],
+      "label" : "My Contribution",
+      "value" : [20, 10, 50, 20]
+    }
+  }
+]

@@ -1,0 +1,145 @@
+{
+  "welcomeMessage": {
+    "title": "Welcome to My College",
+    "tagline": "Empowering Students for a Bright Future in Technology and Innovation"
+  },
+  "heroSection": {
+    "title": "Discover Your Potential at My College",
+    "subtitle": "Join a community of learners and innovators",
+    "buttonText": "Apply Now",
+    "image": "path/to/hero-image.jpg"
+  },
+  "aboutUs": {
+    "title": "About Us",
+    "content": "My College has been a leader in higher education since 1990. Our mission is to provide quality education and foster a culture of innovation and excellence.",
+    "buttonText": "Learn More",
+    "link": "/about"
+  },
+  "programs": {
+    "title": "Our Programs",
+    "items": [
+      {
+        "name": "Bachelor of Computer Applications (BCA)",
+        "description": "A comprehensive program that covers various aspects of computer applications and IT.",
+        "link": "/programs/bca"
+      },
+      {
+        "name": "Bachelor of Technology (B.Tech)",
+        "description": "An engineering degree with various specializations like Computer Science, Mechanical, and Electrical.",
+        "link": "/programs/btech"
+      },
+      {
+        "name": "Bachelor of Science (B.Sc)",
+        "description": "A science degree with specializations in Physics, Chemistry, Mathematics, and Biology.",
+        "link": "/programs/bsc"
+      },
+      {
+        "name": "Bachelor of Commerce (B.Com)",
+        "description": "A commerce degree focusing on accounting, finance, and business studies.",
+        "link": "/programs/bcom"
+      },
+      {
+        "name": "Specialized Courses",
+        "description": "Short-term courses in Python, JavaScript, Graphic Design, and more.",
+        "link": "/programs/specialized-courses"
+      }
+    ]
+  },
+  "eventsAndNews": {
+    "title": "Events and News",
+    "items": [
+      {
+        "name": "Upcoming Tech Symposium",
+        "description": "Join us for our annual tech symposium featuring industry experts and networking opportunities.",
+        "link": "/events/tech-symposium",
+        "date": "2024-07-20"
+      },
+      {
+        "name": "Graduation Ceremony",
+        "description": "Celebrate the achievements of our graduates with family and friends.",
+        "link": "/events/graduation-ceremony",
+        "date": "2024-09-15"
+      },
+      {
+        "name": "AI/ML Workshop",
+        "description": "A workshop on AI and ML for beginners, covering basic concepts and hands-on sessions.",
+        "link": "/events/ai-ml-workshop",
+        "date": "2024-08-10"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What Our Students Say",
+    "items": [
+      {
+        "quote": "My experience at My College has been transformative. The faculty and resources are top-notch.",
+        "name": "Amit Sharma",
+        "class": "BCA Class of 2023"
+      },
+      {
+        "quote": "The B.Tech program at My College provided me with the skills and knowledge to excel in my career.",
+        "name": "Priya Singh",
+        "class": "B.Tech Class of 2022"
+      },
+      {
+        "quote": "I loved the campus environment and the quality of education. Highly recommended!",
+        "name": "Rahul Verma",
+        "class": "B.Com Class of 2023"
+      },
+      {
+        "quote": "The supportive faculty and diverse learning opportunities have greatly enhanced my academic journey.",
+        "name": "Sneha Patel",
+        "class": "MCA Class of 2022"
+      },
+      {
+        "quote": "My college years have been the best time of my life. The exposure and experience gained here are invaluable.",
+        "name": "Rohit Mehra",
+        "class": "B.Sc Class of 2024"
+      },
+      {
+        "quote": "The emphasis on practical learning and industry exposure has been immensely beneficial.",
+        "name": "Ananya Iyer",
+        "class": "BBA Class of 2023"
+      },
+      {
+        "quote": "I have developed strong technical skills and a passion for innovation thanks to my college's excellent programs.",
+        "name": "Vikram Joshi",
+        "class": "B.Tech Class of 2021"
+      },
+      {
+        "quote": "The career guidance and support provided by the college helped me secure my dream job.",
+        "name": "Kavita Rao",
+        "class": "MBA Class of 2022"
+      },
+      {
+        "quote": "My college has a vibrant campus life and offers numerous extracurricular activities to engage in.",
+        "name": "Aakash Gupta",
+        "class": "BCA Class of 2022"
+      },
+      {
+        "quote": "The knowledge and skills I've acquired at my college have been instrumental in my professional growth.",
+        "name": "Neha Dubey",
+        "class": "M.Tech Class of 2021"
+      },
+      {
+        "quote": "The research opportunities and academic support provided here are outstanding.",
+        "name": "Sahil Kapoor",
+        "class": "PhD Class of 2025"
+      }
+    ]
+  },
+  "callToAction": {
+    "title": "Ready to Start Your Journey?",
+    "subtitle": "Apply now or contact us for more information.",
+    "buttons": [
+      {
+        "text": "Apply Now",
+        "link": "/registration"
+      },
+      {
+        "text": "Contact Us",
+        "link": "/about"
+      }
+    ]
+  }
+}

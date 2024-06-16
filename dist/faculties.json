@@ -1,0 +1,182 @@
+[
+  {
+    "photo_url": "rajeev.jpg",
+    "name": "Dr. Rajeev Ranjan",
+    "age": 45,
+    "specialization": "Artificial Intelligence",
+    "qualification": "Ph.D. in Computer Science",
+    "description": "Dr. Rajeev Ranjan is a distinguished professor with over 20 years of experience in the field of Artificial Intelligence. He has published numerous research papers in top-tier journals and has been a keynote speaker at several international conferences. His areas of expertise include machine learning, neural networks, and deep learning. Dr. Kumar is passionate about teaching and mentoring students, helping them to understand complex concepts and apply them in real-world scenarios. He has been instrumental in setting up the AI lab at the college, providing students with hands-on experience in developing AI models and applications. In addition to his teaching and research responsibilities, Dr. Kumar actively collaborates with industry partners on various AI projects, contributing to advancements in the field.",
+    "courses": ["B.Tech", "M.Tech", "Ph.D.", "Specialized Course in AI"]
+  },
+  {
+    "photo_url": "vinod.png",
+    "name": "Prof. Vinod",
+    "age": 58,
+    "specialization": "Data Structures and Algorithms",
+    "qualification": "M.Tech in Computer Science",
+    "description": "Prof. Meera Nair is a dedicated educator with a strong background in Data Structures and Algorithms. She has been teaching at the college for over 10 years and has a reputation for making complex topics accessible to students. Prof. Nair's teaching methodology focuses on practical applications and problem-solving techniques, which prepare students for competitive exams and industry challenges. She has developed several innovative teaching materials and online courses that have been widely appreciated. In her role, she also mentors students on their projects and research work, guiding them to achieve excellence. Prof. Nair is committed to continuous learning and frequently updates her knowledge to include the latest advancements in the field.",
+    "courses": ["B.Tech", "M.Tech", "BCA", "Specialized Course in DSA"]
+  },
+  {
+    "photo_url": "naveen.png",
+    "name": "Dr. Rajesh Sharma",
+    "age": 50,
+    "specialization": "Computer Architecture",
+    "qualification": "Ph.D. in Computer Engineering",
+    "description": "Dr. Rajesh Sharma brings over 25 years of academic and industry experience in Computer Architecture. His deep understanding of the subject and ability to simplify complex theories have made him a favorite among students. Dr. Sharma has contributed to numerous research projects and has several patents to his name. He has also authored a textbook on Computer Architecture that is widely used in engineering colleges across the country. At the college, Dr. Sharma leads the Computer Engineering department and oversees various curricular and extracurricular activities. He is passionate about encouraging innovation and regularly organizes workshops and hackathons to foster a spirit of creativity among students.",
+    "courses": ["B.Tech", "M.Tech", "Ph.D.", "Specialized Course in Computer Architecture"]
+  },
+  {
+    "photo_url": "https://example.com/photos/a4.jpg",
+    "name": "Prof. Sangeeta Joshi",
+    "age": 42,
+    "specialization": "Python Programming",
+    "qualification": "M.Sc. in Computer Science",
+    "description": "Prof. Sangeeta Joshi is an expert in Python Programming with over 15 years of teaching experience. She has a knack for making programming fun and engaging for her students. Prof. Joshi's courses are known for their hands-on approach, where students build real-world applications as part of their learning process. She has been involved in several community outreach programs, teaching coding to underprivileged children and empowering them with digital skills. Prof. Joshi also collaborates with tech companies to ensure that the curriculum is aligned with industry requirements, thereby enhancing the employability of her students.",
+    "courses": ["BCA", "B.Sc.", "Specialized Course in Python", "Diploma in Programming"]
+  },
+  {
+    "photo_url": "https://example.com/photos/a5.jpg",
+    "name": "Dr. Neha Verma",
+    "age": 37,
+    "specialization": "Machine Learning",
+    "qualification": "Ph.D. in Data Science",
+    "description": "Dr. Neha Verma is a passionate educator and researcher in the field of Machine Learning. With a Ph.D. in Data Science, she has a profound understanding of machine learning algorithms and their applications. Dr. Verma has published several research papers in international journals and has presented her work at various conferences. She believes in a practical approach to teaching and ensures that her students get ample opportunities to work on real-world projects. Dr. Verma also leads a research group at the college, focusing on cutting-edge machine learning techniques and their applications in various industries. She is committed to fostering a collaborative learning environment and encourages her students to participate in research and innovation.",
+    "courses": ["B.Tech", "M.Tech", "Ph.D.", "Specialized Course in ML"]
+  },
+  {
+    "photo_url": "https://example.com/photos/a6.jpg",
+    "name": "Prof. Anil Desai",
+    "age": 44,
+    "specialization": "JavaScript and Web Development",
+    "qualification": "M.Tech in Information Technology",
+    "description": "Prof. Anil Desai is an experienced faculty member specializing in JavaScript and Web Development. With over 18 years of teaching experience, he has a comprehensive understanding of web technologies and modern development practices. Prof. Desai's courses emphasize hands-on learning, where students work on building dynamic and responsive web applications. He is well-versed in various JavaScript frameworks and libraries, such as React, Angular, and Vue.js, and incorporates them into his teaching. Prof. Desai also mentors students on their web development projects, guiding them from concept to deployment. His dedication to teaching and his ability to stay updated with the latest trends make him a valuable asset to the college.",
+    "courses": ["BCA", "B.Sc.", "Specialized Course in JavaScript", "Diploma in Web Development"]
+  },
+  {
+    "photo_url": "https://example.com/photos/a7.jpg",
+    "name": "Dr. Kavita Patel",
+    "age": 39,
+    "specialization": "Data Science",
+    "qualification": "Ph.D. in Data Science",
+    "description": "Dr. Kavita Patel is a renowned expert in Data Science with a strong academic and research background. She has been teaching at the college for over 12 years and has made significant contributions to the field through her research work. Dr. Patel's courses cover a wide range of topics, including data analysis, machine learning, and big data technologies. She is dedicated to providing her students with a deep understanding of data science concepts and practical skills. Dr. Patel also collaborates with industry partners on various data science projects, offering students opportunities to work on real-world problems and gain valuable experience. Her commitment to excellence in teaching and research has earned her numerous accolades.",
+    "courses": ["B.Tech", "M.Tech", "Ph.D.", "Specialized Course in Data Science"]
+  },
+  {
+    "photo_url": "https://example.com/photos/a8.jpg",
+    "name": "Prof. Vikram Rao",
+    "age": 41,
+    "specialization": "Cybersecurity",
+    "qualification": "M.Tech in Cybersecurity",
+    "description": "Prof. Vikram Rao is a seasoned professional in the field of Cybersecurity with over 15 years of experience. He has been instrumental in developing the cybersecurity curriculum at the college, ensuring that it meets the highest standards. Prof. Rao's courses focus on both theoretical and practical aspects of cybersecurity, covering topics such as network security, cryptography, ethical hacking, and incident response. He is also actively involved in research and consultancy work, helping organizations to improve their cybersecurity posture. Prof. Rao's dedication to teaching and his ability to keep up with the latest developments in the field make him a sought-after faculty member.",
+    "courses": ["B.Tech", "M.Tech", "BCA", "Specialized Course in Cybersecurity"]
+  },
+  {
+    "photo_url": "https://example.com/photos/a9.jpg",
+    "name": "Dr. Anjali Menon",
+    "age": 36,
+    "specialization": "Natural Language Processing",
+    "qualification": "Ph.D. in Computational Linguistics",
+    "description": "Dr. Anjali Menon is a leading expert in Natural Language Processing (NLP) with a Ph.D. in Computational Linguistics. She has been teaching at the college for over 10 years and has a deep understanding of NLP techniques and their applications. Dr. Menon's courses cover topics such as text processing, sentiment analysis, machine translation, and speech recognition. She is passionate about research and has published several papers in top-tier journals. Dr. Menon also leads a research group focused on developing innovative NLP solutions for various industries. Her commitment to excellence in teaching and research has earned her a reputation as a highly respected faculty member.",
+    "courses": ["B.Tech", "M.Tech", "Ph.D.", "Specialized Course in NLP"]
+  },
+  {
+    "photo_url": "https://example.com/photos/a10.jpg",
+    "name": "Prof. Suresh Gupta",
+    "age": 47,
+    "specialization": "Cloud Computing",
+    "qualification": "M.Tech in Cloud Computing",
+    "description": "Prof. Suresh Gupta is an expert in Cloud Computing with over 20 years of experience in academia and industry. He has been instrumental in establishing the cloud computing lab at the college, providing students with hands-on experience in working with cloud platforms such as AWS, Azure, and Google Cloud. Prof. Gupta's courses cover a wide range of topics, including cloud architecture, virtualization, containerization, and cloud security. He is passionate about teaching and ensures that his students are well-prepared for the challenges of the rapidly evolving cloud computing industry. Prof. Gupta also collaborates with industry partners on various cloud computing projects, offering students opportunities to work on real-world problems.",
+    "courses": ["B.Tech", "M.Tech", "BCA", "Specialized Course in Cloud Computing"]
+  },
+  {
+    "photo_url": "https://example.com/photos/a11.jpg",
+    "name": "Dr. Priya Sharma",
+    "age": 40,
+    "specialization": "Computer Networks",
+    "qualification": "Ph.D. in Computer Networks",
+    "description": "Dr. Priya Sharma is a distinguished faculty member with a specialization in Computer Networks. With over 15 years of teaching experience, she has a deep understanding of networking concepts and technologies. Dr. Sharma's courses cover topics such as network protocols, wireless networks, network security, and network management. She is dedicated to providing her students with a thorough understanding of computer networks and their applications. Dr. Sharma has also published several research papers in reputed journals and has presented her work at various conferences. Her commitment to teaching and research has made her a highly respected member of the faculty.",
+    "courses": ["B.Tech", "M.Tech", "BCA", "Specialized Course in Computer Networks"]
+  },
+  {
+    "photo_url": "https://example.com/photos/a12.jpg",
+    "name": "Prof. Amitabh Singh",
+    "age": 43,
+    "specialization": "Software Engineering",
+    "qualification": "M.Tech in Software Engineering",
+    "description": "Prof. Amitabh Singh is a highly experienced faculty member with a specialization in Software Engineering. With over 18 years of teaching experience, he has a deep understanding of software development methodologies and best practices. Prof. Singh's courses cover topics such as software design, software testing, agile methodologies, and project management. He is dedicated to providing his students with a thorough understanding of software engineering principles and practices. Prof. Singh also mentors students on their software development projects, guiding them through the entire software development lifecycle. His commitment to excellence in teaching and his ability to stay updated with the latest trends make him a valuable asset to the college.",
+    "courses": ["B.Tech", "M.Tech", "BCA", "Specialized Course in Software Engineering"]
+  },
+  {
+    "photo_url": "https://example.com/photos/a13.jpg",
+    "name": "Dr. Radhika Iyer",
+    "age": 38,
+    "specialization": "Blockchain Technology",
+    "qualification": "Ph.D. in Computer Science",
+    "description": "Dr. Radhika Iyer is a leading expert in Blockchain Technology with a Ph.D. in Computer Science. She has been teaching at the college for over 12 years and has a deep understanding of blockchain concepts and their applications. Dr. Iyer's courses cover topics such as blockchain architecture, smart contracts, and decentralized applications. She is passionate about research and has published several papers in top-tier journals. Dr. Iyer also leads a research group focused on developing innovative blockchain solutions for various industries. Her commitment to excellence in teaching and research has earned her a reputation as a highly respected faculty member.",
+    "courses": ["B.Tech", "M.Tech", "Ph.D.", "Specialized Course in Blockchain"]
+  },
+  {
+    "photo_url": "https://example.com/photos/a14.jpg",
+    "name": "Prof. Manish Tiwari",
+    "age": 46,
+    "specialization": "Big Data Analytics",
+    "qualification": "M.Tech in Data Science",
+    "description": "Prof. Manish Tiwari is an expert in Big Data Analytics with over 20 years of experience in academia and industry. He has been instrumental in establishing the big data lab at the college, providing students with hands-on experience in working with big data technologies such as Hadoop, Spark, and Kafka. Prof. Tiwari's courses cover a wide range of topics, including data warehousing, data mining, and data visualization. He is passionate about teaching and ensures that his students are well-prepared for the challenges of the rapidly evolving big data industry. Prof. Tiwari also collaborates with industry partners on various big data projects, offering students opportunities to work on real-world problems.",
+    "courses": ["B.Tech", "M.Tech", "BCA", "Specialized Course in Big Data Analytics"]
+  },
+  {
+    "photo_url": "https://example.com/photos/a15.jpg",
+    "name": "Dr. Sunita Reddy",
+    "age": 41,
+    "specialization": "Robotics",
+    "qualification": "Ph.D. in Robotics",
+    "description": "Dr. Sunita Reddy is a renowned expert in Robotics with a Ph.D. in Robotics. She has been teaching at the college for over 15 years and has made significant contributions to the field through her research work. Dr. Reddy's courses cover a wide range of topics, including robot kinematics, robot dynamics, and robot programming. She is dedicated to providing her students with a deep understanding of robotics concepts and practical skills. Dr. Reddy also collaborates with industry partners on various robotics projects, offering students opportunities to work on real-world problems and gain valuable experience. Her commitment to excellence in teaching and research has earned her numerous accolades.",
+    "courses": ["B.Tech", "M.Tech", "Ph.D.", "Specialized Course in Robotics"]
+  },
+  {
+    "photo_url": "https://example.com/photos/a16.jpg",
+    "name": "Prof. Prakash Naidu",
+    "age": 44,
+    "specialization": "Embedded Systems",
+    "qualification": "M.Tech in Embedded Systems",
+    "description": "Prof. Prakash Naidu is an experienced faculty member specializing in Embedded Systems. With over 18 years of teaching experience, he has a comprehensive understanding of embedded systems and their applications. Prof. Naidu's courses emphasize hands-on learning, where students work on building and programming embedded systems using various microcontrollers and development boards. He is well-versed in various embedded system tools and technologies, such as Arduino, Raspberry Pi, and ARM Cortex. Prof. Naidu also mentors students on their embedded system projects, guiding them from concept to deployment. His dedication to teaching and his ability to stay updated with the latest trends make him a valuable asset to the college.",
+    "courses": ["B.Tech", "M.Tech", "BCA", "Specialized Course in Embedded Systems"]
+  },
+  {
+    "photo_url": "https://example.com/photos/a17.jpg",
+    "name": "Dr. Nisha Mehta",
+    "age": 37,
+    "specialization": "Human-Computer Interaction",
+    "qualification": "Ph.D. in Computer Science",
+    "description": "Dr. Nisha Mehta is a leading expert in Human-Computer Interaction (HCI) with a Ph.D. in Computer Science. She has been teaching at the college for over 10 years and has a deep understanding of HCI concepts and their applications. Dr. Mehta's courses cover topics such as user interface design, usability testing, and user experience design. She is passionate about research and has published several papers in top-tier journals. Dr. Mehta also leads a research group focused on developing innovative HCI solutions for various industries. Her commitment to excellence in teaching and research has earned her a reputation as a highly respected faculty member.",
+    "courses": ["B.Tech", "M.Tech", "Ph.D.", "Specialized Course in HCI"]
+  },
+  {
+    "photo_url": "https://example.com/photos/a18.jpg",
+    "name": "Prof. Sanjay Gupta",
+    "age": 42,
+    "specialization": "Internet of Things (IoT)",
+    "qualification": "M.Tech in Computer Science",
+    "description": "Prof. Sanjay Gupta is an expert in Internet of Things (IoT) with over 15 years of experience in academia and industry. He has been instrumental in developing the IoT curriculum at the college, ensuring that it meets the highest standards. Prof. Gupta's courses focus on both theoretical and practical aspects of IoT, covering topics such as sensor networks, IoT protocols, and IoT security. He is also actively involved in research and consultancy work, helping organizations to implement IoT solutions. Prof. Gupta's dedication to teaching and his ability to keep up with the latest developments in the field make him a sought-after faculty member.",
+    "courses": ["B.Tech", "M.Tech", "BCA", "Specialized Course in IoT"]
+  },
+  {
+    "photo_url": "https://example.com/photos/a19.jpg",
+    "name": "Dr. Seema Chauhan",
+    "age": 35,
+    "specialization": "Computer Graphics",
+    "qualification": "Ph.D. in Computer Science",
+    "description": "Dr. Seema Chauhan is a distinguished faculty member with a specialization in Computer Graphics. With over 10 years of teaching experience, she has a deep understanding of graphics concepts and technologies. Dr. Chauhan's courses cover topics such as 3D modeling, animation, and visualization. She is dedicated to providing her students with a thorough understanding of computer graphics and their applications. Dr. Chauhan has also published several research papers in reputed journals and has presented her work at various conferences. Her commitment to teaching and research has made her a highly respected member of the faculty.",
+    "courses": ["B.Tech", "M.Tech", "BCA", "Specialized Course in Computer Graphics"]
+  },
+  {
+    "photo_url": "https://example.com/photos/a20.jpg",
+    "name": "Prof. Tarun Sethi",
+    "age": 45,
+    "specialization": "Artificial Intelligence and Machine Learning",
+    "qualification": "Ph.D. in Artificial Intelligence",
+    "description": "Prof. Tarun Sethi is an expert in Artificial Intelligence and Machine Learning with over 20 years of teaching and research experience. He has been instrumental in developing the AI/ML curriculum at the college, ensuring that it meets the highest standards. Prof. Sethi's courses cover a wide range of topics, including supervised and unsupervised learning, neural networks, and deep learning. He is passionate about teaching and ensures that his students get ample opportunities to work on real-world projects. Prof. Sethi also collaborates with industry partners on various AI/ML projects, offering students opportunities to work on real-world problems. His dedication to teaching and his ability to keep up with the latest developments in the field make him a valuable asset to the college.",
+    "courses": ["B.Tech", "M.Tech", "Ph.D.", "Specialized Course in AI/ML"]
+  }
+]

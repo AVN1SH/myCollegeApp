@@ -1,0 +1,27 @@
+{
+  "welcomeMessage": "A place where excellence in education meets a vibrant campus life. Our mission is to nurture and develop the talents of our students, preparing them to make meaningful contributions to society.",
+
+  "history": "Founded in 2000, MY College has grown into a prestigious institution known for its academic rigor and commitment to student success. We are verified by University Grants Commission and approved by All India Council for Technical Education (AICTE).",
+
+  "academicPrograms": {
+    "undergraduatePrograms": ["B.A.", "B.Sc.", "B.Com.", "B.Tech."],
+    "graduatePrograms": ["M.A.", "M.Sc.", "MBA", "M.Tech."],
+    "specialPrograms": ["Honors programs", "Study abroad", "Online courses"]
+  },
+  "campusLife": {
+    "facilities": ["State-of-the-art libraries", "Modern laboratories", "Comfortable dormitories", "Recreational areas"],
+    "studentOrganizations": ["50+ student clubs and organizations"],
+    "events": ["Annual cultural fest", "Sports day", "Academic conferences"]
+  },
+  "admissions": {
+    "process": "Apply online and submit required documents.",
+    "requirements": ["High school diploma", "Entrance exam scores", "Letters of recommendation"],
+    "financialAid": ["Scholarships", "Grants", "Financial aid options"]
+  },
+  "contact": {
+    "email": "admissions@[collegename].edu",
+    "phone": "+91-1234-567890",
+    "address": "123 College Street, Sitamarhi, Bihar, 843302",
+    "campusMap": "[Link to interactive map]"
+  }
+}
