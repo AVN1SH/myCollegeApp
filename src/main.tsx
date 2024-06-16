@@ -40,7 +40,7 @@ import StudentProtectedRoute from './components/auth/StudentProtectedRoute.tsx'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App />}>
-      <Route path='' element={<Home />} />
+      <Route path='/' element={<Home />} />
       <Route path="/registration" element={<Registration />} />
       <Route path="/login" element={<LogIn />} />
       <Route path="/faculty/login" element={<FacultyLogin />} />
