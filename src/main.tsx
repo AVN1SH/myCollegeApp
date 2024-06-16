@@ -5,6 +5,7 @@ import './index.css'
 
 import Home from "./pages/Home.tsx"
 import Layout from "./pages/studentDashboard/Layout.tsx"
+import FaLayout from "./pages/facultyDashboard/FaLayout.tsx"
 import Overview from "./pages/studentDashboard/Overview.tsx"
 import FaOverview from './pages/facultyDashboard/FaOverview.tsx'
 import {Route, RouterProvider, createBrowserRouter, createRoutesFromElements} from "react-router-dom";
@@ -66,7 +67,7 @@ const router = createBrowserRouter(
         <Route path="result" element={<ProtectedRoute><StudentProtectedRoute><Results /></StudentProtectedRoute></ProtectedRoute>} />
       </Route>
 
-      <Route path="/faculty-dashboard" element={<ProtectedRoute><FacultyProtectedRoute><Layout /></FacultyProtectedRoute></ProtectedRoute>}>
+      <Route path="/faculty-dashboard" element={<ProtectedRoute><FacultyProtectedRoute><FaLayout /></FacultyProtectedRoute></ProtectedRoute>}>
         <Route path="overview" element={<ProtectedRoute><FacultyProtectedRoute><FaOverview /></FacultyProtectedRoute></ProtectedRoute>} />
         <Route path="feedback" element={<ProtectedRoute><FacultyProtectedRoute><FeedBack /></FacultyProtectedRoute></ProtectedRoute>} />
         <Route path="class" element={<ProtectedRoute><FacultyProtectedRoute><Class /></FacultyProtectedRoute></ProtectedRoute>} />
