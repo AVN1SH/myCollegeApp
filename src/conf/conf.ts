@@ -3,15 +3,15 @@
 import axios from "axios"
 
 const api = axios.create({
-  baseURL : `/api/users`,
+  baseURL : `${import.meta.env.VITE_MY_API_URI}/api/users`,
   withCredentials : true
 });
 const stdApi = axios.create({
-  baseURL : `/api/student`,
+  baseURL : `${import.meta.env.VITE_MY_API_URI}/api/student`,
   withCredentials : true
 });
 const facultyApi = axios.create({
-  baseURL : `/api/faculty`,
+  baseURL : `${import.meta.env.VITE_MY_API_URI}/api/faculty`,
   withCredentials : true
 });
 
