@@ -7,7 +7,7 @@ const Banner3 = () => {
         <div className="md:flex items-center justify-between ">
           <h1 className="text-5xl font-bold text-slate-700 my-2">Leading the AI Revolution:<br/>Join Our Dynamic Learning Community.</h1>
           <div className="md-shrink-0 my-2 md:h-[200px]">
-            <img src="../../../images/banner3.png" alt="" className="md:h-[200px] object-contain"/>
+            <img src="/images/banner3.png" alt="" className="md:h-[200px] object-contain"/>
           </div>
         </div>
       </div>

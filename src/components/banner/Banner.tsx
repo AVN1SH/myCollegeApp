@@ -7,7 +7,7 @@ const Banner = () => {
         <div className="md:flex items-center justify-between">
           <h1 className="text-5xl font-bold text-slate-700 my-2">Redefining Education<br/>with Next-Gen Tech Courses.</h1>
           <div className="md-shrink-0 my-2">
-            <img src="../../../images/img_image_210x374.png" alt="" className="md:h-[200px] object-contain" />
+            <img src="/images/img_image_210x374.png" alt="" className="md:h-[200px] object-contain" />
           </div>
         </div>
       </div>

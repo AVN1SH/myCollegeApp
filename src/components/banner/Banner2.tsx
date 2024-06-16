@@ -7,7 +7,7 @@ const Banner2 = () => {
         <div className="md:flex items-center justify-between ">
           <h1 className="text-5xl font-bold text-slate-700 my-2">Experience the Future of Learning :<br/>Explore Our Latest Tech Curriculum.</h1>
           <div className="md-shrink-0 my-2 md:h-[200px]">
-            <img src="../../../images/Layer1.png" alt="" className="md:h-[200px] object-contain"/>
+            <img src="/images/Layer1.png" alt="" className="md:h-[200px] object-contain"/>
           </div>
         </div>
       </div>
