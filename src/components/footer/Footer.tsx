@@ -53,7 +53,7 @@ const Footer = () => {
           </div>
           <hr className="block xl:hidden m-3 border-gray-300"/>
         </div>
-        <div className="flex space-x-2 justify-between w-full">
+        <div className="flex space-x-2 justify-between w-full flex-col md:flex-row md:space-y-0 space-y-2">
           <div className="flex flex-col whitespace-nowrap space-y-4 w-40">
             <h1 className="font-bold text-xl text-slate-800 ">Student</h1>
             {student.map((item) => (
