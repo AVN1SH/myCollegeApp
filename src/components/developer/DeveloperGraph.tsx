@@ -1,5 +1,5 @@
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Doughnut } from 'react-chartjs-2';
+import { Doughnut, Pie } from 'react-chartjs-2';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -7,7 +7,7 @@ interface Props {
   labels : string[];
   label : string;
   value : number[];
-  color ?: string;
+  color ?: string[];
 }
 
 
@@ -26,20 +26,14 @@ export const options = {
   },
 };
 
-export function ContributeGraph({labels, label, value, color} : Props) {
+export function DeveloperGraph({labels, label, value, color} : Props) {
   const data = {
     labels: labels,
     datasets: [
       {
         label: label,
         data: value,
-        backgroundColor: [
-          'rgba(13, 159, 255, 1)',
-          'rgba(255, 218, 0, 1)',
-          'rgba(135, 12, 255, 1)',
-          color ? color : 'rgba(255, 0, 0, 1)',
-
-        ],
+        backgroundColor: color,
         borderColor: [
           'rgba(41 ,43 ,47, 1)'
           // 'rgba(255, 99, 132, 1)',

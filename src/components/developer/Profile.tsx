@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-import { ContributeGraph } from '@/components/developer/ContributeGraph';
+import { DeveloperGraph } from '@/components/developer/DeveloperGraph';
 
 interface Props {
   name : string;
@@ -20,9 +20,23 @@ interface Props {
     label : string;
     value :number[];
   };
+  currentStatus ? : string;
+  skills ?: {
+    frontend : {
+      labels : string[];
+      label : string;
+      value : number[];
+    }
+    backend : {
+      labels : string[];
+      label : string;
+      value : number[];
+    }
+    additional : string[];
+  }
 }
 
-const Profile = ({name, photo, role, email, about, frontend, backend} : Props) => {
+const Profile = ({name, photo, role, email, about, frontend, backend, currentStatus, skills} : Props) => {
 
   return (
     <div>
@@ -59,33 +73,90 @@ const Profile = ({name, photo, role, email, about, frontend, backend} : Props) =
         </div>
         <div className="absolute bg-gradient-to-t from-[rgba(41,43,47)] w-full h-[100px] bottom-[calc(100%-300px)] sm:bottom-0" />
       </div>
-      <div className="container mt-5 space-y-2">
-        <h1 className='text-white text-3xl font-bold'>About</h1>
-        <div className="text-slate-300"><div className="h-[2px] w-8 bg-orange-500 inline-block"/>{about}</div>
-      </div>
 
-      <div className="container mt-5 space-y-2">
-        <h1 className='text-white text-3xl font-bold'>Contribution In This Project</h1>
+      <div className="container mt-5 mb-10 space-y-2">
+        <h1 className='text-white text-3xl font-bold'>Contribution On This Project</h1>
         <div className="flex items-center gap-8 md:gap-2 flex-col md:flex-row">
           {frontend && <div className="w-[300px] h-[300px]">
             <h1 className="text-xl text-slate-400 font-semibold"><div className="h-[2px] w-4 bg-orange-500 inline-block"/>Front-end contributions : {frontend.contribution}</h1>
-            <ContributeGraph 
+            <DeveloperGraph 
               labels={frontend.labels}
               label={frontend.label}
               value={frontend.value}
+              color={[
+                'rgba(13, 159, 255, 1)',
+                'rgba(255, 218, 0, 1)',
+                'rgba(135, 12, 255, 1)',
+                'rgba(255, 50, 50, 1)'
+              ]}
             />
           </div>}
           {backend && <div className="w-[300px] h-[300px]">
             <h1 className="text-xl text-slate-400 font-semibold"><div className="h-[2px] w-4 bg-orange-500 inline-block"/>Back-end contributions : {backend.contribution}</h1>
-            <ContributeGraph 
+            <DeveloperGraph 
               labels={backend.labels}
-              color="rgba(30, 35, 38, 1)"
+              color={[
+                'rgba(13, 159, 255, 1)',
+                'rgba(255, 218, 0, 1)',
+                'rgba(135, 12, 255, 1)',
+                'rgba(30, 35, 38, 1)'
+              ]}
               label={backend.label}
               value={backend.value}
             />
           </div>}
         </div>
       </div>
+
+      <div className="container mt-5 space-y-2">
+        <h1 className='text-white text-3xl font-bold'>About</h1>
+        <div className="text-slate-300"><div className="h-[2px] w-8 bg-orange-500 inline-block"/>{about}</div>
+      </div>
+
+      {currentStatus && <div className="container mt-5 space-y-2">
+        <h1 className='text-white text-3xl font-bold'>Current Status</h1>
+        <div className="text-slate-300"><div className="h-[2px] w-8 bg-orange-500 inline-block"/>{about}</div>
+      </div>}
+
+      {skills && <div className="container mt-5 mb-10 space-y-2 flex flex-col gap-8">
+        <h1 className='text-white text-3xl font-bold'>Skills</h1>
+        <div className="flex items-center gap-8 md:gap-2 flex-col md:flex-row">
+          {skills?.frontend && <div className="w-[300px] h-[300px]">
+            <h1 className="text-xl text-slate-400 font-semibold"><div className="h-[2px] w-4 bg-orange-500 inline-block"/>Front-end skills</h1>
+            <DeveloperGraph 
+              labels={skills.frontend.labels}
+              label={skills.frontend.label}
+              value={skills.frontend.value}
+              color={[
+                'rgba(13, 159, 255, 1)',
+                'rgba(255, 218, 0, 1)',
+                'rgba(135, 12, 255, 1)',
+                'rgba(255, 50, 50, 1)'
+              ]}
+            />
+          </div>}
+          {skills?.backend && <div className="w-[300px] h-[300px]">
+            <h1 className="text-xl text-slate-400 font-semibold"><div className="h-[2px] w-4 bg-orange-500 inline-block"/>Back-end skills</h1>
+            <DeveloperGraph 
+              labels={skills.backend.labels}
+              label={skills.backend.label}
+              value={skills.backend.value}
+              color={[
+                'rgba(13, 159, 255, 1)',
+                'rgba(255, 218, 0, 1)',
+                'rgba(135, 12, 255, 1)',
+                'rgb(23, 239, 0, 1)',
+                'rgb(255, 93, 192, 1)',
+                'rgb(255, 50, 50, 1)',
+              ]}
+            />
+          </div>}
+        </div>
+        {skills.additional && <div className="container mt-5 space-y-2">
+          <h1 className='text-white text-3xl font-bold'>Additional skills</h1>
+          <div className="text-slate-300 text-xl"><div className="h-[2px] w-8 bg-orange-500 inline-block"/>{(skills.additional.map((skill) => skill + ", "))}</div>
+        </div>}
+      </div>}
     </div>
   )
 }

@@ -7,6 +7,7 @@ export interface Developer {
   role : string[];
   email : string;
   about : string;
+  currentStatus : string;
   frontend ?: {
     contribution : string;
     labels : string[];
@@ -19,6 +20,19 @@ export interface Developer {
     label : string;
     value :number[];
   };
+  skills : {
+    frontend : {
+      labels : string[];
+      label : string;
+      value : number[];
+    }
+    backend : {
+      labels : string[];
+      label : string;
+      value : number[];
+    }
+    additional : string[];
+  }
 }
 
 const Developer: React.FC = () => {
@@ -48,12 +62,14 @@ const Developer: React.FC = () => {
         <div className='flex-[1] border-orange-500 w-[clac(100%-90px)] border-solid border-[1px] h-screen rounded overflow-y-scroll custom-scroll-bar'>
           {data && <Profile 
             name={data[1].name}
+            currentStatus={data[1].currentStatus}
             photo={data[1].photo}
             role={data[1].role}
             email={data[1].email}
             about={data[1].about}
             frontend={data[1].frontend}
             backend={data[1].backend}
+            skills={data[1].skills}
           />}
         </div>
       </div>

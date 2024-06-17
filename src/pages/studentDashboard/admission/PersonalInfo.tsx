@@ -156,7 +156,7 @@ const PersonalInfo = () => {
                         <Input 
                           type="text" 
                           disabled = {userData?.first_name ? true : false}
-                          placeholder={userData ? userData.first_name + ' ' + userData.middle_name + ' ' + userData.last_name : "eg : Jhon"}
+                          placeholder={userData ? userData.first_name + ' ' + (userData.middle_name ? userData.middle_name : '') + ' ' + (userData.last_name ? userData.last_name : '') : "eg:Jhon"}
                           {...field} 
                         />
                       </FormControl>

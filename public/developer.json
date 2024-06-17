@@ -20,10 +20,12 @@
   },
   {
     "name" : "Vikas Kumar",
-    "role" : ["Backend-Developer"],
+    "role" : ["Database Designer","Front-end Developer","Backend-Developer"],
     "photo" : "/images/developer/vikas.png",
+    "phone":  "+91-7256945437",
     "email" : "vikaskumarstm83@gmail.com",
-    "about" : "Teacher at Aptech Computer As a dedicated educator at Aptech Computer, Vikas Kumar specializes in imparting knowledge on various programming languages and web development technologies. With a strong passion for teaching, Vikas Kumar has successfully mentored numerous students, guiding them to become proficient developers in both frontend and backend technologies.",
+    "about" : "From 6 months in full stack web  Developer with designing, developing, and managing web applications. Seeking opportunities to contribute expertise in client/server architecture, Internet, and Intranet applications development in a dynamic and collaborative environment.",
+    "currentStatus":"Teacher at Aptech Computer As a dedicated educator at Aptech Computer, Vikas Kumar specializes in imparting knowledge on various programming languages and web development technologies. With a strong passion for teaching, Vikas Kumar has successfully mentored numerous students, guiding them to become proficient developers in both frontend and backend technologies.",
     "Hobies" : [
       {
         "title" : "Coding",
@@ -38,11 +40,27 @@
         "content" : "Actively participates in local cricket matches, enjoying the team spirit and physical activity."
       }
     ],
+
     "backend" : {
       "contribution" : "80%",
-      "labels" : ["Model Relation", "Models", "Django Rest API", "Not Contributed"],
+      "labels" : ["Python", "Django", "Django Rest-Framework", "Not Contributed"],
       "label" : "My Contribution",
-      "value" : [20, 10, 50, 20]
+      "value" : [20, 40, 20, 20]
+    },
+
+    "skills" : {
+      "frontend" : {
+        "labels" : ["TypeScript", "CSS", "Json", "HTML"],
+        "label" : "Skills %",
+        "value" : [50, 30, 100, 90]
+      },
+      "backend" : {
+        "labels" : ["Python", "Django", "Django Rest-Framework", "SQLite", "MySQL", "MS-Access"],
+        "label" : "Skill %",
+        "value" : [90, 70, 95, 70, 90, 95]
+      },
+
+      "additional" : ["c/c++", "Java"]
     }
   }
 ]
