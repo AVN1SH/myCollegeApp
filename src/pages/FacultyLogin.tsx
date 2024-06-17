@@ -21,6 +21,7 @@ import { faEye, faEyeSlash, faGraduationCap } from "@fortawesome/free-solid-svg-
 import djangoService from "@/Django/django"
 import { useDispatch } from "react-redux"
 import {login as authSignIn} from "../features/authSlice";
+import { toast } from "sonner"
 
 const FacultyLogin = () => {
   // const [email, setEmail] = useState('');
@@ -68,8 +69,15 @@ const FacultyLogin = () => {
       });
       if(userData) {
         dispatch(authSignIn(userData));
-        navigate("/student-dashboard/admission/personal-info");
+        navigate("/faculty-dashboard/overview");
         setError('');
+        toast("Login Successfully..!", {
+          description : "Welcome to our College",
+          action: {
+            label: "ok",
+            onClick: () => console.log(''),
+          },
+        })
       }
       setIsSubmitting(false);
     } catch (error : any) {

@@ -145,7 +145,7 @@ const NavBar = () => {
                       {!authStatus && <Menu.Item>
                         {({ active }) => (
                           <Link
-                            to="/faculty/login"
+                            to="/faculty-login"
                             className={classNames(active ? 'bg-gray-100' : '', 'px-4 py-2 text-sm text-gray-700 flex justify-between hover:text-orange-400 hover:pl-6 duration-150')}
                           >
                             Faculty Login <ArrowRightStartOnRectangleIcon className="h-5 w-5" />
@@ -165,7 +165,7 @@ const NavBar = () => {
                       {authStatus && <Menu.Item>
                         {({ active }) => (
                           <Link
-                            to="/student-dashboard/overview"
+                            to={user?.role === 'student' ? "/student-dashboard/overview" : "/faculty-dashboard/overview"}
                             className={classNames(active ? 'bg-gray-100' : '', 'px-4 py-2 text-sm text-gray-700 flex justify-between hover:text-orange-400 hover:pl-6 duration-150')}
                           >
                             Dashboard <ArrowRightStartOnRectangleIcon className="h-5 w-5" />

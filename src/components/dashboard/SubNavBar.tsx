@@ -32,7 +32,7 @@ const SubNavBar = () => {
               aria-current={item.current ? 'page' : undefined}
             >
               {<FontAwesomeIcon icon={item.icon as any} />}
-              {item.name}
+              <p className="hidden lg:block">{item.name}</p>
             </Link>
           }
         })}

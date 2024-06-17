@@ -86,7 +86,7 @@ const Registration = () => {
         password : values.password,
       });
       if(regData) {
-        navigate("/login");
+        values.collegeID ? navigate("/faculy-login") : navigate("/login");
         setError('');
         toast("Registred Successfully..!", {
           description : "Login to Continue access your dashboard.",

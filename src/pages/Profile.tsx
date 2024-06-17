@@ -24,20 +24,20 @@ const Profile = () => {
           <div className="absolute left-8 top-16 flex items-center gap-3">
             {faculties![Number(id)].photo_url ? <img src={`/images/faculty/${faculties![Number(id)].photo_url}`} className=" object-center object-cover w-40 h-40  rounded-xl" /> : <FontAwesomeIcon icon={faUser} className="w-[140px] h-[140px] rounded-xl border-slate-500 border-solid border-2 p-2 bg-slate-700 text-slate-300"/>}
             <div className="pb-[10px]">
-              <p className="font-semibold text-3xl text-slate-800">{faculties![Number(id)].name}</p>
-              <p className="font-semibold text-slate-600">Age : {faculties![Number(id)].age}</p>
+              <p className="font-semibold text-xl md:text-2xl lg:text-3xl text-slate-800">{faculties![Number(id)].name}</p>
+              <p className="font-semibold text-slate-600 text-xs md:text-sm lg:text-lg">Age : {faculties![Number(id)].age}</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="flex gap-8 flex-col md:flex-row">
+      <div className="flex gap-8 flex-col lg:flex-row">
         <div className="flex-[1.7]">
-          <div className="flex gap-2 w-full justify-between">
-            <Button className="px-16 bg-orange-500 hover:bg-orange-600 duration-150">About</Button>
-            <Button className="px-16 bg-slate-600 hover:bg-orange-600 duration-150">Course</Button>
-            <Button className="px-16 bg-slate-600 hover:bg-orange-600 duration-150">Reviews</Button>
-            <Button className="px-16 bg-slate-600 hover:bg-orange-600 duration-150">Contacts</Button>
+          <div className="sm:flex gap-2 w-full justify-between grid grid-cols-2">
+            <Button className="px-8 xl:px-16 bg-orange-500 hover:bg-orange-600 duration-150">About</Button>
+            <Button className="px-8 xl:px-16 bg-slate-600 hover:bg-orange-600 duration-150">Course</Button>
+            <Button className="px-8 xl:px-16 bg-slate-600 hover:bg-orange-600 duration-150">Reviews</Button>
+            <Button className="px-8 xl:px-16 bg-slate-600 hover:bg-orange-600 duration-150">Contacts</Button>
           </div>
           <div className=" mt-5 space-y-2">
             <h1 className="font-bold text-2xl text-slate-800">About {faculties![Number(id)].name}</h1>

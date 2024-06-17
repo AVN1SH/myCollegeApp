@@ -106,11 +106,11 @@ const Class = () => {
   return (
     <div className="relative m-1 w-[clac(100%-280px)]">
       <div className="absolute w-full bg-orange-500 h-72 rounded">
-        <h1 className="font-bold text-3xl pl-3 pt-3 text-white">
+        <h1 className="font-bold text-md md:text-xl lg:text-3xl pl-3 pt-3 text-white">
           Classes | <span className="font-thin">Set your class schedules</span>
         </h1>
       </div>
-      <div className="absolute border-slate-400 border-[1px] border-solid flex flex-col bg-gray-100 w-[calc(100%-100px)] top-24 left-1/2 -translate-x-1/2 min-h-[calc(100vh-11rem)] rounded p-3">
+      <div className="absolute border-slate-400 border-[1px] border-solid flex flex-col bg-gray-100 w-[calc(100%-5px)] md:w-[calc(100%-60px)] lg:w-[calc(100%-100px)] top-16 md:top-20 lg:top-24 left-1/2 -translate-x-1/2 min-h-[calc(100vh-11rem)] rounded lg:p-3 p-1">
         <div className="font-semibold text-2xl text-slate-700 bg-white mb-1 rounded p-2 pl-2 shadow-md"><FontAwesomeIcon icon={faCalendar}/> {formattedDate}<span className="divider-vertical border-solid border-[1px] border-orange-300 mx-2"></span><span className="font-thin text-md">{formattedWeek}</span>
         </div>
         <div className="flex bg-gray-100 justify-between w-full gap-1">
