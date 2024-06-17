@@ -81,18 +81,18 @@ const Docs = () => {
   return (
     <div className="relative m-1 w-[clac(100%-280px)]">
       <div className="absolute w-full bg-orange-500 h-72 rounded">
-        <h1 className="font-bold text-md md:text-xl lg:text-3xl pl-3 pt-3 text-white">
+        <h1 className="font-bold text-sm md:text-xl lg:text-3xl pl-3 pt-3 text-white">
           Documentaions <span className="text-slate-800 font-thin">| </span><span className="font-thin">Upload Your Docuements</span>
         </h1>
       </div>
       <div className="absolute border-slate-400 border-[1px] border-solid flex flex-col bg-gray-100 w-[calc(100%-5px)] md:w-[calc(100%-60px)] lg:w-[calc(100%-100px)] top-16 md:top-20 lg:top-24 left-1/2 -translate-x-1/2 min-h-[calc(100vh-11rem)] rounded lg:p-3 p-1">
         <div className="flex justify-center items-center min-h-screen bg-gray-100 w-full">
-          <div className="w-full max-w-2xl p-8 space-y-8 bg-white rounded-lg shadow-md my-3">
+          <div className="w-full max-w-2xl p-2 lg:p-8 space-y-2 lg:space-y-8 bg-white rounded-lg shadow-md my-3">
             <div className="text-center">
-              <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6 text-slate-800">
+              <h1 className="xl sm:text-2xl md:text-4xl font-extrabold tracking-tight lg:text-5xl mb-6 text-slate-800">
                 <FontAwesomeIcon icon={faGraduationCap} /> Documentation
               </h1>
-              <p className="mb-4 text-md font-semibold text-orange-600"><b className="text-slate-600">Documentation,</b> Please read instructions before uploading documents.</p>
+              <p className="mb-4 text-xs lg:text-sm font-semibold text-orange-600"><b className="text-slate-600">Documentation,</b> Please read instructions before uploading documents.</p>
             </div>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
@@ -101,7 +101,7 @@ const Docs = () => {
                   control={form.control}
                   render={({ }) => (
                     <FormItem>
-                      <FormLabel>Profile Photo | Required</FormLabel>
+                      <FormLabel className="text-xs md:text-sm">Profile Photo | Required</FormLabel>
                       <FormControl>
                         <Input 
                           type="file" 
@@ -110,7 +110,7 @@ const Docs = () => {
                           {...form.register("photo", { required: true })} 
                         />
                       </FormControl>
-                      <FormDescription>
+                      <FormDescription className="text-xs md:text-sm">
                         Picture Must be clearly visible and readable,
                       <span className="text-blue-500 font-bold"> .jpg, .png, .jpeg</span> format file only.
                       </FormDescription>
@@ -123,7 +123,7 @@ const Docs = () => {
                   control={form.control}
                   render={({ }) => (
                     <FormItem>
-                      <FormLabel>Signature Phote | Required</FormLabel>
+                      <FormLabel className="text-xs md:text-sm">Signature Phote | Required</FormLabel>
                       <FormControl>
                         <Input 
                           type="file" 
@@ -133,7 +133,7 @@ const Docs = () => {
                           {...form.register("signature", { required: true })}
                         />
                       </FormControl>
-                      <FormDescription>
+                      <FormDescription className="text-xs md:text-sm">
                       Picture Must be clearly visible and readable,
                       <span className="text-blue-500 font-bold"> .jpg, .png, .jpeg</span> format file only.
                       </FormDescription>
@@ -146,7 +146,7 @@ const Docs = () => {
                   control={form.control}
                   render={({ }) => (
                     <FormItem>
-                      <FormLabel>Unique Identification card | Required</FormLabel>
+                      <FormLabel className="text-xs md:text-sm">Unique Identification card | Required</FormLabel>
                       <FormControl>
                         <Input 
                           type="file" 
@@ -156,7 +156,7 @@ const Docs = () => {
                           {...form.register("uniqueId", { required: true })} 
                         />
                       </FormControl>
-                      <FormDescription>
+                      <FormDescription className="text-xs md:text-sm">
                         Unique Cards Like : Aadhaar Card, PAN Card, Voter Id, Passport, etc that must be approved by Government Of India.
                         <span className="text-blue-500 font-bold"> .pdf</span> file only
                       </FormDescription>
@@ -169,7 +169,7 @@ const Docs = () => {
                   control={form.control}
                   render={({ }) => (
                     <FormItem>
-                      <FormLabel>10Th MarkSheet | Required</FormLabel>
+                      <FormLabel className="text-xs md:text-sm">10Th MarkSheet | Required</FormLabel>
                       <FormControl>
                         <Input 
                           type="file" 
@@ -179,7 +179,7 @@ const Docs = () => {
                           {...form.register("tenthMarksheet", { required: true })} 
                         />
                       </FormControl>
-                      <FormDescription>
+                      <FormDescription className="text-xs md:text-sm">
                       <span className="text-blue-500 font-bold"> .pdf</span> file only
                       </FormDescription>
                       <FormMessage className="text-xs" />
@@ -191,7 +191,7 @@ const Docs = () => {
                   control={form.control}
                   render={({ }) => (
                     <FormItem>
-                      <FormLabel>12th Marksheet | If Applicable</FormLabel>
+                      <FormLabel className="text-xs md:text-sm">12th Marksheet | If Applicable</FormLabel>
                       <FormControl>
                         <Input 
                           type="file" 
@@ -201,7 +201,7 @@ const Docs = () => {
                           {...form.register("twelfthMarksheet", { required: true })} 
                         />
                       </FormControl>
-                      <FormDescription>
+                      <FormDescription className="text-xs md:text-sm">
                       <span className="text-blue-500 font-bold"> .pdf</span> file only
                       </FormDescription>
                       <FormMessage className="text-xs" />
@@ -213,7 +213,7 @@ const Docs = () => {
                   control={form.control}
                   render={({ }) => (
                     <FormItem>
-                      <FormLabel>Graduation Marksheet | If Applicable</FormLabel>
+                      <FormLabel className="text-xs md:text-sm">Graduation Marksheet | If Applicable</FormLabel>
                       <FormControl>
                         <Input 
                           type="file" 
@@ -223,7 +223,7 @@ const Docs = () => {
                           {...form.register("graduationMarksheet", { required: true })} 
                         />
                       </FormControl>
-                      <FormDescription>
+                      <FormDescription className="text-xs md:text-sm">
                       <span className="text-blue-500 font-bold"> .pdf</span> file only
                       </FormDescription>
                       <FormMessage className="text-xs" />

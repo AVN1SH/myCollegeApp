@@ -364,14 +364,14 @@ const Results = () => {
   return (
     <div className="relative m-1 w-[clac(100%-280px)]">
       <div className="absolute w-full bg-orange-500 h-72 rounded">
-        <h1 className="font-bold text-md md:text-xl lg:text-3xl pl-3 pt-3 text-white">
+        <h1 className="font-bold text-sm md:text-xl lg:text-3xl pl-3 pt-3 text-white">
           Results / Grades <span className="text-slate-800 font-thin">| </span><span className="font-thin"> Your examination performance</span> 
         </h1>
       </div>
       <div className="absolute border-slate-400 border-[1px] border-solid flex flex-col bg-gray-100 w-[calc(100%-5px)] md:w-[calc(100%-60px)] lg:w-[calc(100%-100px)] top-16 md:top-20 lg:top-24 left-1/2 -translate-x-1/2 min-h-[calc(100vh-11rem)] rounded lg:p-3 p-1 space-y-2">
 
         {marks && <div className="font-semibold text-2xl text-slate-700 bg-white mb-1 rounded p-2 pl-2 w-full h-fit space-y-2 shadow-md">
-          <FontAwesomeIcon icon={faFileAlt}/> BCA<span className="divider-vertical border-solid border-[1px] border-orange-300 mx-2"></span><span className="font-thin text-md"> OverAll Marks and Performance</span>
+          <FontAwesomeIcon icon={faFileAlt}/> BCA<span className="divider-vertical border-solid border-[1px] border-orange-300 mx-2"></span><span className="font-thin text-sm"> OverAll Marks and Performance</span>
           <div className="flex rounded gap-3 bg-gray-100 lg:flex-row flex-col">
             <MarksTable caption={tableData.overAll.caption} headData={tableData.overAll.head} rowData={tableData.overAll.row} />
             <div className="bg-white sm:flex sm:items-center sm:justify-center xl:items-start xl:justify-start">
@@ -408,8 +408,8 @@ const Results = () => {
         </div>}
 
         {marks?.sem1 && <div className="font-semibold text-2xl text-slate-700 bg-white mb-1 rounded p-2 pl-2 w-full h-fit space-y-2 shadow-md">
-          <FontAwesomeIcon icon={faFileAlt}/> Semester 1st<span className="divider-vertical border-solid border-[1px] border-orange-300 mx-2"></span><span className="font-thin text-md"> Your Marks and Performance</span>
-          <div className="flex rounded gap-3 bg-gray-100 xl:flex-row sm:flex-col">
+          <FontAwesomeIcon icon={faFileAlt}/> Semester 1st<span className="divider-vertical border-solid border-[1px] border-orange-300 mx-2"></span><span className="font-thin text-sm"> Your Marks and Performance</span>
+          <div className="flex rounded gap-3 bg-gray-100 lg:flex-row flex-col">
             <MarksTable headData={tableData["1st"].head} caption={tableData["1st"].caption} rowData={tableData["1st"].row} />
             <div className="bg-white sm:flex sm:items-center sm:justify-center xl:items-start xl:justify-start">
             <MarksGraph 
@@ -438,8 +438,8 @@ const Results = () => {
         </div>}
 
         {marks?.sem2 && <div className="font-semibold text-2xl text-slate-700 bg-white mb-1 rounded p-2 pl-2 w-full h-fit space-y-2 shadow-md">
-          <FontAwesomeIcon icon={faFileAlt}/> Semester 2nd<span className="divider-vertical border-solid border-[1px] border-orange-300 mx-2"></span><span className="font-thin text-md"> Your Marks and Performance</span>
-          <div className="flex rounded gap-3 bg-gray-100 xl:flex-row sm:flex-col">
+          <FontAwesomeIcon icon={faFileAlt}/> Semester 2nd<span className="divider-vertical border-solid border-[1px] border-orange-300 mx-2"></span><span className="font-thin text-sm"> Your Marks and Performance</span>
+          <div className="flex rounded gap-3 bg-gray-100 lg:flex-row flex-col">
             <MarksTable headData={tableData["1st"].head} caption={tableData["1st"].caption} rowData={tableData["2nd"].row} />
             <div className="bg-white sm:flex sm:items-center sm:justify-center xl:items-start xl:justify-start">
             <MarksGraph 
@@ -468,8 +468,8 @@ const Results = () => {
         </div>}
 
         {marks?.sem3 && <div className="font-semibold text-2xl text-slate-700 bg-white mb-1 rounded p-2 pl-2 w-full h-fit space-y-2 shadow-md">
-          <FontAwesomeIcon icon={faFileAlt}/> Semester 3rd<span className="divider-vertical border-solid border-[1px] border-orange-300 mx-2"></span><span className="font-thin text-md"> Your Marks and Performance</span>
-          <div className="flex rounded gap-3 bg-gray-100 xl:flex-row sm:flex-col">
+          <FontAwesomeIcon icon={faFileAlt}/> Semester 3rd<span className="divider-vertical border-solid border-[1px] border-orange-300 mx-2"></span><span className="font-thin text-sm"> Your Marks and Performance</span>
+          <div className="flex rounded gap-3 bg-gray-100 lg:flex-row flex-col">
             <MarksTable headData={tableData["1st"].head} caption={tableData["1st"].caption} rowData={tableData["3rd"].row} />
             <div className="bg-white sm:flex sm:items-center sm:justify-center xl:items-start xl:justify-start">
             <MarksGraph 
@@ -498,8 +498,8 @@ const Results = () => {
         </div>}
 
         {marks?.sem4 && <div className="font-semibold text-2xl text-slate-700 bg-white mb-1 rounded p-2 pl-2 w-full h-fit space-y-2 shadow-md">
-          <FontAwesomeIcon icon={faFileAlt}/> Semester 4th<span className="divider-vertical border-solid border-[1px] border-orange-300 mx-2"></span><span className="font-thin text-md"> Your Marks and Performance</span>
-          <div className="flex rounded gap-3 bg-gray-100 xl:flex-row sm:flex-col">
+          <FontAwesomeIcon icon={faFileAlt}/> Semester 4th<span className="divider-vertical border-solid border-[1px] border-orange-300 mx-2"></span><span className="font-thin text-sm"> Your Marks and Performance</span>
+          <div className="flex rounded gap-3 bg-gray-100 lg:flex-row flex-col">
             <MarksTable headData={tableData["1st"].head} caption={tableData["1st"].caption} rowData={tableData["4th"].row} />
             <div className="bg-white sm:flex sm:items-center sm:justify-center xl:items-start xl:justify-start">
             <MarksGraph 
@@ -528,8 +528,8 @@ const Results = () => {
         </div>}
 
         {marks?.sem5 && <div className="font-semibold text-2xl text-slate-700 bg-white mb-1 rounded p-2 pl-2 w-full h-fit space-y-2 shadow-md">
-          <FontAwesomeIcon icon={faFileAlt}/> Semester 5th<span className="divider-vertical border-solid border-[1px] border-orange-300 mx-2"></span><span className="font-thin text-md"> Your Marks and Performance</span>
-          <div className="flex rounded gap-3 bg-gray-100 xl:flex-row sm:flex-col">
+          <FontAwesomeIcon icon={faFileAlt}/> Semester 5th<span className="divider-vertical border-solid border-[1px] border-orange-300 mx-2"></span><span className="font-thin text-sm"> Your Marks and Performance</span>
+          <div className="flex rounded gap-3 bg-gray-100 lg:flex-row flex-col">
             <MarksTable headData={tableData["1st"].head} caption={tableData["1st"].caption} rowData={tableData["5th"].row} />
             <div className="bg-white sm:flex sm:items-center sm:justify-center xl:items-start xl:justify-start">
             <MarksGraph 
@@ -558,8 +558,8 @@ const Results = () => {
           </div>
         </div>}
         {marks?.sem6 && <div className="font-semibold text-2xl text-slate-700 bg-white mb-1 rounded p-2 pl-2 w-full h-fit space-y-2 shadow-md">
-          <FontAwesomeIcon icon={faFileAlt}/> Semester 6th<span className="divider-vertical border-solid border-[1px] border-orange-300 mx-2"></span><span className="font-thin text-md"> Your Marks and Performance</span>
-          <div className="flex rounded gap-3 bg-gray-100 xl:flex-row sm:flex-col">
+          <FontAwesomeIcon icon={faFileAlt}/> Semester 6th<span className="divider-vertical border-solid border-[1px] border-orange-300 mx-2"></span><span className="font-thin text-sm"> Your Marks and Performance</span>
+          <div className="flex rounded gap-3 bg-gray-100 lg:flex-row flex-col">
             <MarksTable headData={tableData["1st"].head} caption={tableData["1st"].caption} rowData={tableData["5th"].row} />
             <div className="bg-white sm:flex sm:items-center sm:justify-center xl:items-start xl:justify-start">
             <MarksGraph 

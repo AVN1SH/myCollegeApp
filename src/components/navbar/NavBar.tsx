@@ -72,11 +72,11 @@ const NavBar = () => {
                       if(item.name === 'Developers') {
                         return <Link to={item.href}
                           className={classNames(
-                            path === item.href ? 'border-b-2 border-gray-900 border-solid text-black' : 'text-gray-700 hover:border-b-2 hover:border-gray-800 hover:border-solid',
-                            "px-3 py-2 text-sm font-medium h-full flex items-center flex-shrink-0 duration-75 relative overflow-hidden w-[100px] bg-clip-border before:content-[''] before:absolute before:top-[-40px] before:left-[-80px] before:w-[200px] before:h-[200px] before:bg-gradient-to-r before:from-indigo-600 before:via-purple-600 before:to-pink-600 motion-safe:before:animate-[spin_2s_linear_infinite] before:-z-10"
+                            
+                            "px-3 py-2 text-sm font-medium h-full flex items-center flex-shrink-0 duration-75 relative overflow-hidden w-[100px] bg-clip-border before:content-[''] before:absolute before:top-[-40px] before:left-[-80px] before:w-[200px] before:h-[200px] before:bg-gradient-to-r before:from-indigo-500 before:via-purple-500 before:to-pink-500 motion-safe:before:animate-[spin_2s_linear_infinite] before:-z-10"
                           )}
                         >
-                          <h1 className="absolute w-full h-full bg-white mix-blend-screen pt-[18px] left-0 font-semibold text-lg pl-1">{item.name}</h1>
+                          <h1 className={`${path === item.href ? 'border-b-2 border-gray-900 border-solid text-black' : 'text-gray-700 hover:border-b-2 hover:border-gray-800 hover:border-solid'} absolute w-full h-full bg-white mix-blend-screen pt-[18px] left-0 font-semibold text-lg pl-1 duration-150`}>{item.name}</h1>
                         </Link>
                       }
                       return <Link to={item.href}

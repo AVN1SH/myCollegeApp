@@ -96,12 +96,12 @@ const LogIn = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md my-3">
+      <div className="w-full max-w-md p-2 md:p-8 space-y-8 bg-white rounded-lg shadow-md my-3 mt-20 md:mt-0 m-2 md:m-0">
         <div className="text-center">
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6">
             <FontAwesomeIcon icon={faGraduationCap} /> My College
           </h1>
-          <p className="mb-4 text-md">Sign In To Your Account, If Not <Link to={"/registration"} className="text-blue-500 underline hover:font-semibold">Sign-Up</Link></p>
+          <p className="mb-4 text-sm">Sign In To Your Account, If Not <Link to={"/registration"} className="text-blue-500 underline hover:font-semibold">Sign-Up</Link></p>
         </div>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">

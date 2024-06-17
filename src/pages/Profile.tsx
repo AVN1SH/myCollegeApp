@@ -17,7 +17,7 @@ const Profile = () => {
     .catch((error) => console.error('Error fetching the JSON:', error));
   }, []);
   return faculties && (
-    <div className="py-28 md:ml-[100px] md:w-[calc(100%-200px)]  ml-[50px] w-[calc(100%-100px)]">
+    <div className="py-20 lg:py-28 md:ml-[100px] md:w-[calc(100%-200px)] ml-[10px] w-[calc(100%-40px)]">
       <div className="relative w-full h-[270px]">
         <div className="h-[140px] w-full bg-orange-200 rounded-xl">
           <p className="p-3 font-semibold text-slate-700">Home | Faculties | {faculties![Number(id)].name}</p>
@@ -46,28 +46,28 @@ const Profile = () => {
         </div>
 
         <div className="flex-[1] h-fit">
-          <div className="bg-white h-[400px] w-[400px] mx-auto rounded-xl shrink-0 flex flex-col justify-between p-4 font-bold text-slate-800">
-            <div className="flex justify-between items-center">
+          <div className="bg-white h-[400px] w-full md:w-[400px] mx-auto rounded-xl shrink-0 flex flex-col justify-between p-4 font-bold text-slate-800">
+            <div className="flex justify-between items-center gap-5">
               <div className="text-slate-500">Total Course</div>
               <div className="text-orange-600">30</div>
             </div>
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center gap-5">
               <div className="text-slate-500">Rating</div>
               <div>4.9(123)</div>
             </div>
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center gap-5">
               <div className="text-slate-500">Experinces</div>
               <div>10 Years</div>
             </div>
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center gap-5">
               <div className="text-slate-500">Qualification</div>
               <div>{faculties![Number(id)].qualification}</div>
             </div>
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center gap-5">
               <div className="text-slate-500">Language</div>
               <div>English, Hindi</div>
             </div>
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center gap-5">
               <div className="text-slate-500">Social</div>
               <div className="text-2xl flex gap-3"><FontAwesomeIcon icon={faFacebook} className=" text-blue-500" /> <FontAwesomeIcon icon={faWhatsapp} color="green"/><FontAwesomeIcon icon={faLinkedin} className=" text-sky-600" /></div>
             </div>

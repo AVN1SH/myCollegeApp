@@ -21,17 +21,17 @@ const SubNavBar = () => {
     setPath(pathname);
   }, [pathname])
   return (
-    <div className="flex flex-col items-start space-y-2 w-full p-3 pb-0">
+    <div className="flex flex-col items-start space-y-2 w-full py-3 md:py-0 md:p-3 pb-0">
       {admissionSubNav.map((item) => {
           if(item.list) {
             return <Link to={item.href}
               key={item.name}
               className={ classNames(
-                path === item.href ? "bg-orange-100 text-orange-600" : "hover:text-slate-900 hover:bg-gray-100 text-slate-500" , "flex items-center gap-3 w-full font-semibold p-2 rounded-md  hover:pl-3 duration-75 "
+                path === item.href ? "md:bg-orange-100 text-orange-600" : "hover:text-slate-900 hover:bg-gray-100 text-slate-500" , "flex items-center md:gap-3 w-full font-semibold py-2 md:py-0 md:p-2 rounded-md  md:hover:pl-3 duration-75 "
               )}
               aria-current={item.current ? 'page' : undefined}
             >
-              {<FontAwesomeIcon icon={item.icon as any} />}
+              {<FontAwesomeIcon icon={item.icon as any}  className="text-sm md:text-sm"/>}
               <p className="hidden lg:block">{item.name}</p>
             </Link>
           }

@@ -4,7 +4,7 @@ const Teachers = () => {
   return (
     <div className="relative m-1 w-[clac(100%-280px)]">
       <div className="absolute w-full bg-orange-500 h-72 rounded">
-        <h1 className="font-bold text-md md:text-xl lg:text-3xl pl-3 pt-3 text-white">
+        <h1 className="font-bold text-sm md:text-xl lg:text-3xl pl-3 pt-3 text-white">
           Teachers <span className="text-slate-800 font-thin">| </span> <span className="font-thin">Faculties who guide & teach you whole session</span>
         </h1>
       </div>

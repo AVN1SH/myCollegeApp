@@ -5,7 +5,7 @@ const FaLayout = () => {
   return (
     <div>
       <LeftNavBar />
-      <main className="pl-[68px] lg:pl-[280px] pt-16">
+      <main className="pl-[41px] md:pl-[68px] lg:pl-[280px] pt-16">
         <Outlet />
       </main>
     </div>

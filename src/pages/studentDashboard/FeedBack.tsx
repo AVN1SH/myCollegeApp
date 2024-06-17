@@ -46,18 +46,18 @@ const FeedBack = () => {
   return (
     <div className="relative m-1 w-[clac(100%-280px)]">
       <div className="absolute w-full bg-orange-500 h-72 rounded">
-        <h1 className="font-bold text-md md:text-xl lg:text-3xl pl-3 pt-3 text-white">
+        <h1 className="font-bold text-sm md:text-xl lg:text-3xl pl-3 pt-3 text-white">
           FeedBack <span className="text-slate-800 font-thin">| </span><span className="font-thin">Ask Your Queries And Problems</span>
         </h1>
       </div>
       <div className="absolute border-slate-400 border-[1px] border-solid flex flex-col bg-gray-100 w-[calc(100%-5px)] md:w-[calc(100%-60px)] lg:w-[calc(100%-100px)] top-16 md:top-20 lg:top-24 left-1/2 -translate-x-1/2 min-h-[calc(100vh-11rem)] rounded lg:p-3 p-1">
         <div className="flex justify-center items-center min-h-screen bg-gray-100 w-full">
-          <div className="w-full max-w-2xl p-8 space-y-8 bg-white rounded-lg shadow-md my-3">
+          <div className="w-full max-w-2xl p-2 lg:p-8 space-y-2 lg:space-y-8 bg-white rounded-lg shadow-md my-3">
             <div className="text-center">
-              <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6 text-slate-800">
+              <h1 className=" text-xl sm:text-2xl md:text-4xl font-extrabold tracking-tight lg:text-5xl mb-2 lg:mb-6 text-slate-800">
                 <FontAwesomeIcon icon={faGraduationCap} /> FeedBack Form
               </h1>
-              <p className="mb-4 text-md font-semibold text-orange-600"><b className="text-slate-600">FeeBack Form,</b> Explain Your Issues and Querry Here</p>
+              <p className="mb-4 text-xs lg:text-sm font-semibold text-orange-600"><b className="text-slate-600">FeeBack Form,</b> Explain Your Issues and Querry Here</p>
             </div>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
@@ -66,7 +66,7 @@ const FeedBack = () => {
                   control={form.control}
                   render={({ field }) => (
                     <FormItem className="flex-1">
-                      <FormLabel>Query Type | Required</FormLabel>
+                      <FormLabel className="text-xs md:text-sm">Query Type | Required</FormLabel>
                       <FormControl>
                         <Select
                           onValueChange={(value) => {
@@ -109,7 +109,7 @@ const FeedBack = () => {
                   control={form.control}
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Query Title</FormLabel>
+                      <FormLabel className="text-xs md:text-sm">Query Title</FormLabel>
                       <FormControl>
                         <Input 
                           type="text" 
@@ -126,7 +126,7 @@ const FeedBack = () => {
                   name="description"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Justify | Required</FormLabel>
+                      <FormLabel className="text-xs md:text-sm">Justify | Required</FormLabel>
                       <FormControl>
                         <Textarea
                           placeholder="Explain briefly about your Query / Problem."
@@ -134,7 +134,7 @@ const FeedBack = () => {
                           {...field}
                         />
                       </FormControl>
-                      <FormDescription>
+                      <FormDescription className="text-xs md:text-sm">
                         You can <span>@mention</span> other users and faculty members.
                       </FormDescription>
                       <FormMessage />
@@ -146,7 +146,7 @@ const FeedBack = () => {
                   control={form.control}
                   render={({ }) => (
                     <FormItem>
-                      <FormLabel>File or Photo | Optional</FormLabel>
+                      <FormLabel className="text-xs md:text-sm">File or Photo | Optional</FormLabel>
                       <FormControl>
                         <Input 
                           type="file" 
@@ -155,7 +155,7 @@ const FeedBack = () => {
                           {...form.register("file", { required: true })} 
                         />
                       </FormControl>
-                      <FormDescription>
+                      <FormDescription className="text-xs md:text-sm">
                         Picture Must be clearly visible and readable,
                       <span className="text-blue-500 font-bold"> .jpg, .png, .jpeg, .pdf</span> format file only.
                       </FormDescription>

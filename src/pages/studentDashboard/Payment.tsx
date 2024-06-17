@@ -41,7 +41,7 @@ const Payment = () => {
   return (
     <div className="relative m-1 w-[clac(100%-280px)]">
       <div className="absolute w-full bg-orange-500 h-72 rounded">
-        <h1 className="font-bold text-md md:text-xl lg:text-3xl pl-3 pt-3 text-white">
+        <h1 className="font-bold text-sm md:text-xl lg:text-3xl pl-3 pt-3 text-white">
           Payment Section<span className="text-slate-800 font-thin">| </span><span className="font-thin">Complete Your Payment</span>
         </h1>
       </div>

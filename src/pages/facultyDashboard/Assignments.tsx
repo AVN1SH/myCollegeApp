@@ -46,7 +46,7 @@ const Assignment = () => {
   return (
     <div className="relative m-1 w-[clac(100%-280px)]">
       <div className="absolute w-full bg-orange-500 h-72 rounded">
-        <h1 className="font-bold text-md md:text-xl lg:text-3xl pl-3 pt-3 text-white">
+        <h1 className="font-bold text-sm md:text-xl lg:text-3xl pl-3 pt-3 text-white">
           Assignments <span className="text-slate-800 font-thin">| </span> <span className="font-thin"> Set UpComming Assignments and Notice for Students</span>
         </h1>
       </div>
@@ -57,7 +57,7 @@ const Assignment = () => {
               <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6 text-slate-800">
                 <FontAwesomeIcon icon={faGraduationCap} /> Send Notice
               </h1>
-              <p className="mb-4 text-md font-semibold text-orange-600"><b className="text-slate-600">Send Notice,</b> Fill Your Assignments or Notice to Student</p>
+              <p className="mb-4 text-sm font-semibold text-orange-600"><b className="text-slate-600">Send Notice,</b> Fill Your Assignments or Notice to Student</p>
             </div>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">

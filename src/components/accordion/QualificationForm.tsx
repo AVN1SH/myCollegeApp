@@ -96,8 +96,8 @@ const QualificationForm = ({degree} : Props) => {
   return (
     <Accordion type="single" collapsible>
       <AccordionItem value="item-1">
-        <AccordionTrigger className="hover:no-underline font-bold text-lg text-slate-600">{degree} Qualification</AccordionTrigger>
-        <AccordionContent className="space-y-4">
+        <AccordionTrigger className="hover:no-underline font-bold text-sm lg:text-lg text-slate-600">{degree} Qualification</AccordionTrigger>
+        <AccordionContent className=" space-y-2 lg:space-y-4">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
               <FormField
@@ -105,7 +105,7 @@ const QualificationForm = ({degree} : Props) => {
                 control={form.control}
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Qualification Status Name | Required</FormLabel>
+                    <FormLabel className="text-xs md:text-sm">Qualification Status Name | Required</FormLabel>
                       <Select
                         onValueChange={(value) => {
                           field.onChange(value)
@@ -131,9 +131,9 @@ const QualificationForm = ({degree} : Props) => {
                   control={form.control}
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>
+                      <FormLabel className="text-xs md:text-sm">
                         {status === "passed" ? "Session" : status === "appearing" && "Current Session"} | Required</FormLabel>
-                        <div className="flex gap-2">
+                        <div className="flex gap-2 md:flex-row flex-col">
                           <Select
                             onValueChange={(value) => {
                               setYearFrom(value);
@@ -176,7 +176,7 @@ const QualificationForm = ({degree} : Props) => {
                   control={form.control}
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>School / College Name | Required</FormLabel>
+                      <FormLabel className="text-xs md:text-sm">School / College Name | Required</FormLabel>
                       <FormControl>
                       <Input 
                         type="text" 
@@ -193,7 +193,7 @@ const QualificationForm = ({degree} : Props) => {
                   control={form.control}
                   render={({ field }) => (
                     <FormItem className=" flex-[1]">
-                      <FormLabel>Roll Code | Required</FormLabel>
+                      <FormLabel className="text-xs md:text-sm">Roll Code | Required</FormLabel>
                       <FormControl>
                         <Input type="number" placeholder="eg : 12345678" className="custom-number-input" {...field} />
                       </FormControl>
@@ -201,13 +201,13 @@ const QualificationForm = ({degree} : Props) => {
                     </FormItem>
                   )}
                 />
-                <div className="flex gap-2">
+                <div className="flex gap-2 lg:flex-row flex-col">
                   <FormField
                     name="totalMarks"
                     control={form.control}
                     render={({ field }) => (
                       <FormItem className=" flex-[1]">
-                        <FormLabel>Total Marks | Required</FormLabel>
+                        <FormLabel className="text-xs md:text-sm">Total Marks | Required</FormLabel>
                         <FormControl>
                           <Input type="number" placeholder="eg : 500" className="custom-number-input" {...field} 
                           onChange={(e) => {
@@ -225,7 +225,7 @@ const QualificationForm = ({degree} : Props) => {
                     control={form.control}
                     render={({ field }) => (
                       <FormItem className=" flex-[1]">
-                        <FormLabel>Obtained Marks | Required</FormLabel>
+                        <FormLabel className="text-xs md:text-sm">Obtained Marks | Required</FormLabel>
                         <FormControl>
                           <Input type="number" placeholder="eg : 400" className="custom-number-input" {...field}
                           onChange={(e) => {
@@ -239,7 +239,7 @@ const QualificationForm = ({degree} : Props) => {
                     )}
                   />
                   <div className="flex flex-col gap-2 ">
-                    <h1 className="font-semibold">Total Percentage</h1>
+                    <h1 className="font-semibold text-xs md:text-sm">Total Percentage</h1>
                     <p className="bg-gray-300 w-[180px] h-10 hover:cursor-not-allowed border-solid border-[1px] border-gray-200 rounded-md pl-3 py-2">{totalMarks ? (Number(Number(obtainedMarks) * 100 / Number(totalMarks)).toFixed(2)) : '0'}%</p>
                   </div>
                 </div>

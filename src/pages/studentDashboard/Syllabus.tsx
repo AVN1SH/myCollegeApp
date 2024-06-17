@@ -18,7 +18,7 @@ const Syllabus = () => {
   return (
     <div className="relative m-1 w-[clac(100%-280px)]">
       <div className="absolute w-full bg-orange-500 h-72 rounded">
-        <h1 className="font-bold text-md md:text-xl lg:text-3xl pl-3 pt-3 text-white">
+        <h1 className="font-bold text-sm md:text-xl lg:text-3xl pl-3 pt-3 text-white">
           Syllabus <span className="text-slate-800 font-thin">| </span><span className="font-thin">Topics That You Coverd Through Out 
           The Session</span>
         </h1>
@@ -28,7 +28,7 @@ const Syllabus = () => {
           {syllabus.map((data : any) => 
             <Accordion type="single" key={data.duration} collapsible className="px-3">
               <AccordionItem value="item-1">
-                <AccordionTrigger className={classNames(track && trackByData === data.duration ? "text-orange-500" : "", "font-bold text-md lg:text-xl hover:no-underline hover:text-orange-500 hover:pl-2")}
+                <AccordionTrigger className={classNames(track && trackByData === data.duration ? "text-orange-500" : "", "font-bold text-sm lg:text-xl hover:no-underline hover:text-orange-500 hover:pl-2")}
                 onClick={() => {
                   setTrackByData(data.duration);
                   setTrack(!track);
@@ -38,8 +38,8 @@ const Syllabus = () => {
                 {data.content.map((data : any) => 
                   <Accordion type="single" key={data.duration} collapsible className="px-3">
                     <AccordionItem value="item-1">
-                      <AccordionTrigger className="font-bold text-sm lg:text-lg hover:no-underline text-slate-600 hover:text-orange-500 hover:pl-2">{data.duration}</AccordionTrigger>
-                      <AccordionContent className="font-semibold text-slate-500 p-3">
+                      <AccordionTrigger className="font-bold text-xs lg:text-lg hover:no-underline text-slate-600 hover:text-orange-500 hover:pl-2">{data.duration}</AccordionTrigger>
+                      <AccordionContent className="font-semibold text-slate-500 p-3 text-[10px]">
                         {data.topics}
                       </AccordionContent>
                     </AccordionItem>
