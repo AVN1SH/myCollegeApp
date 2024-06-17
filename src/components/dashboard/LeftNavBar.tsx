@@ -21,7 +21,6 @@ const LeftNavBar = () => {
 
   useEffect(() => {
     setPath(pathname);
-    console.log(admissionStats)
   }, [pathname]);
 
 

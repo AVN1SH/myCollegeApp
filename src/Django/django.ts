@@ -114,7 +114,6 @@ export class DjangoService {
       if (response.data) {
         const user = response.data;
         console.log('Logged in successfully');
-        console.log(user)
         return user;
 
       } else {

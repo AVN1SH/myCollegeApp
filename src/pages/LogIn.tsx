@@ -68,8 +68,14 @@ const LogIn = () => {
       });
       if(userData) {
         dispatch(authSignIn(userData));
-        if(userData.pay) dispatch(admission());
-        navigate("/student-dashboard/admission/personal-info");
+        if(userData.pay) {
+          dispatch(admission());
+          navigate("/student-dashboard/overview")
+        } else {
+          userData.role === 'student' 
+            ? navigate("/student-dashboard/admission/personal-info") 
+            : navigate("/faculty-dashboard/overview");
+        }
         setError('');
         toast("Login Successfully..!", {
           description : "Welcome to our College",
@@ -82,12 +88,10 @@ const LogIn = () => {
       setIsSubmitting(false);
     } catch (error : any) {
       if(Number(error.message) >= 400) {
-        console.log("fields are required");
         setError("Error While Login, Please Try Again Or Do It Later");
       }
       setIsSubmitting(false);
     }
-    console.log(values)
   }
 
   return (

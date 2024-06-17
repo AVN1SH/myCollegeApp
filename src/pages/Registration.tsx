@@ -86,7 +86,6 @@ const Registration = () => {
         password : values.password,
       });
       if(regData) {
-        console.log(regData);
         navigate("/login");
         setError('');
         toast("Registred Successfully..!", {

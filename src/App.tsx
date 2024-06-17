@@ -22,8 +22,8 @@ const App = () => {
   useEffect((() => {
     const fetchUser = async () => {
       const authIdStr = localStorage.getItem("authId");
-      const authIdJson = authIdStr ? JSON.parse(authIdStr) : null;
-      await djangoService.getAllData({id : authIdJson})
+      const authIdJson = !(authIdStr === "undefined" || authIdStr === null) ? JSON.parse(authIdStr && authIdStr) : null;
+      authIdJson && await djangoService.getAllData({id : authIdJson})
         .then((userData) => {
           if(userData) {
             dispatch(login(userData));

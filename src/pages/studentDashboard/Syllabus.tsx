@@ -19,7 +19,7 @@ const Syllabus = () => {
     <div className="relative m-1 w-[clac(100%-280px)]">
       <div className="absolute w-full bg-orange-500 h-72 rounded">
         <h1 className="font-bold text-3xl pl-3 pt-3 text-white">
-          Syllabus | <span className="font-thin">Topics That You Coverd Through Out 
+          Syllabus <span className="text-slate-800 font-thin">| </span><span className="font-thin">Topics That You Coverd Through Out 
           The Session</span>
         </h1>
       </div>

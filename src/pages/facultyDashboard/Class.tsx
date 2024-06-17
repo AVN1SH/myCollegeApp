@@ -22,6 +22,9 @@ import { z } from "zod";
 import { stdClass } from "@/schema/zod"
 import { Textarea } from "@/components/ui/textarea"
 import { CourseType } from "../Programs"
+import { toast } from "sonner"
+import { useSelector } from "react-redux"
+import { RootState } from "@/store/store"
 
 const Class = () => {
   const [date, setDate] = useState<Date | undefined>(new Date());
@@ -31,6 +34,7 @@ const Class = () => {
   // const [course, setCourse] = useState('');
   const [error, setError] = useState('');
   const [courses, setCourses] = useState<CourseType[] | null>(null);
+  const userData = useSelector((state : RootState) => state.authSlice.userData);
 
   useEffect(() => {
     fetch('/courses.json')
@@ -52,8 +56,8 @@ const Class = () => {
   const onSubmit = async (values: z.infer<typeof stdClass>) => {
     setIsSubmitting(true);
     try {
-      const userData = await djangoService.facultyClass({
-        facultyName : "Vikrant sir",
+      const response = await djangoService.facultyClass({
+        facultyName : userData ? (userData.first_name + ' ' + (userData.middle_name ? userData.middle_name : '') + ' ' + (userData.last_name ? userData.last_name : '')) : '',
         course : values.course,
         date : date?.toLocaleDateString("en-GB", {
           year: "numeric",
@@ -64,8 +68,15 @@ const Class = () => {
         endTime : values.endTime,
         description : values.description,
       });
-      if(userData) {
+      if(response) {
         setError('');
+        toast("Schedule Added Successfully..!", {
+          description : "Users Now view you schedule in there class tab",
+          action: {
+            label: "ok",
+            onClick: () => console.log(''),
+          },
+        })
       }
       setIsSubmitting(false);
     } catch (error : any) {
