@@ -38,7 +38,7 @@ const LeftNavBar = () => {
                 aria-current={item.current ? 'page' : undefined}
               >
                 {<FontAwesomeIcon icon={item.icon as any} />}
-                <p className="hidden lg:block">{item.name}</p>
+                <p className="hidden lg:block md:p-2 rounded-md md:hover:pl-3 duration-75 transition-[1s]">{item.name}</p>
               </Link>
               {path.includes(item.href) && item.subNav ? <SubNavBar /> : ''} 
             </div>
