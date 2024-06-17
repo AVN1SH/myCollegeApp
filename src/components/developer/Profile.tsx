@@ -115,7 +115,7 @@ const Profile = ({name, photo, role, email, about, frontend, backend, currentSta
 
       {currentStatus && <div className="container mt-5 space-y-2">
         <h1 className='text-white text-3xl font-bold'>Current Status</h1>
-        <div className="text-slate-300"><div className="h-[2px] w-8 bg-orange-500 inline-block"/>{about}</div>
+        <div className="text-slate-300"><div className="h-[2px] w-8 bg-orange-500 inline-block"/>{currentStatus}</div>
       </div>}
 
       {skills && <div className="container mt-5 mb-10 space-y-2 flex flex-col gap-8">

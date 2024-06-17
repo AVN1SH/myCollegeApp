@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserTie } from "@fortawesome/free-solid-svg-icons";
 
 export interface FacultyType {
   photo_url: string,
@@ -31,11 +33,11 @@ const Faculties = () => {
             <Link key={faculty.name} to={`/profile/${index}`} className="group shadow-md overflow-hidden max-w-md md:max-w-full 2xl:max-w-md mx-auto rounded-xl hover:shadow-[0_0_10px_rgba(0,0,0,0.45)] duration-300">
                 <div className="md:flex 2xl:block">
                   <div className="md:shrink-0 2xl:block">
-                    <img 
+                    {faculty.photo_url ? <img 
                       className="h-[400px] w-full object-center object-cover md:h-60 md:w-48 2xl:h-[400px] 2xl:w-full" 
                       src={`/images/faculty/${faculty.photo_url}`}
                       alt={faculty.name} 
-                    />
+                    /> : <FontAwesomeIcon icon={faUserTie} className="p-10 w-fit h-fit text-slate-400"/>}
                   </div>
                   <div className="p-8">
                     <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{faculty.name}</div>
