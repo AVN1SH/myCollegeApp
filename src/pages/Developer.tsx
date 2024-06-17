@@ -4,6 +4,11 @@ import React, { useEffect, useState } from 'react';
 export interface Developer {
   name : string;
   photo : string;
+  url : {
+    linkedin : string;
+    github : string;
+    whatsapp : string;
+  }
   role : string[];
   email : string;
   about : string;
@@ -49,6 +54,7 @@ const Developer: React.FC = () => {
       <div className="flex flex-col xl:flex-row gap-4 my-3">
         <div className="flex-[1] w-full border-orange-500 border-solid border-[1px] h-screen rounded overflow-y-scroll custom-scroll-bar">
           {data && <Profile 
+            url={data[0].url}
             name={data[0].name}
             photo={data[0].photo}
             role={data[0].role}
@@ -61,6 +67,7 @@ const Developer: React.FC = () => {
 
         <div className='flex-[1] border-orange-500 w-[clac(100%-90px)] border-solid border-[1px] h-screen rounded overflow-y-scroll custom-scroll-bar'>
           {data && <Profile 
+            url={data[1].url}
             name={data[1].name}
             currentStatus={data[1].currentStatus}
             photo={data[1].photo}

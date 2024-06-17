@@ -5,16 +5,16 @@
     "age": 53,
     "specialization": "Business comunication",
     "qualification": "Ph.D. in Computer Science",
-    "description": "Dr. Rajeev Ranjan is a distinguished professor with over 20 years of experience in the field of Artificial Intelligence. He has published numerous research papers in top-tier journals and has been a keynote speaker at several international conferences. His areas of expertise include machine learning, neural networks, and deep learning. Dr. Kumar is passionate about teaching and mentoring students, helping them to understand complex concepts and apply them in real-world scenarios. He has been instrumental in setting up the AI lab at the college, providing students with hands-on experience in developing AI models and applications. In addition to his teaching and research responsibilities, Dr. Kumar actively collaborates with industry partners on various AI projects, contributing to advancements in the field.",
+    "description": "Dr. Rajeev Ranjan is a distinguished professor with over 30 years of experience in the field of Artificial Intelligence. He has published numerous research papers in top-tier journals and has been a keynote speaker at several international conferences. His areas of expertise include machine learning, neural networks, and deep learning. Dr. Rajeev Ranjan is passionate about teaching and mentoring students, helping them to understand complex concepts and apply them in real-world scenarios. He has been instrumental in setting up the AI lab at the college, providing students with hands-on experience in developing AI models and applications. In addition to his teaching and research responsibilities, Dr. Rajeev Ranjan actively collaborates with industry partners on various AI projects, contributing to advancements in the field.",
     "courses": ["B.Tech", "M.Tech", "Ph.D.", "Specialized Course in AI"]
   },
   {
     "photo_url": "vikrant.png",
-    "name": "Prof. Vikrant Lochan",
+    "name": "Vikrant Lochan",
     "age": 40,
     "specialization": "Computer Language specialist",
     "qualification": "M.Tech. in Computer Science",
-    "description": "Prof. Vikrant Lochan is an expert in Computer Programming Language with over 15 years of teaching experience. She has a knack for making programming fun and engaging for her students. Prof. Joshi's courses are known for their hands-on approach, where students build real-world applications as part of their learning process. She has been involved in several community outreach programs, teaching coding to underprivileged children and empowering them with digital skills. Prof. Joshi also collaborates with tech companies to ensure that the curriculum is aligned with industry requirements, thereby enhancing the employability of her students.",
+    "description": "Vikrant Lochan is an expert in Computer Programming Language with over 20 years of teaching experience. She has a knack for making programming fun and engaging for her students. Vikrant Lochan courses are known for their hands-on approach, where students build real-world applications as part of their learning process. She has been involved in several community outreach programs, teaching coding to underprivileged children and empowering them with digital skills. Vikrant Lochan also collaborates with tech companies to ensure that the curriculum is aligned with industry requirements, thereby enhancing the employability of her students.",
     "courses": ["B.Tech", "M.Tech", "Specialized Course in Programming", "Diploma in Programming"]
   },
   {
@@ -22,17 +22,17 @@
     "name": "Prof. Vinod sir",
     "age": 58,
     "specialization": "Mathematics",
-    "qualification": "M.SC. in Computer Science",
-    "description": "Prof. Meera Nair is a dedicated educator with a strong background in Mathematics. She has been teaching at the college for over 10 years and has a reputation for making complex topics accessible to students. Prof. Nair's teaching methodology focuses on practical applications and problem-solving techniques, which prepare students for competitive exams and industry challenges. She has developed several innovative teaching materials and online courses that have been widely appreciated. In her role, she also mentors students on their projects and research work, guiding them to achieve excellence. Prof. Nair is committed to continuous learning and frequently updates her knowledge to include the latest advancements in the field.",
+    "qualification": "Ph.D. in Mathematics",
+    "description": "Prof. Vinod sir is a dedicated educator with a strong background in Mathematics. She has been teaching at the college for over 30 years and has a reputation for making complex topics accessible to students. Prof. Vinod sir teaching methodology focuses on practical applications and problem-solving techniques, which prepare students for competitive exams and industry challenges. She has developed several innovative teaching materials and online courses that have been widely appreciated. In her role, she also mentors students on their projects and research work, guiding them to achieve excellence. Prof. Vinod sir is committed to continuous learning and frequently updates her knowledge to include the latest advancements in the field.",
     "courses": ["B.Sc.", "M.SC", "BCA", "Specialized Course in Mathematics"]
   },
   {
     "photo_url": "naveen.png",
-    "name": "Prof. Naveen Yadav",
+    "name": "Naveen Yadav",
     "age": 35,
     "specialization": "Computer Architecture",
     "qualification": "M.C.A in Computer Science",
-    "description": "Dr. Rajesh Sharma brings over 25 years of academic and industry experience in Computer Architecture. His deep understanding of the subject and ability to simplify complex theories have made him a favorite among students. Dr. Sharma has contributed to numerous research projects and has several patents to his name. He has also authored a textbook on Computer Architecture that is widely used in engineering colleges across the country. At the college, Dr. Sharma leads the Computer Engineering department and oversees various curricular and extracurricular activities. He is passionate about encouraging innovation and regularly organizes workshops and hackathons to foster a spirit of creativity among students.",
+    "description": "Naveen Yadav brings over 16 years of academic and industry experience in Computer Architecture. His deep understanding of the subject and ability to simplify complex theories have made him a favorite among students. Naveen Yadav has contributed to numerous research projects and has several patents to his name. He has also authored a textbook on Computer Architecture that is widely used in engineering colleges across the country. At the college, Naveen Yadav leads the Computer Engineering department and oversees various curricular and extracurricular activities. He is passionate about encouraging innovation and regularly organizes workshops and hackathons to foster a spirit of creativity among students.",
     "courses": ["B.Tech", "M.Tech", "Ph.D.", "Specialized Course in Computer Architecture"]
   },
   {
@@ -41,7 +41,7 @@
     "age": 80,
     "specialization": "Database and Architecture",
     "qualification": "M.C.A in Computer Science",
-    "description": "Dr. Neeraj Dube is a passionate educator and researcher in the field of Machine Learning. With a M.C.A in Computer Science, she has a profound understanding of machine learning algorithms and their applications. Dr. Verma has published several research papers in international journals and has presented her work at various conferences. She believes in a practical approach to teaching and ensures that her students get ample opportunities to work on real-world projects. Dr. Verma also leads a research group at the college, focusing on cutting-edge machine learning techniques and their applications in various industries. She is committed to fostering a collaborative learning environment and encourages her students to participate in research and innovation.",
+    "description": "Neeraj Dube is a passionate educator and researcher in the field of Machine Learning. With a M.C.A in Computer Science, she has a profound understanding of machine learning algorithms and their applications. Neeraj Dube has published several research papers in international journals and has presented her work at various conferences. She believes in a practical approach to teaching and ensures that her students get ample opportunities to work on real-world projects. Neeraj Dube also leads a research group at the college, focusing on cutting-edge machine learning techniques and their applications in various industries. She is committed to fostering a collaborative learning environment and encourages her students to participate in research and innovation.",
     "courses": ["B.Tech", "M.Tech", "Ph.D.", "Specialized Course in Database"]
   },
   {
@@ -50,7 +50,7 @@
     "age": 46,
     "specialization": "JavaScript and Web Development",
     "qualification": "B.Tech in Computer Science",
-    "description": "Prof. Anil Desai is an experienced faculty member specializing in JavaScript and Web Development. With over 18 years of teaching experience, he has a comprehensive understanding of web technologies and modern development practices. Prof. Desai's courses emphasize hands-on learning, where students work on building dynamic and responsive web applications. He is well-versed in various JavaScript frameworks and libraries, such as React, Angular, and Vue.js, and incorporates them into his teaching. Prof. Bharti also mentors students on their web development projects, guiding them from concept to deployment. His dedication to teaching and his ability to stay updated with the latest trends make him a valuable asset to the college.",
+    "description": "Prof. Rajnish Bharti is an experienced faculty member specializing in JavaScript and Web Development. With over 30 years of teaching experience, he has a comprehensive understanding of web technologies and modern development practices. Prof. Rajnish Bharti courses emphasize hands-on learning, where students work on building dynamic and responsive web applications. He is well-versed in various JavaScript frameworks and libraries, such as React, Angular, and Vue.js, and incorporates them into his teaching. Prof. Bharti also mentors students on their web development projects, guiding them from concept to deployment. His dedication to teaching and his ability to stay updated with the latest trends make him a valuable asset to the college.",
     "courses": ["BCA", "B.Sc.", "Specialized Course in JavaScript", "Diploma in Web Development"]
   },
   {
@@ -59,7 +59,7 @@
     "age": 33,
     "specialization": "Management in IT",
     "qualification": "B.Tech in Computer Science",
-    "description": "Dr. Kavita Patel is a renowned expert in Data Science with a strong academic and research background. She has been teaching at the college for over 3 years and has made significant contributions to the field through her research work. Dr. Patel's courses cover a wide range of topics, including data analysis, machine learning, and big data technologies. She is dedicated to providing her students with a deep understanding of data science concepts and practical skills. Dr. Patel also collaborates with industry partners on various data science projects, offering students opportunities to work on real-world problems and gain valuable experience. Her commitment to excellence in teaching and research has earned her numerous accolades.",
+    "description": "Er. Mukesh Kumar is a renowned expert in Data Science with a strong academic and research background. She has been teaching at the college for over 3 years and has made significant contributions to the field through her research work. Er. Mukesh Kumar courses cover a wide range of topics, including data analysis, machine learning, and big data technologies. She is dedicated to providing her students with a deep understanding of data science concepts and practical skills. Er. Mukesh Kumar also collaborates with industry partners on various data science projects, offering students opportunities to work on real-world problems and gain valuable experience. Her commitment to excellence in teaching and research has earned her numerous accolades.",
     "courses": ["B.Tech", "M.Tech", "Management", "Specialized Course in Data Science"]
   },
   {
@@ -95,7 +95,7 @@
     "age": 44,
     "specialization": "JavaScript and Web Development",
     "qualification": "M.Tech in Information Technology",
-    "description": "Prof. Anil Desai is an experienced faculty member specializing in JavaScript and Web Development. With over 18 years of teaching experience, he has a comprehensive understanding of web technologies and modern development practices. Prof. Desai's courses emphasize hands-on learning, where students work on building dynamic and responsive web applications. He is well-versed in various JavaScript frameworks and libraries, such as React, Angular, and Vue.js, and incorporates them into his teaching. Prof. Desai also mentors students on their web development projects, guiding them from concept to deployment. His dedication to teaching and his ability to stay updated with the latest trends make him a valuable asset to the college.",
+    "description": "Dr. Kavita Patel is an experienced faculty member specializing in JavaScript and Web Development. With over 18 years of teaching experience, he has a comprehensive understanding of web technologies and modern development practices. Prof. Desai's courses emphasize hands-on learning, where students work on building dynamic and responsive web applications. He is well-versed in various JavaScript frameworks and libraries, such as React, Angular, and Vue.js, and incorporates them into his teaching. Prof. Desai also mentors students on their web development projects, guiding them from concept to deployment. His dedication to teaching and his ability to stay updated with the latest trends make him a valuable asset to the college.",
     "courses": ["BCA", "B.Sc.", "Specialized Course in JavaScript", "Diploma in Web Development"]
   },
   {
@@ -104,7 +104,7 @@
     "age": 37,
     "specialization": "Data Science",
     "qualification": "Ph.D. in Data Science",
-    "description": "Dr. Kavita Patel is a renowned expert in Data Science with a strong academic and research background. She has been teaching at the college for over 12 years and has made significant contributions to the field through her research work. Dr. Patel's courses cover a wide range of topics, including data analysis, machine learning, and big data technologies. She is dedicated to providing her students with a deep understanding of data science concepts and practical skills. Dr. Patel also collaborates with industry partners on various data science projects, offering students opportunities to work on real-world problems and gain valuable experience. Her commitment to excellence in teaching and research has earned her numerous accolades.",
+    "description": "Prof. Anil Desai is a renowned expert in Data Science with a strong academic and research background. She has been teaching at the college for over 12 years and has made significant contributions to the field through her research work. Dr. Patel's courses cover a wide range of topics, including data analysis, machine learning, and big data technologies. She is dedicated to providing her students with a deep understanding of data science concepts and practical skills. Dr. Patel also collaborates with industry partners on various data science projects, offering students opportunities to work on real-world problems and gain valuable experience. Her commitment to excellence in teaching and research has earned her numerous accolades.",
     "courses": ["B.Tech", "M.Tech", "Ph.D.", "Specialized Course in Data Science"]
   },
   {

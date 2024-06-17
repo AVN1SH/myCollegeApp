@@ -1,9 +1,15 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { DeveloperGraph } from '@/components/developer/DeveloperGraph';
+import { Link } from 'react-router-dom';
 
 interface Props {
   name : string;
+  url : {
+    linkedin : string;
+    github : string;
+    whatsapp : string;
+  }
   photo : string;
   role : string[];
   email : string;
@@ -36,7 +42,7 @@ interface Props {
   }
 }
 
-const Profile = ({name, photo, role, email, about, frontend, backend, currentStatus, skills} : Props) => {
+const Profile = ({name, url, photo, role, email, about, frontend, backend, currentStatus, skills} : Props) => {
 
   return (
     <div>
@@ -55,7 +61,7 @@ const Profile = ({name, photo, role, email, about, frontend, backend, currentSta
 
         <p className="text-slate-200 mt-3 left-[40%] ml-[10%] sm:ml-0 sm:absolute z-20">Contact - <span className='text-purple-600 hover:cursor-pointer hover:underline'>{email}</span></p>
 
-        <div className="absolute top-[10px] left-2 flex flex-col w-fit items-center gap-2 z-10">
+        <div className="absolute top-[10px] left-2 flex flex-col w-fit items-center gap-1 z-10">
           <div className="flex flex-col items-center font-mono text-[10px]">
           <p className="text-white">S</p>
           <p className="text-white">O</p>
@@ -66,10 +72,10 @@ const Profile = ({name, photo, role, email, about, frontend, backend, currentSta
           <p className="text-white">S</p>
           </div>
           <div className="w-[1px] h-[60px] bg-orange-500 " />
-          <FontAwesomeIcon icon={faLinkedin} className="text-lg text-blue-500 hover:cursor-pointer hover:text-blue-600"/>
-          <FontAwesomeIcon icon={faWhatsapp} className="text-lg text-green-500 hover:cursor-pointer hover:text-green-600" />
-          <FontAwesomeIcon icon={faTwitter} className="text-lg text-sky-500 hover:cursor-pointer hover:text-sky-600" />
-          <FontAwesomeIcon icon={faGithub} className="text-lg text-gray-300 hover:cursor-pointer hover:text-gray-400" />
+          <Link to={url.linkedin}><FontAwesomeIcon icon={faLinkedin} className="text-lg text-blue-500 hover:cursor-pointer hover:text-blue-600"/></Link>
+          <Link to={url.whatsapp} ><FontAwesomeIcon icon={faWhatsapp} className="text-lg text-green-500 hover:cursor-pointer hover:text-green-600" /></Link>
+          <Link to={'#'} ><FontAwesomeIcon icon={faTwitter} className="text-lg text-sky-500 hover:cursor-pointer hover:text-sky-600" /></Link>
+          <Link to={url.github} ><FontAwesomeIcon icon={faGithub} className="text-lg text-gray-300 hover:cursor-pointer hover:text-gray-400" /></Link>
         </div>
         <div className="absolute bg-gradient-to-t from-[rgba(41,43,47)] w-full h-[100px] bottom-[calc(100%-300px)] sm:bottom-0" />
       </div>

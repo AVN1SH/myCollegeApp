@@ -1,6 +1,11 @@
 [
   {
     "name" : "Avnish Kr. Sharma",
+    "url" : {
+      "linkedin" : "https://www.linkedin.com/in/avnish-kumar-sharma/",
+      "whatsapp" : "https://wa.me/7322090812",
+      "github" : "https://github.com/AVN1SH"
+    },
     "role" : ["Team Leader", "Front-end Developer", "Backend-Helper"],
     "photo" : "/images/developer/file3.png",
     "email" : "avnish84344@gmail.com",
@@ -20,6 +25,11 @@
   },
   {
     "name" : "Vikas Kumar",
+    "url" : {
+      "linkedin" : "https://www.linkedin.com/in/vikas-kumar-31222b250?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      "whatsapp" : "https://wa.me/7256945437",
+      "github" : "https://github.com/rajkumarvikas"
+    },
     "role" : ["Database Designer","Front-end Developer","Backend-Developer"],
     "photo" : "/images/developer/vikas.png",
     "phone":  "+91-7256945437",
@@ -42,7 +52,7 @@
     ],
 
     "backend" : {
-      "contribution" : "80%",
+      "contribution" : "100%",
       "labels" : ["Python", "Django", "Django Rest-Framework", "Not Contributed"],
       "label" : "My Contribution",
       "value" : [20, 40, 20, 20]
