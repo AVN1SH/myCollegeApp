@@ -76,14 +76,13 @@ interface FacultyClass {
 
 export class DjangoService {
 
-  async createAccount({firstName, middleName, lastName, role, collegeID, email, mobNum, password} : CreateUserAccount) {
+  async createAccount({firstName, middleName, lastName, role, email, mobNum, password} : CreateUserAccount) {
     try {
       const response = await api.post("/register/", {
         first_name : firstName,
         middle_name : middleName,
         last_name : lastName,
         role,
-        collegeID,
         email,
         phone : mobNum,
         password
