@@ -50,9 +50,9 @@ const MyClasses = () => {
                 month : "space-y-4 w-full border-[1px] border-gray-200 border-solid rounded-lg pt-2",
                 head_cell:"text-muted-foreground rounded-md min-w-[28px] font-normal text-[0.8rem] w-full",
                 row: "flex w-full",
-                cell: "h-8 lg:h-14 min-w-[28px] lg:w-14 text-center text-xs lg:text-sm relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-orange-100 [&:has([aria-selected])]:bg-orange-100 first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20 w-full rounded-full hover:bg-orange-100 flex items-center justify-center hover:cursor-pointer",
+                cell: "h-8 xl:h-14 min-w-[28px] xl:w-14 text-center text-xs xl:text-sm relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-orange-100 [&:has([aria-selected])]:bg-orange-100 first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20 w-full rounded-full hover:bg-orange-100 flex items-center justify-center hover:cursor-pointer",
                 day_selected:"bg-orange-500 text-orange-500-foreground hover:bg-orange-600 hover:text-orange-600-foreground focus:bg-orange-500 focus:text-orange-500-foreground text-white",
-                day: "min-w-[32px] h-8 lg:w-12 lg:h-12 rounded-full",
+                day: "min-w-[32px] h-8 xl:w-12 xl:h-12 rounded-full",
                 day_today: "bg-accent text-accent-foreground text-orange-500 font-semibold",
               }}
             />

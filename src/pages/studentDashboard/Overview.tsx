@@ -3,7 +3,8 @@ import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 
 const Overview = () => {
-  const userData = useSelector((state : RootState) => state.authSlice.userData)
+  const userData = useSelector((state : RootState) => state.authSlice.userData);
+  const admissionStatus = useSelector((state : RootState) => state.stdSlice.admissionStatus)
   return (
     <div className="relative m-1 w-[clac(100%-280px)]">
       <div className="absolute w-full bg-orange-500 h-72 rounded">
@@ -15,11 +16,11 @@ const Overview = () => {
         <div className="bg-white mb-1 rounded p-2 pl-2 w-full h-fit text-sm md:text-2xl lg:text-3xl xl:text-4xl">
           <h1 className="scroll-m-20 font-extrabold tracking-tight text-slate-700"><span className="text-orange-600">Welcome</span> To My College "{userData && (userData.first_name + ' ' + (userData.middle_name ? userData.middle_name : '') + ' ' + (userData.last_name ? userData.last_name : ''))}"</h1>
         </div>
-        <div className="bg-white mb-1 rounded p-2 pl-2 w-full h-fit text-xs lg:text-lg">
+        {!admissionStatus && <div className="bg-white mb-1 rounded p-2 pl-2 w-full h-fit text-xs lg:text-lg">
           <blockquote className="border-l-2 border-red-600 pl-6 italic bg-red-100 py-2">
             You haven't Completed your admission yet, <Link className="underline text-blue-600 font-semibold" to="/student-dashboard/admission"> click here</Link> to do now.
           </blockquote>
-        </div>
+        </div>}
       </div>
     </div>
   )

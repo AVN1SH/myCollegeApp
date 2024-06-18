@@ -9,7 +9,7 @@ const registration = z.object({
   role: z.union([z.literal('student'), z.literal('faculty'), z.literal(undefined)]).refine(value => value !== undefined, {
     message : "Please select your role."
   }),
-  collegeID: z.string(),
+  course: z.string(),
   email: z.string().email("Invalid Email Id"),
   mobNum: z.string().min(10, "Mobile Number must contain 10 digits").max(10, "Mobile Number must contain 10 digits"),
   password: z.string().min(8, "Password must have at least 8 characters").max(20, "Password must be under 20 charecters").refine(value => {

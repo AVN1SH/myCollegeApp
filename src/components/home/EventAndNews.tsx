@@ -26,7 +26,7 @@ const EventAndNews = () => {
 
   return (
     <div className=" ml-2 w-[calc(100%-20px)] p-2 mt-5 bg-slate-200 rounded">
-      <div className="font-semibold text-2xl text-slate-700 bg-white mb-2 rounded p-2 w-full shadow-md"><FontAwesomeIcon icon={faCalendar}/> Events And News<span className="divider-vertical border-solid border-[1px] border-orange-300 mx-2"></span><span className="font-thin text-xs">AnyOne Can Attend these Events.</span>
+      <div className="font-semibold text-lg lg:text-2xl text-slate-700 bg-white mb-2 rounded p-2 w-full shadow-md"><FontAwesomeIcon icon={faCalendar}/> Events And News<span className="divider-vertical border-solid border-[1px] border-orange-300 mx-2"></span><span className="font-thin">AnyOne Can Attend these Events.</span>
       </div>
       <div className="grid grid-cols-1 gap-x-3 gap-y-5 md:grid-cols-1 lg:grid-cols-2">
         {data?.newsEvents.map((value) => (
@@ -40,10 +40,10 @@ const EventAndNews = () => {
                   />
                 </div>
                 <div className="p-3 h-fit">
-                  <div className="uppercase tracking-wide text-xs text-indigo-500 font-semibold">{value.title}</div>
-                  <div className="text-xs"><span className="font-semibold">Date : </span>{value.date}</div>
-                  <p className="block mt-1 text-xs leading-tight font-medium text-black hover:underline">{value.brief}</p>
-                  <p className="mt-2 text-slate-500 text-sm">{value.detailed.slice(0, 80) + "..."}</p>
+                  <div className="uppercase tracking-wide text-sm lg:text-[16px] text-indigo-500 font-semibold">{value.title}</div>
+                  <div className="text-xs"><span className="font-semibold ">Date : </span>{value.date}</div>
+                  <p className="block mt-1 text-sm lg:text-[16px] leading-tight font-medium text-black hover:underline">{value.brief}</p>
+                  <p className="mt-2 text-slate-500 text-sm lg:text-[16px]">{value.detailed.slice(0, 80) + "..."}</p>
                 </div>
               </div>
           </Link>

@@ -27,7 +27,7 @@ const SubNavBar = () => {
             return <Link to={item.href}
               key={item.name}
               className={ classNames(
-                path === item.href ? "lg:bg-orange-100 text-orange-600" : "hover:text-slate-900 hover:bg-gray-100 text-slate-500" , "flex items-center lg:gap-3 w-full font-semibold py-2 lg:py-0 lg:p-2 rounded-md  lg:hover:pl-3 duration-75 "
+                path === item.href ? "lg:bg-orange-100 text-orange-600" : "hover:text-slate-900 hover:bg-gray-100 text-slate-500" , "flex items-center md:gap-3 w-full font-semibold py-2 md:py-2 lg:py-0 lg:p-2 rounded-md md:pl-3 lg:pl-2 md:hover:pl-3 duration-75 transition-[1s]"
               )}
               aria-current={item.current ? 'page' : undefined}
             >

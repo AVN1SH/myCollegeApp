@@ -86,8 +86,8 @@ const QualificationForm = ({degree} : Props) => {
       setIsSubmitting(false);
     } catch (error : any) {
       if(Number(error.message) >= 400) {
-        console.log("fields are required");
-        setError("Error While adding data, Please Try Again Or Do It Later");
+        if(error.message === '409') setError("Data already saved..!")
+        else setError("Error While Login, Please Try Again Or Do It Later");
       }
       setIsSubmitting(false);
     }

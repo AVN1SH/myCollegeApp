@@ -1,6 +1,7 @@
 [
   {
-    "name" : "Batchlor's of computer application",
+    "name" : "Bachelor of computer application",
+    "shortName" : "BCA",
     "url" : "/images/college.jpg",
     "info" : "The Bachelor of Computer Applications (BCA) is an undergraduate degree course in computer applications. With the rapid growth of the IT industry in India, the demand for computer professionals is increasing day by day. This increasing growth of the IT industry has created a lot of opportunities for computer graduates.",
     "description" : [
@@ -54,7 +55,8 @@
     ]
   },
   {
-    "name" : "B.Voc.",
+    "name" : "Bachelor of Vocation",
+    "shortName" : "B.Voc.",
     "url" : "/images/college.jpg",
     "info": "Bachelor of Vocation (BVoc) is an undergraduate program aimed at providing students with specialized skills and knowledge in a specific vocation or profession. It combines theoretical education with practical training, enhancing employability."
     ,
@@ -107,7 +109,8 @@
     ]
   },
   {
-    "name" : "BBA",
+    "name" : "Bachelor of Business Administration",
+    "shortName" : "BBA",
     "url" : "/images/college.jpg",
     "info": "The Bachelor of Business Administration (BBA) is an undergraduate program focusing on business principles, management, and entrepreneurship. It equips students with foundational knowledge and skills needed to pursue careers in various business sectors."
     ,
@@ -160,7 +163,8 @@
     ]
   },
   {
-    "name" : "Batchlor's of science",
+    "name" : "Bachelor of Science",
+    "shortName" : "BSc.",
     "url" : "/images/college.jpg",
     "info": "Bachelor of Science (BSc) is an undergraduate academic degree awarded for courses in natural sciences, life sciences, physical sciences, and sometimes social sciences. It provides a broad foundation in scientific principles."
     ,
@@ -217,7 +221,8 @@
     ]
   },
   {
-    "name" : "B.Tech.",
+    "name" : "Bachelor of Technology.",
+    "shortName" : "B.Tech.",
     "url" : "/images/college.jpg",
     "info": "Bachelor of Technology (BTech) is an undergraduate engineering degree focused on practical application of technology. It covers various disciplines such as mechanical, civil, electrical, and computer engineering, among others."
     ,
@@ -274,6 +279,7 @@
   },
   {
     "name" : "Master of computer application",
+    "shortName" : "MCA",
     "url" : "/images/college.jpg",
     "info": "Master of Computer Applications (MCA) is a postgraduate program that equips students with advanced knowledge and skills in computer applications. It prepares graduates for roles in software development, systems management, and IT consultancy."
     ,
@@ -327,7 +333,8 @@
     ]
   },
   {
-    "name" : "MBA",
+    "name" : "Master of Business Administration",
+    "shortName" : "MBA",
     "url" : "/images/college.jpg",
     "info": "Master of Business Administration (MBA) is a postgraduate program in business management. It develops skills in leadership, finance, marketing, and entrepreneurship, preparing graduates for senior management roles."
     ,
@@ -382,7 +389,8 @@
     ]
   },
   {
-    "name" : "M.Tech.",
+    "name" : "Master of Technology",
+    "shortName" : "M.Tech.",
     "url" : "/images/college.jpg",
     "info": "Master of Technology (MTech) is a postgraduate engineering degree that focuses on technical aspects and practical application of technology. It offers specialized knowledge in various engineering disciplines."
     ,
@@ -441,7 +449,8 @@
     ]
   },
   {
-    "name" : "M.Sc.",
+    "name" : "Master of Science",
+    "shortName" : "M.SC.",
     "url" : "/images/college.jpg",
     "info": "Master of Science (MSc) is a postgraduate academic degree awarded for courses in sciences and sometimes social sciences. It involves advanced study in a specialized field, emphasizing research and theoretical knowledge."
     ,
@@ -500,7 +509,8 @@
     ]
   },
   {
-    "name" : "specializations",
+    "name" : "Specializations",
+    "shortName" : "Spec.",
     "url" : "/images/college.jpg",
     "info": "Specialized courses such as Python programming, web development, Artificial Intelligence and Machine Learning, Data Structures and Algorithms, and database management focus on developing specific skills crucial for careers in technology and IT sectors. These courses provide hands-on training and in-depth knowledge in their respective domains, preparing students for roles in software development, data analysis, system architecture, and more."
     ,

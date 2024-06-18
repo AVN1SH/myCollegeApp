@@ -88,7 +88,9 @@ const LogIn = () => {
       setIsSubmitting(false);
     } catch (error : any) {
       if(Number(error.message) >= 400) {
-        setError("Error While Login, Please Try Again Or Do It Later");
+        if(error.message === '401') setError("Password does'nt matched..! try again")
+        else if(error.message === '404') setError("Email not found..! try again or register yourself")
+        else setError("Error While Login, Please Try Again Or Do It Later");
       }
       setIsSubmitting(false);
     }

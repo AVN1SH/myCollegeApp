@@ -4,11 +4,13 @@
     {
       "quote": "My experience at My College has been transformative. The faculty and resources are top-notch.",
       "name": "Amit Sharma",
+      "img" : "portrait-young-confident-businessman-wearing-glasses_158595-5359.avif",
       "class": "BCA Class of 2023"
     },
     {
       "quote": "The B.Tech program at My College provided me with the skills and knowledge to excel in my career.",
-      "name": "Priya Singh",
+      "name": "Emelia Welsh",
+      "img" : "young-woman-having-brow-color-added-her-eyebrows_231208-3535.jpg",
       "class": "B.Tech Class of 2022"
     },
     {
@@ -24,6 +26,7 @@
     {
       "quote": "My college years have been the best time of my life. The exposure and experience gained here are invaluable.",
       "name": "Rohit Mehra",
+      "img" : "young-adult-enjoying-virtual-date_23-2149328221.avif",
       "class": "B.Sc Class of 2024"
     },
     {
@@ -34,6 +37,7 @@
     {
       "quote": "I have developed strong technical skills and a passion for innovation thanks to my college's excellent programs.",
       "name": "Vikram Joshi",
+      "img" : "smiley-man-posing-medium-shot_23-2149915893.avif",
       "class": "B.Tech Class of 2021"
     },
     {

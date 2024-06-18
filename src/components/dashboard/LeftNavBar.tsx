@@ -33,7 +33,7 @@ const LeftNavBar = () => {
                 <Link to={item.subNav ? item.href + item.subNav : item.href}
                 key={item.name}
                 className={ classNames(
-                  path.includes(item.href) ? "md:bg-orange-100 text-orange-600" : "hover:text-slate-900 md:hover:bg-gray-100 text-slate-500" , "flex items-center md:gap-3 w-full font-semibold py-2 md:py-0 md:p-2 rounded-md md:hover:pl-3 duration-75 transition-[1s]"
+                  path.includes(item.href) ? "md:bg-orange-100 text-orange-600" : "hover:text-slate-900 md:hover:bg-gray-100 text-slate-500" , "flex items-center md:gap-3 w-full font-semibold py-2 md:py-2 lg:py-0 lg:p-2 rounded-md md:pl-3 lg:pl-2 md:hover:pl-3 duration-75 transition-[1s]"
                 )}
                 aria-current={item.current ? 'page' : undefined}
               >

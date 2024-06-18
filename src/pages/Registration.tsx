@@ -22,6 +22,7 @@ import { faEye, faEyeSlash, faGraduationCap } from "@fortawesome/free-solid-svg-
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import djangoService from "@/Django/django"
 import { toast } from "sonner"
+import courses from "@/../public/courses.json"
 
 
 const Registration = () => {
@@ -37,7 +38,7 @@ const Registration = () => {
   // const debounced = useDebounceCallback(setEmail, 300);
 
   const updatingRegistration = registration.extend({
-    collegeID : selectValue === "faculty" ? z.string().min(6, "College Id must be Valid.").max(6, "College Id must be Valid.") : z.string().optional()
+    course : selectValue === "student" ? z.string() : z.string().optional()
   })
   
 
@@ -65,7 +66,7 @@ const Registration = () => {
       lastName: "",
       email: "",
       role : undefined,
-      collegeID: "",
+      course: undefined,
       mobNum : "",
       password: "",
       confirmPassword: "",
@@ -80,13 +81,13 @@ const Registration = () => {
         middleName : values.middleName,
         lastName : values.lastName,
         role : values.role || "",
-        collegeID : values.collegeID,
+        collegeID : values.course,
         email : values.email,
         mobNum : values.mobNum,
         password : values.password,
       });
       if(regData) {
-        values.collegeID ? navigate("/faculy-login") : navigate("/login");
+        values.role === 'faculty' ? navigate("/faculy-login") : navigate("/login");
         setError('');
         toast("Registred Successfully..!", {
           description : "Login to Continue access your dashboard.",
@@ -99,8 +100,8 @@ const Registration = () => {
       setIsSubmitting(false);
     } catch (error : any) {
       if(Number(error.message) >= 400) {
-        console.log("fields are required");
-        setError("Error While Registration, Please Try Again Or Do It Later");
+        if(error.message === '409') setError("Email Already Exist..! try different one")
+        else setError("Error While Registration, Please Try Again Or Do It Later");
       }
       setIsSubmitting(false);
     }
@@ -109,7 +110,7 @@ const Registration = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="w-full max-w-xl p-2 md:p-8 space-y-8 bg-white rounded-lg shadow-md my-3 mt-20 md:mt-0 m-2 md:m-0">
+      <div className="w-full max-w-xl p-2 md:p-8 space-y-8 bg-white rounded-lg shadow-md my-3 mt-20 m-2">
         <div className="text-center">
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6">
             <FontAwesomeIcon icon={faGraduationCap} /> My College
@@ -182,7 +183,7 @@ const Registration = () => {
                         onValueChange={(value) => {
                           field.onChange(value)
                           setSelectValue(value);
-                          value === "faculty" ? setIsSelected(true) : setIsSelected(false);
+                          value === "student" ? setIsSelected(true) : setIsSelected(false);
                         }}
                       >
                         <SelectTrigger className="w-[180px]">
@@ -198,24 +199,32 @@ const Registration = () => {
                   </FormItem>
                 )}
               />
-              <FormField
-                name="collegeID"
+              {isSelected && <FormField
+                name="course"
                 control={form.control}
                 render={({ field }) => (
-                  <FormItem className={isSelected ? "block flex-1" : "hidden"}>
-                    <FormLabel>College ID | Required</FormLabel>
+                  <FormItem className="flex-1">
+                    <FormLabel className="text-xs md:text-sm">Course | Required</FormLabel>
                     <FormControl>
-                      <Input 
-                        type="number" 
-                        placeholder="eg : 123456" 
-                        className="custom-number-input"
-                        {...field} 
-                      />
+                      <Select
+                        onValueChange={(value) => {
+                          field.onChange(value)
+                        }}
+                      >
+                        <SelectTrigger className="w-[180px]">
+                          <SelectValue placeholder="Course" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {courses?.map(value => (
+                            <SelectItem value={value.name} key={value.name} className="hover:cursor-pointer hover:font-semibold md:hover:pl-10 duration-75">{value.name}</SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
                     </FormControl>
                     <FormMessage className="text-xs" />
                   </FormItem>
                 )}
-              />
+              />}
             </div>
             <FormField
               control={form.control}
