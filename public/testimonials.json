@@ -4,61 +4,105 @@
     {
       "quote": "My experience at My College has been transformative. The faculty and resources are top-notch.",
       "name": "Amit Sharma",
-      "img" : "portrait-young-confident-businessman-wearing-glasses_158595-5359.avif",
-      "class": "BCA Class of 2023"
+      "img": "portrait-young-confident-businessman-wearing-glasses_158595-5359.avif",
+      "class": "BCA Class of 2023",
+      "courses": ["Web Development", "Database Systems", "Computer Networks"],
+      "gpa": 3.8,
+      "extracurricular": ["Coding Club President", "Basketball Team"],
+      "contact": "amit.sharma@example.com"
     },
     {
       "quote": "The B.Tech program at My College provided me with the skills and knowledge to excel in my career.",
       "name": "Emelia Welsh",
-      "img" : "young-woman-having-brow-color-added-her-eyebrows_231208-3535.jpg",
-      "class": "B.Tech Class of 2022"
+      "img": "young-woman-having-brow-color-added-her-eyebrows_231208-3535.jpg",
+      "class": "B.Tech Class of 2022",
+      "courses": ["Data Structures", "Operating Systems", "AI and Machine Learning"],
+      "gpa": 3.9,
+      "extracurricular": ["Robotics Club", "Student Council"],
+      "contact": "emelia.welsh@example.com"
     },
     {
       "quote": "I loved the campus environment and the quality of education. Highly recommended!",
       "name": "Rahul Verma",
-      "class": "B.Com Class of 2023"
+      "class": "B.Com Class of 2023",
+      "courses": ["Financial Accounting", "Business Law", "Marketing"],
+      "gpa": 3.7,
+      "extracurricular": ["Debate Team", "Economics Society"],
+      "contact": "rahul.verma@example.com"
     },
     {
       "quote": "The supportive faculty and diverse learning opportunities have greatly enhanced my academic journey.",
       "name": "Sneha Patel",
-      "class": "MCA Class of 2022"
+      "class": "MCA Class of 2022",
+      "courses": ["Advanced Java Programming", "Software Engineering", "Cyber Security"],
+      "gpa": 3.8,
+      "extracurricular": ["Tech Symposium Organizer", "Volunteer at Coding Bootcamp"],
+      "contact": "sneha.patel@example.com"
     },
     {
       "quote": "My college years have been the best time of my life. The exposure and experience gained here are invaluable.",
       "name": "Rohit Mehra",
-      "img" : "young-adult-enjoying-virtual-date_23-2149328221.avif",
-      "class": "B.Sc Class of 2024"
+      "img": "young-adult-enjoying-virtual-date_23-2149328221.avif",
+      "class": "B.Sc Class of 2024",
+      "courses": ["Physics", "Chemistry", "Mathematics"],
+      "gpa": 3.6,
+      "extracurricular": ["Science Club", "Swimming Team"],
+      "contact": "rohit.mehra@example.com"
     },
     {
       "quote": "The emphasis on practical learning and industry exposure has been immensely beneficial.",
       "name": "Ananya Iyer",
-      "class": "BBA Class of 2023"
+      "class": "BBA Class of 2023",
+      "courses": ["Business Management", "Human Resources", "Entrepreneurship"],
+      "gpa": 3.9,
+      "extracurricular": ["Business Club", "Internship at ABC Corp"],
+      "contact": "ananya.iyer@example.com"
     },
     {
       "quote": "I have developed strong technical skills and a passion for innovation thanks to my college's excellent programs.",
       "name": "Vikram Joshi",
-      "img" : "smiley-man-posing-medium-shot_23-2149915893.avif",
-      "class": "B.Tech Class of 2021"
+      "img": "smiley-man-posing-medium-shot_23-2149915893.avif",
+      "class": "B.Tech Class of 2021",
+      "courses": ["Network Security", "Embedded Systems", "Cloud Computing"],
+      "gpa": 4.0,
+      "extracurricular": ["Hackathon Winner", "Tech Club"],
+      "contact": "vikram.joshi@example.com"
     },
     {
       "quote": "The career guidance and support provided by the college helped me secure my dream job.",
       "name": "Kavita Rao",
-      "class": "MBA Class of 2022"
+      "class": "MBA Class of 2022",
+      "courses": ["Strategic Management", "Finance", "Marketing"],
+      "gpa": 3.9,
+      "extracurricular": ["Finance Club", "Alumni Relations"],
+      "contact": "kavita.rao@example.com"
     },
     {
       "quote": "My college has a vibrant campus life and offers numerous extracurricular activities to engage in.",
       "name": "Aakash Gupta",
-      "class": "BCA Class of 2022"
+      "class": "BCA Class of 2022",
+      "courses": ["Mobile App Development", "Information Systems", "Software Testing"],
+      "gpa": 3.7,
+      "extracurricular": ["App Development Team", "Music Club"],
+      "contact": "aakash.gupta@example.com"
     },
     {
       "quote": "The knowledge and skills I've acquired at my college have been instrumental in my professional growth.",
       "name": "Neha Dubey",
-      "class": "M.Tech Class of 2021"
+      "class": "M.Tech Class of 2021",
+      "courses": ["Machine Learning", "Big Data Analytics", "Advanced Algorithms"],
+      "gpa": 4.0,
+      "extracurricular": ["Research Assistant", "Tech Conferences"],
+      "contact": "neha.dubey@example.com"
     },
     {
       "quote": "The research opportunities and academic support provided here are outstanding.",
       "name": "Sahil Kapoor",
-      "class": "PhD Class of 2025"
+      "class": "PhD Class of 2025",
+      "courses": ["Research Methodologies", "Thesis Work", "Advanced Machine Learning"],
+      "gpa": 4.0,
+      "extracurricular": ["Research Publications", "Guest Lecturer"],
+      "contact": "sahil.kapoor@example.com"
     }
   ]
 }

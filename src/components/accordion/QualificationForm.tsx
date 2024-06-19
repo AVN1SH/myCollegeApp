@@ -25,6 +25,7 @@ import djangoService from "@/Django/django"
 import { useSelector } from "react-redux"
 import { RootState } from "@/store/store"
 import { toast } from "sonner"
+import { useNavigate } from "react-router-dom"
 
 interface Props {
   degree : string;
@@ -39,6 +40,7 @@ const QualificationForm = ({degree} : Props) => {
   const [error, setError] = useState('');
   const userData = useSelector((state : RootState) => state.authSlice.userData);
   const [year, setYear] = useState<number[] | null>(null)
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch('/year.json')
@@ -82,6 +84,7 @@ const QualificationForm = ({degree} : Props) => {
             onClick: () => console.log(''),
           },
         })
+        navigate("/student-dashboard/documentation");
       }
       setIsSubmitting(false);
     } catch (error : any) {
