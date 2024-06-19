@@ -50,7 +50,7 @@ const Profile = ({name, url, photo, role, email, about, frontend, backend, curre
         <img src={photo} 
         className="sm:absolute w-[300px] h-[300px] object-cover object-top drop-shadow-[0_0_10px_0_rgb(0,0,0,1);] left-4 z-0" 
         />
-        <img src="/images/branding-decor-2.png" className="absolute top-0 left-0 w-full h-full object-contain z-0 " />
+        <img src="/images/design/branding-decor-2.png" className="absolute top-0 left-0 w-full h-full object-contain z-0 " />
 
         <div className=' ml-[10%] sm:ml-[40%] sm:mt-[100px] mt-[10px]'>
           <h1 className=" text-slate-200 font-bold text-2xl">

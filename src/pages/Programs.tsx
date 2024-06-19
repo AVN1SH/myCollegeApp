@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { getRandomColor } from "@/utils/colors";
 
 export interface CourseType {
   name: string
   url : string
   info : string;
+  shortName : string;
   description: [{
     title : string;
     content : string;
@@ -31,11 +33,17 @@ const Programs = () => {
             <Link key={course.name} to={`/programs/${index}`} className="group shadow-md overflow-hidden max-w-md md:max-w-full xl:max-w-md mx-auto rounded-xl hover:shadow-[0_0_10px_rgba(0,0,0,0.45)] duration-300">
                 <div className="xs:flex md:block">
                   <div className="xs:shrink-0 md:block">
-                    <img 
+                    <div className="h-[200px] w-full md:h-[200px] flex items-center justify-center relative">
+                      <img src="/images/design/randomShape.svg" className=" mix-blend-multiply w-full h-full absolute object-cover opacity-10"/>
+                      <div className={`${getRandomColor()} font-extrabold w-[180px] h-[180px] rounded-full text-5xl text-white flex`}>
+                        <p className="mx-auto my-auto">{course.shortName}</p>
+                      </div>
+                    </div>
+                    {/* <img 
                       className="h-[200px] w-full object-center object-cover md:h-[200px] " 
                       src={course.url}
                       alt={course.name} 
-                    />
+                    /> */}
                   </div>
                   <div className="p-8">
                     <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{course.name}</div>
