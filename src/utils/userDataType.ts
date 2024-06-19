@@ -5,6 +5,7 @@ interface UserData {
   middle_name: string | null;
   last_name: string | null;
   role: string,
+  course: string,
   phone: string,
   email: string,
   father_name: string,

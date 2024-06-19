@@ -120,7 +120,7 @@ const PersonalInfo = () => {
     } catch (error : any) {
       if(Number(error.message) >= 400) {
         if(error.message === '409') setError("Data already saved..!")
-        else setError("Error While Login, Please Try Again Or Do It Later");
+        else setError("Error While Submitting data, Please Try Again Or Do It Later");
       }
       setIsSubmitting(false);
     }
