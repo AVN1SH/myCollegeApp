@@ -2,8 +2,13 @@ import Attendance from "@/components/dashboard/progress/attendance/Attendance"
 import Achieved from "@/components/dashboard/progress/attendance/Overall"
 import Course from "@/components/dashboard/progress/Course"
 import Behavior from "@/components/dashboard/progress/Behavior"
+import { useEffect } from "react"
 
 const Progress = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="relative m-1 w-[clac(100%-280px)]">
       <div className="absolute w-full bg-orange-500 h-72 rounded">

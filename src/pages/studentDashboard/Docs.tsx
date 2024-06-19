@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { documentations } from "@/schema/zod"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate} from "react-router-dom"
 import { Loader2 } from "lucide-react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -78,6 +78,9 @@ const Docs = () => {
     }
     console.log(values)
   }
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="relative m-1 w-[clac(100%-280px)]">
       <div className="absolute w-full bg-orange-500 h-72 rounded">

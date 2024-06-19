@@ -23,6 +23,10 @@ const Faculties = () => {
       .catch((error) => console.error('Error fetching the JSON:', error));
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-2xl px-1 sm:px-4 py-24 lg:max-w-full lg:px-6">

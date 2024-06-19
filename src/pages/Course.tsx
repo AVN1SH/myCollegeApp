@@ -75,6 +75,10 @@ const Course = () => {
       }
     };
   }, [activeTopic]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   
   return courses && (
     <div className="py-28 md:ml-[100px] md:w-[calc(100%-200px)]  ml-[50px] w-[calc(100%-100px)]">

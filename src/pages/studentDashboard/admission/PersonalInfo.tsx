@@ -14,7 +14,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { personalDetails } from "@/schema/zod"
 // import { useDebounceCallback } from "usehooks-ts"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate} from "react-router-dom"
 import { CalendarIcon, Loader2 } from "lucide-react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -59,6 +59,9 @@ const PersonalInfo = () => {
   //   }
   // }, [email])
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const updatedDetails = personalDetails.extend({
     candidate : !userData?.first_name ? z.string().min(3, "Name must have at least 3 characters").max(30, "Name must be less than 30 Characters") : z.string().optional()
   })

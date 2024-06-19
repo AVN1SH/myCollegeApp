@@ -1,8 +1,12 @@
 import { RootState } from "@/store/store"
+import { useEffect } from "react";
 import { useSelector } from "react-redux"
 
 const FaOverview = () => {
-  const userData = useSelector((state : RootState) => state.authSlice.userData)
+  const userData = useSelector((state : RootState) => state.authSlice.userData);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="relative m-1 w-[clac(100%-280px)]">
       <div className="absolute w-full bg-orange-500 h-72 rounded">

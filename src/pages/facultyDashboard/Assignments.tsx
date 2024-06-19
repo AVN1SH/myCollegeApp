@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { feedback } from "@/schema/zod"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Loader2 } from "lucide-react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons"
@@ -43,6 +43,10 @@ const Assignment = () => {
     }
     console.log(values)
   }
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="relative m-1 w-[clac(100%-280px)]">
       <div className="absolute w-full bg-orange-500 h-72 rounded">

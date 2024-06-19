@@ -1,10 +1,14 @@
 import { RootState } from "@/store/store"
+import { useEffect } from "react";
 import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 
 const Overview = () => {
   const userData = useSelector((state : RootState) => state.authSlice.userData);
   const admissionStatus = useSelector((state : RootState) => state.stdSlice.admissionStatus)
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="relative m-1 w-[clac(100%-280px)]">
       <div className="absolute w-full bg-orange-500 h-72 rounded">

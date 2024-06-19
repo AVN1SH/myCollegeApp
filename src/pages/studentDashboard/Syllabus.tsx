@@ -6,7 +6,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 function classNames(...classes : any) {
   return classes.filter(Boolean).join(' ')
 }
@@ -15,6 +15,10 @@ const Syllabus = () => {
   // const userData = useSelector((state : AuthState) => state.userData);
   const [track, setTrack] = useState(false);
   const [trackByData, setTrackByData] = useState('');
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="relative m-1 w-[clac(100%-280px)]">
       <div className="absolute w-full bg-orange-500 h-72 rounded">

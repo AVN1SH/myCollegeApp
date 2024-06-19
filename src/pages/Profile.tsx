@@ -16,6 +16,10 @@ const Profile = () => {
     .then((data) => setFaculties(data))
     .catch((error) => console.error('Error fetching the JSON:', error));
   }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return faculties && (
     <div className="py-20 lg:py-28 md:ml-[100px] md:w-[calc(100%-200px)] ml-[10px] w-[calc(100%-40px)]">
       <div className="relative w-full h-[270px]">

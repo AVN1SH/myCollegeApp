@@ -1,6 +1,10 @@
+import { useEffect } from "react";
 import Faculties from "../Faculties"
 
 const Teachers = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="relative m-1 w-[clac(100%-280px)]">
       <div className="absolute w-full bg-orange-500 h-72 rounded">

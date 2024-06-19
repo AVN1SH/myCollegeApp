@@ -49,6 +49,10 @@ const Developer: React.FC = () => {
       .catch((error) => console.error('Error fetching the JSON:', error));
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="bg-[rgba(41,43,47)] pt-16 min-h-fit py-4">
       <div className="flex flex-col xl:flex-row gap-4 my-3">

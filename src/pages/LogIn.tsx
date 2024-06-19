@@ -13,7 +13,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { login } from "@/schema/zod"
 // import { useDebounceCallback } from "usehooks-ts"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Link, useNavigate} from "react-router-dom"
 import { Loader2 } from "lucide-react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -95,6 +95,9 @@ const LogIn = () => {
       setIsSubmitting(false);
     }
   }
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
