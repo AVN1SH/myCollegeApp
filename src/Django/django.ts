@@ -136,24 +136,24 @@ export class DjangoService {
     }
   }
 
-  async logout() {
-    try {
-      // await api.post("/logout", null, {
-      //   headers : {
-      //     Authorization : `Bearer ${accessToken}`
-      //   }
-      // });
-      await api.post("/logout");
-    } catch (error) {
-      console.log("logout not fetched, error : ", error);
-    }
-  }
+  // async logout() {
+  //   try {
+  //     // await api.post("/logout", null, {
+  //     //   headers : {
+  //     //     Authorization : `Bearer ${accessToken}`
+  //     //   }
+  //     // });
+  //     await api.post("/logout");
+  //   } catch (error) {
+  //     console.log("logout not fetched, error : ", error);
+  //   }
+  // }
 
   // faculty login...............
 
-  async facultyLogin({email, password, collegeID} : LoginUserAccount) {
+  async facultyLogin({email, password, collegeID} : {email : string; password : string; collegeID : string}) {
     try {
-      const response = await api.post(`/login/`, {
+      const response = await facultyApi.post(`/login/`, {
         email,
         password,
         collegeID
@@ -162,9 +162,7 @@ export class DjangoService {
       if (response.data) {
         const user = response.data;
         console.log('Logged in successfully');
-        console.log(user)
         return user;
-
       } else {
         console.error('Login failed:', response.data.error);
       }
@@ -196,7 +194,7 @@ export class DjangoService {
 
         return response.data;
       } else {
-        console.error("error while Adding personal details : ");
+        console.error("error while Adding personal details : ", response);
       }
     } catch(error : any) {
       console.log(error);

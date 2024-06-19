@@ -87,7 +87,7 @@ const Registration = () => {
         password : values.password,
       });
       if(regData) {
-        values.role === 'faculty' ? navigate("/faculy-login") : navigate("/login");
+        values.role === 'faculty' ? navigate("/faculty-login") : navigate("/login");
         setError('');
         toast("Registred Successfully..!", {
           description : "Login to Continue access your dashboard.",

@@ -20,7 +20,7 @@ const CallToAction = () => {
         className="rounded-full hover:px-6 transition-[0.75s]"
         onClick={() => navigate("/about-us")}
         >
-          contac us
+          Contact Us
         </Button>
       </div>
     </div>

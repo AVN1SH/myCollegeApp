@@ -51,6 +51,7 @@ const router = createBrowserRouter(
       <Route path="/developer" element={<Developer />} />
       <Route path="/profile/:id" element={<Profile />} />
       <Route path="/programs/:id" element={<Course />} />
+      <Route path="/feedback" element={<ProtectedRoute><FeedBack /></ProtectedRoute>} />
 
       <Route path="/student-dashboard" element={<ProtectedRoute><StudentProtectedRoute><Layout /></StudentProtectedRoute></ProtectedRoute>}>
         <Route path="overview" element={<ProtectedRoute><StudentProtectedRoute><Overview /></StudentProtectedRoute></ProtectedRoute>} />
@@ -62,7 +63,6 @@ const router = createBrowserRouter(
         <Route path="syllabus" element={<ProtectedRoute><StudentProtectedRoute><Syllabus /></StudentProtectedRoute></ProtectedRoute>} />
         <Route path="my-classes" element={<ProtectedRoute><StudentProtectedRoute><MyClasses /></StudentProtectedRoute></ProtectedRoute>} />
         <Route path="teachers" element={<ProtectedRoute><StudentProtectedRoute><Teachers /></StudentProtectedRoute></ProtectedRoute>} />
-        <Route path="feedback" element={<ProtectedRoute><StudentProtectedRoute><FeedBack /></StudentProtectedRoute></ProtectedRoute>} />
         <Route path="progress-report" element={<ProtectedRoute><StudentProtectedRoute><Progress /></StudentProtectedRoute></ProtectedRoute>} />
         <Route path="result" element={<ProtectedRoute><StudentProtectedRoute><Results /></StudentProtectedRoute></ProtectedRoute>} />
       </Route>
