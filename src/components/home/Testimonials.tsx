@@ -67,7 +67,7 @@ const Testimonials = () => {
               </Link>
             </DrawerTrigger>
             <DrawerContent>
-              <div className="mx-auto container flex flex-col lg:flex-row">
+              <div className="mx-auto lg:container flex flex-col lg:flex-row">
                 <div className="flex-[1] p-2 mx-auto lg:mx-0">
                   { value.img ? <img 
                     className="h-[full] w-[120px] object-center object-cover md:w-[200px] lg:h-[300px] lg:w-[280px] rounded-xl" 
@@ -75,7 +75,7 @@ const Testimonials = () => {
                   />
                   : <FontAwesomeIcon icon={faUser} className="w-[120px] h-full lg:w-[300px] lg:h-[300px] rounded-xl border-slate-500 border-solid border-2 p-2 bg-slate-700 text-slate-300"/>}
                 </div>
-                <div className="flex-[3] container flex flex-col justify-between">
+                <div className="flex-[3] lg:container flex flex-col justify-between">
                   <div>
                     <DrawerHeader className="flex flex-col items-start">
                       <DrawerTitle><div className="uppercase tracking-wide text-sm lg:text-[16px] text-indigo-500 font-semibold">{value.name}</div></DrawerTitle>

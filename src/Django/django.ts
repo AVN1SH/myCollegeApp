@@ -390,6 +390,29 @@ export class DjangoService {
       throw new Error(error.response.status)
     }
   }
+
+  //for all users ..........
+  async feedBack({queryType, queryTitle, justify} : {queryType : string, queryTitle : string; justify : string; file : File | null;}) {
+    try {
+      const response = await api.post(`/feedback/`, {
+        query_type : queryType,
+        query_title : queryTitle,
+        justify
+      });
+  
+      if (response.data) {
+        const data = response.data;
+        console.log(data)
+        return data;
+  
+      } else {
+        console.error('Error while Fetching Data : ', response.data.error);
+      }
+    } catch (error : any) {
+      console.log(error);
+      throw new Error(error.response.status)
+    }
+  }
 }
 
 

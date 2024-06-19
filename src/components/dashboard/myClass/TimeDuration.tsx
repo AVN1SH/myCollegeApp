@@ -1,3 +1,4 @@
+import { getRandomColor } from "@/utils/colors";
 import { faClock } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
@@ -35,7 +36,7 @@ const TimeDuration = ({startTime, endTime, facultyName, description} : Props) =>
   return (
     <div 
       style={{height : `${height}px`, top : `${top}px`}}
-      className={"absolute bg-slate-500 border-solid border-orange-500 border-[1px] shadow-[0_0_5px_orange] w-full rounded p-2 overflow-hidden opacity-[0.75] space-y-2 "}>
+      className={`absolute ${getRandomColor()} border-solid border-slate-500 border-[1px] shadow-[0_0_5px_rgba(0,0,0,0.45)] w-full rounded p-2 overflow-hidden opacity-[0.75] space-y-2`}>
       <p className="text-white font-semibold text-xs lg:text-sm">
         <FontAwesomeIcon icon={faClock}/> Time : {startTime} - {endTime} 
         <span className="text-orange-600"> | </span> 

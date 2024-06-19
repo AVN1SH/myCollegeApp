@@ -45,7 +45,10 @@ const LeftNavBar = () => {
           }
         })}
         {userData && <div className="fixed md:flex items-center gap-4 hidden md:p-3 lg:pl-4 bg-white border-t-[1px] border-slate-300 border-solid bottom-0 left-0 lg:w-[277.5px] h-[60px] hover:cursor-pointer hover:bg-orange-500 hover:text-white duration-300 w-[66px]">
-          {userData.photo ? <img className=" w-[40px] h-[40px] rounded-full object-cover object-center border-slate-500 border-solid border-2" src={userData.photo} /> : <FontAwesomeIcon icon={faUser} className="w-[20px] h-[20px] rounded-full border-slate-500 border-solid border-2 p-2 bg-slate-700 text-slate-300"/>}
+          {userData.photo 
+            ? <img className=" w-[40px] h-[40px] rounded-full object-cover object-center border-slate-500 border-solid border-2" src={userData.photo} /> 
+            : <FontAwesomeIcon icon={faUser} className="w-[20px] h-[20px] rounded-full border-slate-500 border-solid border-2 p-2 bg-slate-700 text-slate-300"/>
+          }
           <p className="text-slate-500 text-lg font-bold hidden lg:block">{userData.first_name + ' ' + (userData.middle_name ? userData.middle_name : '') + ' ' + (userData.last_name ? userData.last_name : '')}</p>
         </div>}
       </div>

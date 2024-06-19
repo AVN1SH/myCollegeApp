@@ -20,13 +20,13 @@ const BadgeNav = () => {
           </div>
         ))}
       </div>
-      <div className="w-full h-[450px] bg-white border-solid border-slate-300 border-[2px] rounded p-2 mt-[49px]">
+      <div className="w-full h-[220px] md:h-[320px] lg:h-[450px] bg-white border-solid border-slate-300 border-[2px] rounded p-2 mt-[49px]">
         <Link to={`/programs/${track}`} className="relaive z-20 w-full h-full">
-          <img src={courses[track].url} className="object-cover object-center h-full w-full rounded"/>
+          <img src={courses[track].url} className="object-cover object-center h-[200px] md:h-[300px] lg:h-full w-full rounded"/>
 
-          <div className="absolute top-40 left-20 text-4xl w-[calc(100%-160px)] space-y-2 z-10">
-            <h1 className="font-extrabold text-orange-500">{courses[track].name}</h1>
-            <p className="font-semibold text-slate-300 text-xl">{courses[track].info}</p>
+          <div className="absolute top-20 left-10 md:top-30 md:left-15 lg:top-40 lg:left-20 w-[calc(100%-80px)] lg:w-[calc(100%-160px)] space-y-2 z-10">
+            <h1 className="font-extrabold text-orange-500 text-xl lg:text-4xl">{courses[track].name}</h1>
+            <p className="font-semibold text-slate-300 text-sm lg:text-xl">{courses[track].info}</p>
           </div>
 
           <div className="absolute top-[57px] bottom-[8px] w-[calc(100%-18px)] rounded bg-black opacity-[0.55]"></div>

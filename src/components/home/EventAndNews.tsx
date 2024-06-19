@@ -64,7 +64,7 @@ const EventAndNews = () => {
               </Link>
             </DrawerTrigger>
             <DrawerContent>
-              <div className="mx-auto container flex flex-col lg:flex-row">
+              <div className="mx-auto lg:container flex flex-col lg:flex-row">
                 <div className="flex-[1] p-2 mx-auto lg:mx-0">
                   <img 
                     className="h-[full] w-[120px] object-center object-cover md:w-[200px] lg:h-full lg:w-[280px] rounded-xl" 
@@ -72,7 +72,7 @@ const EventAndNews = () => {
                     alt={value.id} 
                   />
                 </div>
-                <div className="flex-[3] container">
+                <div className="flex-[3] lg:container">
                   <div>
                     <DrawerHeader>
                       <DrawerTitle><div className="uppercase tracking-wide text-sm lg:text-[16px] text-indigo-500 font-semibold">{value.title}</div></DrawerTitle>

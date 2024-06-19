@@ -71,6 +71,7 @@ const NavBar = () => {
                     {navigation.map((item) => {
                       if(item.name === 'Developers') {
                         return <Link to={item.href}
+                              key={item.href}
                           className={classNames(
                             
                             "px-3 py-2 text-sm font-medium h-full flex items-center flex-shrink-0 duration-75 relative overflow-hidden w-[100px] bg-clip-border before:content-[''] before:absolute before:top-[-40px] before:left-[-80px] before:w-[200px] before:h-[200px] before:bg-gradient-to-r before:from-indigo-500 before:via-purple-500 before:to-pink-500 motion-safe:before:animate-[spin_2s_linear_infinite] before:-z-10"

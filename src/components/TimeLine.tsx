@@ -2,6 +2,8 @@ import times from "@/../public/times.json";
 import { useEffect, useState } from "react";
 import TimeDuration from "./dashboard/myClass/TimeDuration";
 import djangoService from "@/Django/django";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 
 interface Props {
   date : string | undefined;
@@ -19,12 +21,13 @@ interface Data {
 
 const TimeLine = ({date} : Props) => {
   const [data, setData] = useState<Data[]>();
+  const userData = useSelector((state : RootState) => state.authSlice.userData)
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await djangoService.stdClass({
-          course : "Batchlor's of computer application",
+          course : userData?.course || '',
           date : date || ''
         });
         

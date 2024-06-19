@@ -127,7 +127,6 @@ const PersonalInfo = () => {
       }
       setIsSubmitting(false);
     }
-    console.log(values)
   }
 
 

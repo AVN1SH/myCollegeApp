@@ -19,9 +19,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
+import djangoService from "@/Django/django"
+import { toast } from "sonner"
 
 const FeedBack = () => {
   const [isSubmiting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState('');
+
 
   const form = useForm<z.infer<typeof feedback>>({
     resolver: zodResolver(feedback),
@@ -33,15 +37,33 @@ const FeedBack = () => {
     },
   })
 
-  const onSubmit = (values: z.infer<typeof feedback>) => {
+  const onSubmit = async (values: z.infer<typeof feedback>) => {
     setIsSubmitting(true);
     try {
-      //TODO: need to handle submit here
+      const response = await djangoService.feedBack({
+        queryType : values.type || '',
+        queryTitle : values.title,
+        justify : values.description,
+        file : values.file ? values.file[0] : null
+      });
+      
+      if(response) {
+        setError('');
+        toast("Your query send Successfully..!", {
+          description : "You may wait for futher action.",
+          action: {
+            label: "ok",
+            onClick: () => console.log(''),
+          },
+        })
+      }
       setIsSubmitting(false);
-    } catch (error) {
+    } catch (error : any) {
+      if(Number(error.message) >= 400) {
+        setError("Error While Submitting data, Please Try Again Or Do It Later");
+      }
       setIsSubmitting(false);
     }
-    console.log(values)
   }
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -166,6 +188,7 @@ const FeedBack = () => {
                     </FormItem>
                   )}
                 />
+                {error && <div className="text-red-500 font-bold ">{error}</div>}
                 <Button type="submit" disabled={isSubmiting} className="bg-orange-600 rounded">
                   {
                     isSubmiting ? (
