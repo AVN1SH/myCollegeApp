@@ -81,7 +81,7 @@ const Registration = () => {
         middleName : values.middleName,
         lastName : values.lastName,
         role : values.role || "",
-        collegeID : values.course,
+        course : values.course,
         email : values.email,
         mobNum : values.mobNum,
         password : values.password,

@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '@/features/authSlice';
 import { RootState } from '@/store/store';
 import { admissionRemove } from '@/features/stdSlice';
+import Notification from './Notification';
 
 const navigation = [
   { name: 'Home', href: '/', current: true },
@@ -97,7 +98,7 @@ const NavBar = () => {
                   </div>
                 </div>
               </div>
-              <div className="absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0 h-full">
+              <div className="absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0 h-full transition-[1s]">
 
                 {!userStats && <button
                   type="button"
@@ -108,6 +109,8 @@ const NavBar = () => {
                   <span className="sr-only">Open user menu</span>
                   <FontAwesomeIcon icon={faCheckToSlot} /> Apply Now
                 </button>}
+
+                {userStats && <Notification />}
 
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">

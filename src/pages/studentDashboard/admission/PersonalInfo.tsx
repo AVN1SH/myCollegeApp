@@ -89,6 +89,7 @@ const PersonalInfo = () => {
       month: "numeric",
       day: "numeric"
     }))
+    console.log(values.dob?.toLocaleString("en-GB", {year : "numeric", day : "numeric", month : "numeric"}))
     try {
       const response = await djangoService.userDetails({
         id : userData?.id || '',
@@ -97,7 +98,7 @@ const PersonalInfo = () => {
         motherName : values.motherName,
         gender : values.gender || '',
         cast : values.cast || '',
-        dob : values.dob.toLocaleDateString("en-US", {
+        dob : values.dob.toLocaleDateString("en-GB", {
           year: "numeric",
           month: "numeric",
           day: "numeric"

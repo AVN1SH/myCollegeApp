@@ -43,7 +43,7 @@ const EventAndNews = () => {
       </div>
       <div className="grid grid-cols-1 gap-x-3 gap-y-5 md:grid-cols-1 lg:grid-cols-2">
         {data?.newsEvents.map((value) => (
-          <Drawer>
+          <Drawer key={value.id}>
             <DrawerTrigger asChild>
               <Link key={value.title} to='#' className="group shadow-[0_0_5px_rgba(0,0,0,0.15)] overflow-hidden max-w-md md:max-w-full mx-auto rounded bg-white md:h-[180px] hover:shadow-[0_0_10px_rgba(0,0,0,0.45)] duration-300 md:min-w-full">
                   <div className="md:flex">

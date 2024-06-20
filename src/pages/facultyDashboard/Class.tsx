@@ -55,38 +55,51 @@ const Class = () => {
 
   const onSubmit = async (values: z.infer<typeof stdClass>) => {
     setIsSubmitting(true);
-    try {
-      const response = await djangoService.facultyClass({
-        facultyName : userData ? (userData.first_name + ' ' + (userData.middle_name ? userData.middle_name : '') + ' ' + (userData.last_name ? userData.last_name : '')) : '',
-        course : values.course,
-        date : date?.toLocaleDateString("en-GB", {
-          year: "numeric",
-          month: "numeric",
-          day: "numeric",
-        }) || "",
-        startTime : values.startTime,
-        endTime : values.endTime,
-        description : values.description,
-      });
-      if(response) {
-        setError('');
-        toast("Schedule Added Successfully..!", {
-          description : "Users Now view you schedule in there class tab",
-          action: {
-            label: "ok",
-            onClick: () => console.log(''),
-          },
-        })
-      }
-      setIsSubmitting(false);
-    } catch (error : any) {
-      if(Number(error.message) >= 400) {
-        console.log("fields are required");
-        setError("Error While submitting, Please Try Again Or Do It Later");
-      }
+    console.log(values.startTime)
+    const time = values.startTime.split(':');
+    const hour = Number(time[0]);
+    const min = Number(time[1]);
+    const time2 = values.endTime.split(':');
+    const hour2 = Number(time2[0]);
+    const min2 = Number(time2[1]);
+    const timeDifference = (hour2 * 60 + min2) - (hour * 60 + min);
+    if(timeDifference < 30) {
+      setError("Time must be more than 30 minutes and less than 6 hours");
       setIsSubmitting(false);
     }
-    console.log(values)
+    else{
+      try {
+        const response = await djangoService.facultyClass({
+          facultyName : userData ? (userData.first_name + ' ' + (userData.middle_name ? userData.middle_name : '') + ' ' + (userData.last_name ? userData.last_name : '')) : '',
+          course : values.course,
+          date : date?.toLocaleDateString("en-GB", {
+            year: "numeric",
+            month: "numeric",
+            day: "numeric",
+          }) || "",
+          startTime : values.startTime,
+          endTime : values.endTime,
+          description : values.description,
+        });
+        if(response) {
+          setError('');
+          toast("Schedule Added Successfully..!", {
+            description : "Users Now view you schedule in there class tab",
+            action: {
+              label: "ok",
+              onClick: () => console.log(''),
+            },
+          })
+        }
+        setIsSubmitting(false);
+      } catch (error : any) {
+        if(Number(error.message) >= 400) {
+          console.log("fields are required");
+          setError("Error While submitting, Please Try Again Or Do It Later");
+        }
+        setIsSubmitting(false);
+      }
+    }
   }
 
   useEffect(() => {
