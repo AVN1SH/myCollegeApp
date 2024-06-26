@@ -352,12 +352,12 @@ const Results = () => {
             ],
             [
               marks.sem6.subjects[1].paper_title, 
-              "100",
+              "50",
               String(marks.sem6.subjects[1].obtain_marks)
             ],
             [
               marks.sem6.subjects[2].paper_title, 
-              "100",
+              "50",
               String(marks.sem6.subjects[2].obtain_marks)
             ],
           ] : []
@@ -589,10 +589,10 @@ const Results = () => {
                   marks.sem6.subjects[1].obtain_marks,
                   marks.sem6.subjects[2].obtain_marks,
                   
-                  300 -
+                  200 -
                   (marks.sem6.subjects[3].total_marks)
                 ]}
-                label="Oute of 300"
+                label="Oute of 200"
               />
             </div>
           </div>
