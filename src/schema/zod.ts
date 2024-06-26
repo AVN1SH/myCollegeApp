@@ -64,7 +64,15 @@ const address = z.object({
   district : z.string(),
   pinCode: z.string().min(6, "Field must contain 6 digit Number").max(6, "Field must be 6 digit Number"),
   contactNum : z.string().min(10, "Invalid Number").max(10, "Invalid Number"),
-  alternateNum : z.string().optional()
+  alternateNum : z.string().optional().refine(
+    (val) => {
+      if (!val) return true;
+      return /^[0-9]{10}$/.test(val);
+    },
+    {
+      message: 'Alternate number must be exactly 10 digits',
+    }
+  ),
 });
 
 const qualification = z.object({

@@ -107,7 +107,7 @@ const Footer = () => {
       </div>
       <div>
         <hr className="m-3 border-gray-300"/>
-        <p className="text-slate-800"><span className="text-red-400">©</span> All rights reserved <span className="text-slate-300">|</span> Created and Designed by <Link to="https://github.com/AVN1SH" className="text-lime-600 underline font-semibold">Avnish Kr. Sharma</Link><span className="text-slate-300"> |</span> Backend Developer <Link to="https://github.com/rajkumarvikas" className="text-lime-600 underline font-semibold">Vikas Kumar</Link></p>
+        <p className="text-slate-800"><span className="text-red-400">©</span> All rights reserved <span className="text-slate-300">|</span> Created and Designed by <Link to="/developer" className="text-lime-600 underline font-semibold">Avnish Kr. Sharma</Link><span className="text-slate-300"> |</span> Backend Developer <Link to="/developer" className="text-lime-600 underline font-semibold">Vikas Kumar</Link></p>
       </div>
     </footer>
   )
