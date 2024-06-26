@@ -16,7 +16,7 @@ const Results = () => {
     const fetchData = async () => {
       try {
         const response = await djangoService.result({
-          id : userData?.id || ''
+          id : "1"
         });
         
         if(response) {
