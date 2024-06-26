@@ -137,7 +137,9 @@ const Profile = ({name, url, photo, role, email, about, frontend, backend, curre
                 'rgba(13, 159, 255, 1)',
                 'rgba(255, 218, 0, 1)',
                 'rgba(135, 12, 255, 1)',
-                'rgba(255, 50, 50, 1)'
+                'rgba(255, 50, 50, 1)',
+                'rgb(0, 255, 147, 1)',
+                'rgb(255, 57, 156, 1)'
               ]}
             />
           </div>}

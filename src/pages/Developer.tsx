@@ -66,6 +66,7 @@ const Developer: React.FC = () => {
             about={data[0].about}
             frontend={data[0].frontend}
             backend={data[0].backend}
+            skills={data[0].skills}
           />}
         </div>
 
