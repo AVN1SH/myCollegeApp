@@ -4,13 +4,13 @@ import MarksTable from "@/components/result/MarksTable"
 import MarksGraph from "@/components/result/MarksGraph"
 import { useEffect, useState } from "react"
 import djangoService from "@/Django/django"
-import { useSelector } from "react-redux"
-import { RootState } from "@/store/store"
+// import { useSelector } from "react-redux"
+// import { RootState } from "@/store/store"
 
 const Results = () => {
   const [marks, setMarks] = useState<TransformedData>();
   const [tableData, setTableData] = useState<{[any : string] : {caption : string; head : string[]; row : string[][]}}>();
-  const userData = useSelector((state : RootState) => state.authSlice.userData);
+  // const userData = useSelector((state : RootState) => state.authSlice.userData);
   
   useEffect(() => {
     const fetchData = async () => {
